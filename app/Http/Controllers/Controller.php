@@ -13,6 +13,6 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
-        return Inertia::render('Event/Show');
+        return Inertia::render('Web/index');
     }
 }
