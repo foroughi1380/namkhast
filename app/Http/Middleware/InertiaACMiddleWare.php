@@ -17,7 +17,7 @@ class InertiaACMiddleWare
      */
     public function handle(Request $request, Closure $next)
     {
-        Inertia::setRootView("");
+        Inertia::setRootView("ac");
         return $next($request);
     }
 }

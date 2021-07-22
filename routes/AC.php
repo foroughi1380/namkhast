@@ -2,6 +2,4 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get("/login" , function (){
-   return "it's work";
-});
+Route::get("/" , [\App\Http\Controllers\AC\MainController::class , 'index']);

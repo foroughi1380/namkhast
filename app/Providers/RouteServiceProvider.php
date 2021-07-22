@@ -66,7 +66,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function AdminConsoleMapping(){
         Route::prefix('ac')
-            ->middleware(InertiaACMiddleWare::class)
+            ->middleware(['web' , InertiaACMiddleWare::class])
             ->namespace($this->adminControlNamespace)
             ->group(base_path("routes/AC.php"));
     }
