@@ -14,7 +14,7 @@ class CreateTransactionTable extends Migration
     public function up()
     {
         Schema::create('transaction', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique()->primary();
+            $table->id();
             $table->integer('price');
             $table->string('tracking_code');
             $table->integer('response_code');

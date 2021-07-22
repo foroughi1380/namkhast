@@ -14,7 +14,7 @@ class CreateChallengeTable extends Migration
     public function up()
     {
         Schema::create('challenge', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique()->primary();
+            $table->id();
             $table->foreignId('user_id');
             $table->string('title' , 255);
             $table->text('description');
@@ -22,13 +22,13 @@ class CreateChallengeTable extends Migration
             $table->foreignId('transaction_id');
             $table->foreignId('winner_user');
             $table->enum('status' , ['pending', 'paid'])->default('pending');
-            $table->boolean('deleted')->default('false');
             $table->timestamp('ended_at');
             $table->timestamp('expiration_at');
             $table->string('budget');
             $table->integer('maximum_user');
             $table->enum('type' , ['free', 'nonfree']);
             $table->integer('contributors_count');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -14,9 +14,9 @@ class CreateContributorsTransactionTable extends Migration
     public function up()
     {
         Schema::create('contributors_transaction', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique()->primary();
-            $table->foreignId('contributors_id ');
-            $table->foreignId('transaction_id ');
+            $table->id();
+            $table->foreignId('contributors_id');
+            $table->foreignId('transaction_id');
             $table->timestamps();
         });
     }

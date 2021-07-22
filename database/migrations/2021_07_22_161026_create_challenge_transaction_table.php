@@ -14,7 +14,7 @@ class CreateChallengeTransactionTable extends Migration
     public function up()
     {
         Schema::create('challenge_transaction', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique()->primary();
+            $table->id();
             $table->foreignId('challenge_id');
             $table->foreignId('transaction_id');
             $table->timestamps();
