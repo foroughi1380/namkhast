@@ -1,9 +1,6 @@
 <template>
   <!-- Default box -->
   <div class="card">
-
-
-
     <div class="card-header">
       <h3 class="card-title">عنوان</h3>
 
@@ -15,16 +12,7 @@
       </div>
     </div>
     <div class="card-body">
-
-
-      <Link href="users" class="nav-link">
-
-        click me
-
-      </Link>
-
-
-      سلام شما در داشبورد هستید.
+      شما در حال مشاهده کاربران هستید.
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
@@ -33,11 +21,12 @@
     <!-- /.card-footer-->
   </div>
   <!-- /.card -->
+
 </template>
 
 <script>
 export default {
-  name: "dashboard",
+name: "Users"
 }
 </script>
 
