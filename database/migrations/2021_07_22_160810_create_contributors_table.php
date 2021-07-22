@@ -15,7 +15,7 @@ class CreateContributorsTable extends Migration
     {
         Schema::create('contributors', function (Blueprint $table) {
             $table->id()->autoIncrement()->unique()->primary();
-            $table->foreignId('challenge');
+            $table->foreignId('challenge_id');
             $table->foreignId('user_id');
             $table->timestamps();
         });
