@@ -19,7 +19,7 @@ class CreateAdminTable extends Migration
             $table->string('family', 35);
             $table->string('phone', 11);
             $table->string('email', 50);
-            $table->string('password', 9);
+            $table->string('password');
             $table->string('picture', 100)->nullable();
             $table->timestamps();
         });
