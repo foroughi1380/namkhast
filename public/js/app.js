@@ -17984,8 +17984,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("data-v-52dabb70");
 
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-52dabb70");
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"card\" data-v-52dabb70><div class=\"card-header\" data-v-52dabb70><h3 class=\"card-title\" data-v-52dabb70>عنوان</h3><div class=\"card-tools\" data-v-52dabb70><button type=\"button\" class=\"btn btn-tool\" data-widget=\"collapse\" data-toggle=\"tooltip\" title=\"Collapse\" data-v-52dabb70><i class=\"fa fa-minus\" data-v-52dabb70></i></button><button type=\"button\" class=\"btn btn-tool\" data-widget=\"remove\" data-toggle=\"tooltip\" title=\"Remove\" data-v-52dabb70><i class=\"fa fa-times\" data-v-52dabb70></i></button></div></div><div class=\"card-body\" data-v-52dabb70> سلام شما در داشبورد هستید. </div><!-- /.card-body --><div class=\"card-footer\" data-v-52dabb70> فوتر </div><!-- /.card-footer--></div>", 1);
+
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
+
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", null, "Hi you are in dashboard");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Default box "), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card ")], 2112
+  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  );
 });
 
 /***/ }),
