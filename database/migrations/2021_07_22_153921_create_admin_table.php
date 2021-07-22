@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Admin extends Migration
+class CreateAdminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,8 +21,7 @@ class Admin extends Migration
             $table->string('email', 50);
             $table->string('password', 9);
             $table->string('picture', 100)->nullable();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 
