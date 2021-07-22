@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Middleware\InertiaACMiddleWare;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string|null
      */
     // protected $namespace = 'App\\Http\\Controllers';
+    protected $adminControlNamespace = "App\\Http\\Controllers\\AC";
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -35,13 +37,14 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->configureRateLimiting();
+        //$this->configureRateLimiting();
+        $this->AdminConsoleMapping();
 
         $this->routes(function () {
-            Route::prefix('api')
-                ->middleware('api')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/api.php'));
+//            Route::prefix('api')
+//                ->middleware('api')
+//                ->namespace($this->namespace)
+//                ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
                 ->namespace($this->namespace)
@@ -59,5 +62,12 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
+    }
+
+    protected function AdminConsoleMapping(){
+        Route::prefix('ac')
+            ->middleware(InertiaACMiddleWare::class)
+            ->namespace($this->adminControlNamespace)
+            ->group(base_path("routes/AC.php"));
     }
 }
