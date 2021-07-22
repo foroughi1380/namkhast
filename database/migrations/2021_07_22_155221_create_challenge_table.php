@@ -14,7 +14,7 @@ class CreateChallengeTable extends Migration
     public function up()
     {
         Schema::create('challenge', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement()->unique()->primary();
             $table->foreignId('user_id');
             $table->string('title' , 255);
             $table->text('description');
