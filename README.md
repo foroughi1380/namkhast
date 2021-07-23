@@ -27,7 +27,7 @@ this project just only for final university project and you should not use this 
 ```
 APP_NAME=NamKhast
 APP_ENV=local
-APP_KEY=base64:q5H2ZAeX3c+UHaJEw1RUmuLsj+1ttRythGLJRl+1VZY=
+APP_KEY=
 APP_DEBUG=true
 APP_URL=http://localhost
 
@@ -76,8 +76,8 @@ PUSHER_APP_CLUSTER=mt1
 
 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
-
 ```
+>to create key run `php artisan key:generate`
 5. create databases
 ```
     php artisan migrage
