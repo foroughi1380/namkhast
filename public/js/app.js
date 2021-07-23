@@ -18260,17 +18260,19 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-77106d28");
 
-var _hoisted_1 = {
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("this project just only for final university project and you should not use this for your business. ");
+
+var _hoisted_2 = {
   "class": "wrapper"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<nav class=\"main-header navbar navbar-expand bg-white navbar-light border-bottom\" data-v-77106d28><!-- Left navbar links --><ul class=\"navbar-nav\" data-v-77106d28><li class=\"nav-item\" data-v-77106d28><a class=\"nav-link\" data-widget=\"pushmenu\" href=\"#\" data-v-77106d28><i class=\"fa fa-bars\" data-v-77106d28></i></a></li><li class=\"nav-item d-none d-sm-inline-block\" data-v-77106d28><a href=\"../../index3.html\" class=\"nav-link\" data-v-77106d28>خانه</a></li><li class=\"nav-item d-none d-sm-inline-block\" data-v-77106d28><a href=\"#\" class=\"nav-link\" data-v-77106d28>تماس</a></li></ul><!-- SEARCH FORM --><form class=\"form-inline ml-3\" data-v-77106d28><div class=\"input-group input-group-sm\" data-v-77106d28><input class=\"form-control form-control-navbar\" type=\"search\" placeholder=\"جستجو\" aria-label=\"Search\" data-v-77106d28><div class=\"input-group-append\" data-v-77106d28><button class=\"btn btn-navbar\" type=\"submit\" data-v-77106d28><i class=\"fa fa-search\" data-v-77106d28></i></button></div></div></form><!-- Right navbar links --><ul class=\"navbar-nav mr-auto\" data-v-77106d28><!-- Messages Dropdown Menu --><li class=\"nav-item dropdown\" data-v-77106d28><a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\" data-v-77106d28><i class=\"fa fa-comments-o\" data-v-77106d28></i><span class=\"badge badge-danger navbar-badge\" data-v-77106d28>3</span></a><div class=\"dropdown-menu dropdown-menu-lg dropdown-menu-left\" data-v-77106d28><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><!-- Message Start --><div class=\"media\" data-v-77106d28><img src=\"dist/img/user1-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 ml-3 img-circle\" data-v-77106d28><div class=\"media-body\" data-v-77106d28><h3 class=\"dropdown-item-title\" data-v-77106d28> حسام موسوی <span class=\"float-left text-sm text-danger\" data-v-77106d28><i class=\"fa fa-star\" data-v-77106d28></i></span></h3><p class=\"text-sm\" data-v-77106d28>با من تماس بگیر لطفا...</p><p class=\"text-sm text-muted\" data-v-77106d28><i class=\"fa fa-clock-o mr-1\" data-v-77106d28></i> 4 ساعت قبل</p></div></div><!-- Message End --></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><!-- Message Start --><div class=\"media\" data-v-77106d28><img src=\"dist/img/user8-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 img-circle ml-3\" data-v-77106d28><div class=\"media-body\" data-v-77106d28><h3 class=\"dropdown-item-title\" data-v-77106d28> پیمان احمدی <span class=\"float-left text-sm text-muted\" data-v-77106d28><i class=\"fa fa-star\" data-v-77106d28></i></span></h3><p class=\"text-sm\" data-v-77106d28>من پیامتو دریافت کردم</p><p class=\"text-sm text-muted\" data-v-77106d28><i class=\"fa fa-clock-o mr-1\" data-v-77106d28></i> 4 ساعت قبل</p></div></div><!-- Message End --></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><!-- Message Start --><div class=\"media\" data-v-77106d28><img src=\"dist/img/user3-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 img-circle ml-3\" data-v-77106d28><div class=\"media-body\" data-v-77106d28><h3 class=\"dropdown-item-title\" data-v-77106d28> سارا وکیلی <span class=\"float-left text-sm text-warning\" data-v-77106d28><i class=\"fa fa-star\" data-v-77106d28></i></span></h3><p class=\"text-sm\" data-v-77106d28>پروژه اتون عالی بود مرسی واقعا</p><p class=\"text-sm text-muted\" data-v-77106d28><i class=\"fa fa-clock-o mr-1\" data-v-77106d28></i>4 ساعت قبل</p></div></div><!-- Message End --></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item dropdown-footer\" data-v-77106d28>مشاهده همه پیام‌ها</a></div></li><!-- Notifications Dropdown Menu --><li class=\"nav-item dropdown\" data-v-77106d28><a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\" data-v-77106d28><i class=\"fa fa-bell-o\" data-v-77106d28></i><span class=\"badge badge-warning navbar-badge\" data-v-77106d28>15</span></a><div class=\"dropdown-menu dropdown-menu-lg dropdown-menu-left\" data-v-77106d28><span class=\"dropdown-item dropdown-header\" data-v-77106d28>15 نوتیفیکیشن</span><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><i class=\"fa fa-envelope ml-2\" data-v-77106d28></i> 4 پیام جدید <span class=\"float-left text-muted text-sm\" data-v-77106d28>3 دقیقه</span></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><i class=\"fa fa-users ml-2\" data-v-77106d28></i> 8 درخواست دوستی <span class=\"float-left text-muted text-sm\" data-v-77106d28>12 ساعت</span></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><i class=\"fa fa-file ml-2\" data-v-77106d28></i> 3 گزارش جدید <span class=\"float-left text-muted text-sm\" data-v-77106d28>2 روز</span></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item dropdown-footer\" data-v-77106d28>مشاهده همه نوتیفیکیشن</a></div></li></ul></nav>", 1);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<nav class=\"main-header navbar navbar-expand bg-white navbar-light border-bottom\" data-v-77106d28><!-- Left navbar links --><ul class=\"navbar-nav\" data-v-77106d28><li class=\"nav-item\" data-v-77106d28><a class=\"nav-link\" data-widget=\"pushmenu\" href=\"#\" data-v-77106d28><i class=\"fa fa-bars\" data-v-77106d28></i></a></li><li class=\"nav-item d-none d-sm-inline-block\" data-v-77106d28><a href=\"../../index3.html\" class=\"nav-link\" data-v-77106d28>خانه</a></li><li class=\"nav-item d-none d-sm-inline-block\" data-v-77106d28><a href=\"#\" class=\"nav-link\" data-v-77106d28>تماس</a></li></ul><!-- SEARCH FORM --><form class=\"form-inline ml-3\" data-v-77106d28><div class=\"input-group input-group-sm\" data-v-77106d28><input class=\"form-control form-control-navbar\" type=\"search\" placeholder=\"جستجو\" aria-label=\"Search\" data-v-77106d28><div class=\"input-group-append\" data-v-77106d28><button class=\"btn btn-navbar\" type=\"submit\" data-v-77106d28><i class=\"fa fa-search\" data-v-77106d28></i></button></div></div></form><!-- Right navbar links --><ul class=\"navbar-nav mr-auto\" data-v-77106d28><!-- Messages Dropdown Menu --><li class=\"nav-item dropdown\" data-v-77106d28><a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\" data-v-77106d28><i class=\"fa fa-comments-o\" data-v-77106d28></i><span class=\"badge badge-danger navbar-badge\" data-v-77106d28>3</span></a><div class=\"dropdown-menu dropdown-menu-lg dropdown-menu-left\" data-v-77106d28><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><!-- Message Start --><div class=\"media\" data-v-77106d28><img src=\"dist/img/user1-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 ml-3 img-circle\" data-v-77106d28><div class=\"media-body\" data-v-77106d28><h3 class=\"dropdown-item-title\" data-v-77106d28> حسام موسوی <span class=\"float-left text-sm text-danger\" data-v-77106d28><i class=\"fa fa-star\" data-v-77106d28></i></span></h3><p class=\"text-sm\" data-v-77106d28>با من تماس بگیر لطفا...</p><p class=\"text-sm text-muted\" data-v-77106d28><i class=\"fa fa-clock-o mr-1\" data-v-77106d28></i> 4 ساعت قبل</p></div></div><!-- Message End --></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><!-- Message Start --><div class=\"media\" data-v-77106d28><img src=\"dist/img/user8-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 img-circle ml-3\" data-v-77106d28><div class=\"media-body\" data-v-77106d28><h3 class=\"dropdown-item-title\" data-v-77106d28> پیمان احمدی <span class=\"float-left text-sm text-muted\" data-v-77106d28><i class=\"fa fa-star\" data-v-77106d28></i></span></h3><p class=\"text-sm\" data-v-77106d28>من پیامتو دریافت کردم</p><p class=\"text-sm text-muted\" data-v-77106d28><i class=\"fa fa-clock-o mr-1\" data-v-77106d28></i> 4 ساعت قبل</p></div></div><!-- Message End --></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><!-- Message Start --><div class=\"media\" data-v-77106d28><img src=\"dist/img/user3-128x128.jpg\" alt=\"User Avatar\" class=\"img-size-50 img-circle ml-3\" data-v-77106d28><div class=\"media-body\" data-v-77106d28><h3 class=\"dropdown-item-title\" data-v-77106d28> سارا وکیلی <span class=\"float-left text-sm text-warning\" data-v-77106d28><i class=\"fa fa-star\" data-v-77106d28></i></span></h3><p class=\"text-sm\" data-v-77106d28>پروژه اتون عالی بود مرسی واقعا</p><p class=\"text-sm text-muted\" data-v-77106d28><i class=\"fa fa-clock-o mr-1\" data-v-77106d28></i>4 ساعت قبل</p></div></div><!-- Message End --></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item dropdown-footer\" data-v-77106d28>مشاهده همه پیام‌ها</a></div></li><!-- Notifications Dropdown Menu --><li class=\"nav-item dropdown\" data-v-77106d28><a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\" data-v-77106d28><i class=\"fa fa-bell-o\" data-v-77106d28></i><span class=\"badge badge-warning navbar-badge\" data-v-77106d28>15</span></a><div class=\"dropdown-menu dropdown-menu-lg dropdown-menu-left\" data-v-77106d28><span class=\"dropdown-item dropdown-header\" data-v-77106d28>15 نوتیفیکیشن</span><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><i class=\"fa fa-envelope ml-2\" data-v-77106d28></i> 4 پیام جدید <span class=\"float-left text-muted text-sm\" data-v-77106d28>3 دقیقه</span></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><i class=\"fa fa-users ml-2\" data-v-77106d28></i> 8 درخواست دوستی <span class=\"float-left text-muted text-sm\" data-v-77106d28>12 ساعت</span></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item\" data-v-77106d28><i class=\"fa fa-file ml-2\" data-v-77106d28></i> 3 گزارش جدید <span class=\"float-left text-muted text-sm\" data-v-77106d28>2 روز</span></a><div class=\"dropdown-divider\" data-v-77106d28></div><a href=\"#\" class=\"dropdown-item dropdown-footer\" data-v-77106d28>مشاهده همه نوتیفیکیشن</a></div></li></ul></nav>", 1);
 
-var _hoisted_3 = {
+var _hoisted_4 = {
   "class": "main-sidebar sidebar-dark-primary elevation-4"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   href: "https://google.com/../../index3.html",
   "class": "brand-link"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
@@ -18286,40 +18288,40 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_5 = {
+var _hoisted_6 = {
   "class": "sidebar"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"user-panel mt-3 pb-3 mb-3 d-flex\" data-v-77106d28><div class=\"image\" data-v-77106d28><img src=\"https://www.gravatar.com/avatar/52f0fbcbedee04a121cba8dad1174462?s=200&amp;d=mm&amp;r=g\" class=\"img-circle elevation-2\" alt=\"User Image\" data-v-77106d28></div><div class=\"info\" data-v-77106d28><a href=\"#\" class=\"d-block\" data-v-77106d28>حسام موسوی</a></div></div>", 1);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"user-panel mt-3 pb-3 mb-3 d-flex\" data-v-77106d28><div class=\"image\" data-v-77106d28><img src=\"https://www.gravatar.com/avatar/52f0fbcbedee04a121cba8dad1174462?s=200&amp;d=mm&amp;r=g\" class=\"img-circle elevation-2\" alt=\"User Image\" data-v-77106d28></div><div class=\"info\" data-v-77106d28><a href=\"#\" class=\"d-block\" data-v-77106d28>حسام موسوی</a></div></div>", 1);
 
-var _hoisted_7 = {
+var _hoisted_8 = {
   "class": "mt-2"
 };
-var _hoisted_8 = {
+var _hoisted_9 = {
   "class": "nav nav-pills nav-sidebar flex-column",
   "data-widget": "treeview",
   role: "menu",
   "data-accordion": "false"
 };
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "nav-item"
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "nav-icon fa fa-dashboard"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, " صفحه اصلی ", -1
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, " صفحه اصلی ", -1
 /* HOISTED */
 );
 
-var _hoisted_12 = {
+var _hoisted_13 = {
   "class": "nav-item has-treeview"
 };
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   href: "#",
   "class": "nav-link"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
@@ -18330,24 +18332,24 @@ var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_14 = {
+var _hoisted_15 = {
   "class": "nav nav-treeview"
 };
-var _hoisted_15 = {
+var _hoisted_16 = {
   "class": "nav-item"
 };
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "fa fa-users nav-icon"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, "لیست کاربران", -1
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, "لیست کاربران", -1
 /* HOISTED */
 );
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", {
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", {
   "class": "nav-item"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   href: "../../index2.html",
@@ -18358,10 +18360,10 @@ var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_19 = {
+var _hoisted_20 = {
   "class": "content-wrapper"
 };
-var _hoisted_20 = {
+var _hoisted_21 = {
   "class": "content"
 };
 
@@ -18370,28 +18372,28 @@ var _hoisted_20 = {
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navbar "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.navbar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main Sidebar Container "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("aside", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Brand Logo "), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar user panel (optional) "), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("nav", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Add icons to the links using the .nav-icon class\n                   with font-awesome or any other icon font library "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navbar "), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.navbar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main Sidebar Container "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("aside", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Brand Logo "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar user panel (optional) "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("nav", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Add icons to the links using the .nav-icon class\n                   with font-awesome or any other icon font library "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: "/ac",
     "class": "nav-link"
   }, {
     "default": _withId(function () {
-      return [_hoisted_10, _hoisted_11];
+      return [_hoisted_11, _hoisted_12];
     }),
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: "/ac/users",
     "class": "nav-link"
   }, {
     "default": _withId(function () {
-      return [_hoisted_16, _hoisted_17];
+      return [_hoisted_17, _hoisted_18];
     }),
     _: 1
     /* STABLE */
 
-  })]), _hoisted_18])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.sidebar-menu ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.sidebar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Content Wrapper. Contains page content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Content Header (Page header) "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("section", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default", {}, undefined, true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.content ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Control Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.control-sidebar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ./wrapper ")], 2112
-  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  })]), _hoisted_19])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.sidebar-menu ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.sidebar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Content Wrapper. Contains page content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Content Header (Page header) "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("section", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default", {}, undefined, true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.content ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Control Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.control-sidebar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ./wrapper ")], 64
+  /* STABLE_FRAGMENT */
   );
 });
 
