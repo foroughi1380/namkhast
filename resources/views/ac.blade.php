@@ -15,31 +15,31 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../theme/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../theme/AC/dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <!-- bootstrap rtl -->
-    <link rel="stylesheet" href="../theme/dist/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="../theme/AC/dist/css/bootstrap-rtl.min.css">
     <!-- template rtl version -->
-    <link rel="stylesheet" href="../theme/dist/css/custom-style.css">
+    <link rel="stylesheet" href="../theme/AC/dist/css/custom-style.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 @inertia
 
 <!-- jQuery -->
-<script src="../theme/plugins/jquery/jquery.min.js"></script>
+<script src="../theme/AC/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../theme/AC/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- SlimScroll -->
-<script src="../theme/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../theme/AC/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="../theme/plugins/fastclick/fastclick.js"></script>
+<script src="../theme/AC/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="../theme/dist/js/adminlte.min.js"></script>
+<script src="../theme/AC/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../theme/dist/js/demo.js"></script>
+<script src="../theme/AC/dist/js/demo.js"></script>
 
 </body>
 </html>
