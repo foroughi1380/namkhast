@@ -23,7 +23,7 @@ class CreateChallengeTable extends Migration
             $table->foreignId('winner_user');
             $table->enum('status' , ['pending', 'paid'])->default('pending');
             $table->timestamp('ended_at');
-            $table->timestamp('expiration_at');
+            $table->timestamp('expiration_at')->nullable()->default(null);
             $table->string('budget');
             $table->integer('maximum_user');
             $table->enum('type' , ['free', 'nonfree']);
