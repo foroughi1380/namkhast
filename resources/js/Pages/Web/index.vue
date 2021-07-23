@@ -5,8 +5,10 @@
 </template>
 
 <script>
+import appLayout from "../../Shared/appLayout";
 export default {
-    name: "index"
+    name: "index",
+    layout : appLayout
 }
 </script>
 
