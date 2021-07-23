@@ -2,14 +2,14 @@
 ## About
 this project just only for final university project and you should not use this for your business.
 
-##requirements
+## requirements
 - PHP >= 7.3.0
 - Composer >= 2.1
 - Nodejs >= 14
 - Npm >= 6.14
 - Mysql >= 8
 
-##how to run it
+## how to run it
 1. clone the project 
 ```
     git clone https://github.com/foroughi1380/namkhast.git
@@ -101,7 +101,7 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 > 
 > password : 12345678
 
-###project demo site
+### project demo site
 You can see [Namkhast.ir](https://namkhast.ir)
 
 >Owners : Mohamad Foroughi , Seyed Mohammad Khalili
