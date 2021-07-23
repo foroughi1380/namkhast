@@ -1,6 +1,6 @@
 <template>
   <Layout>
-
+    <Head title="داشبورد"></Head>
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">

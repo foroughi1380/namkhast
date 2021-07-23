@@ -5,6 +5,7 @@ import { Head } from '@inertiajs/inertia-vue3'
 
 var vuevue;
 createInertiaApp({
+    title : title => `${title} | نام خواست `,
     resolve: name => require(`./Pages/${name}`),
     setup({ el, app, props, plugin }) {
         vuevue = createApp({ render: () => h(app, props)});
