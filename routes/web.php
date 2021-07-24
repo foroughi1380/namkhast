@@ -21,3 +21,20 @@ Route::middleware([\App\Http\Middleware\webNoAuthMiddleware::class])->group(func
 
 });
 
+
+Route::get('/profile', function (){
+    return \Inertia\Inertia::render('Web/profile');
+});
+Route::get('/challenge', function (){
+    return \Inertia\Inertia::render('Web/challenges');
+});
+Route::get('/participants', function (){
+    return \Inertia\Inertia::render('Web/participants');
+});
+Route::get('/favorites', function (){
+    return \Inertia\Inertia::render('Web/favorites');
+});
+Route::get('/about', function (){
+    return \Inertia\Inertia::render('Web/about');
+});
+

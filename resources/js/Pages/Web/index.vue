@@ -1,6 +1,7 @@
 <template>
-    <p>
-        The index page
+  <Head title="خانه"></Head>
+  <p>
+        صفحه اصلی
     </p>
 </template>
 
