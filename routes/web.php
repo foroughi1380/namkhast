@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class , "index"]);
+
+Route::get('/profile', function (){
+    return \Inertia\Inertia::render('Web/profile');
+});
