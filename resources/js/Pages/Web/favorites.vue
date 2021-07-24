@@ -1,4 +1,5 @@
 <template>
+  <Head title="علاقه مندی ها"></Head>
   <section>
     <div class=" col-12">
       <div class="content-body">

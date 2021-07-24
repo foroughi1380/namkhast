@@ -1,4 +1,5 @@
 <template>
+  <Head title="پروفایل کاربر"></Head>
   <div id="user-profile">
     <div class="row">
       <div class="col-12">

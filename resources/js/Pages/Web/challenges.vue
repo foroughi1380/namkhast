@@ -1,4 +1,5 @@
 <template>
+  <Head title="چالش ها"></Head>
   <section>
     <div class="content-detached content-right">
       <div class="content-body">
