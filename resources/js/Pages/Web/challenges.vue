@@ -48,8 +48,9 @@
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html">نام چالش</h3>
                   <div class="row">
-                    <p class="item-company col-6">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-6 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -86,8 +87,9 @@
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html">نام چالش</h3>
                   <div class="row">
-                    <p class="item-company col-6">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-6 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -124,8 +126,9 @@
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html">نام چالش</h3>
                   <div class="row">
-                    <p class="item-company col-6">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-6 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -162,8 +165,9 @@
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html">نام چالش</h3>
                   <div class="row">
-                    <p class="item-company col-6">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-6 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -200,8 +204,9 @@
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html">نام چالش</h3>
                   <div class="row">
-                    <p class="item-company col-6">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-6 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -238,8 +243,9 @@
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html">نام چالش</h3>
                   <div class="row">
-                    <p class="item-company col-6">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-6 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
