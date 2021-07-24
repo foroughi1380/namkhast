@@ -264,7 +264,7 @@
         </li>
         <li class=" nav-item"><Link href="/profile"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Email">پروفایل من</span></Link>
         </li>
-        <li class=" nav-item"><a href="app-chat.html"><i class="feather icon-award"></i><span class="menu-title" data-i18n="Chat">چالش ها</span></a>
+        <li class=" nav-item"><Link href="/challenge"><i class="feather icon-award"></i><span class="menu-title" data-i18n="Chat">چالش ها</span></Link>
         </li>
         <li class=" nav-item"><a href="app-todo.html"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">شرکت شده ها</span></a>
         </li>

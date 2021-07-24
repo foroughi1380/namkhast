@@ -19,3 +19,6 @@ Route::get('/', [IndexController::class , "index"]);
 Route::get('/profile', function (){
     return \Inertia\Inertia::render('Web/profile');
 });
+Route::get('/challenge', function (){
+    return \Inertia\Inertia::render('Web/challenges');
+});
