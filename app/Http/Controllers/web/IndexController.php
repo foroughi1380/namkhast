@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\web;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
-class Controller extends BaseController
+class IndexController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 

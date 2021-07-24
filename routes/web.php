@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\web\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class , "index"]);
+Route::get('/', [IndexController::class , "index"]);
