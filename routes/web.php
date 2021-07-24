@@ -28,3 +28,6 @@ Route::get('/participants', function (){
 Route::get('/favorites', function (){
     return \Inertia\Inertia::render('Web/favorites');
 });
+Route::get('/about', function (){
+    return \Inertia\Inertia::render('Web/about');
+});

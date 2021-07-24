@@ -270,9 +270,7 @@
         </li>
         <li class=" nav-item"><Link href="/favorites"><i class="feather icon-star"></i><span class="menu-title" data-i18n="Calender">مورد علاقه ها</span></Link>
         </li>
-        <li class=" nav-item"><a href="app-calender.html"><i class="feather icon-help-circle"></i><span class="menu-title" data-i18n="Calender">درباره ما</span></a>
-        </li>
-        <li class=" nav-item"><a href="app-calender.html"><i class="feather icon-phone"></i><span class="menu-title" data-i18n="Calender">تماس با ما</span></a>
+        <li class=" nav-item"><Link href="/about"><i class="feather icon-help-circle"></i><span class="menu-title" data-i18n="Calender">درباره ما</span></Link>
         </li>
 
         <li class=" navigation-header"><span>چالش ها</span>
