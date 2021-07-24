@@ -25,3 +25,6 @@ Route::get('/challenge', function (){
 Route::get('/participants', function (){
     return \Inertia\Inertia::render('Web/participants');
 });
+Route::get('/favorites', function (){
+    return \Inertia\Inertia::render('Web/favorites');
+});
