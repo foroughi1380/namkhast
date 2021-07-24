@@ -15,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class , "index"]);
+Route::middleware([\App\Http\Middleware\webNoAuthMiddleware::class])->group(function (){
+    Route::get("/login" , [\App\Http\Controllers\web\ReLoController::class , "loginIndex"]);
+    Route::post("/login" , [\App\Http\Controllers\web\ReLoController::class , "login"]);
+
+});
+
