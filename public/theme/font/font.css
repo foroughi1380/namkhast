@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Vz";
+    src: url("/theme/font/Vazir-Regular.ttf");
+}
+
+*{
+    font-family: Vz !important;
+}
+
+body{
+    font-family: Vz !important;
+}
