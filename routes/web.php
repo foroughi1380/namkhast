@@ -40,4 +40,5 @@ Route::get('/about', function (){
 Route::inertia('/challenge/create', 'Web/challengeCreate');
 Route::inertia('/challenge/myChallenge', 'Web/myChallenge');
 Route::inertia('/profile/edit', 'Web/profileEdit');
+Route::inertia('/withdraw', 'Web/withdraw');
 

@@ -284,7 +284,7 @@
         </li>
         <li class=" nav-item"><Link href="/profile/edit"><i class="feather icon-edit"></i><span class="menu-title" data-i18n="Calender">ویرایش پروفایل</span></Link>
         </li>
-        <li class=" nav-item"><a href="app-calender.html"><i class="feather icon-arrow-up"></i><span class="menu-title" data-i18n="Calender">درخواست برداشت</span></a>
+        <li class=" nav-item"><Link href="/withdraw"><i class="feather icon-arrow-up"></i><span class="menu-title" data-i18n="Calender">درخواست برداشت</span></Link>
         </li>
         <li class=" nav-item"><a href="app-calender.html"><i class="feather icon-search"></i><span class="menu-title" data-i18n="Calender">پیگیری درخواست ها</span></a>
         </li>
