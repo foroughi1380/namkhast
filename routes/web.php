@@ -42,4 +42,5 @@ Route::inertia('/challenge/myChallenge', 'Web/myChallenge');
 Route::inertia('/profile/edit', 'Web/profileEdit');
 Route::inertia('/withdraw', 'Web/withdraw');
 Route::inertia('/withdraw/track', 'Web/withdrawTrack');
+Route::inertia('/challenge/detail', 'Web/challengeDetail');
 
