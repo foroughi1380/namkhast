@@ -13,7 +13,7 @@ class RegisterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|min:3|max:30|string',
+            'family'=> 'required|min:2|max:35|string',
+            "phone" => "required|digits:11|regex:/^09\d{9}$/|unique:user,phone",
+            "token" => "require"
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.*' => 'نام باید بین ۳ تا ۳۰ کاراکتر باشد',
+            'family.*' => 'نام خانوادگی باید بین ۲ تا ۳۵ کاراکتر باشد' ,
+            'phone.unique' => 'شماره تلفن وارد شده قبلا در سامانه ثبت نام کرده است',
+            'phone.*' => "شماره تلفن خود را صحیح وارد کنید مثل : 09123949383",
+            'token.*' => 'جواب کپچا به نادرست است'
         ];
     }
 }
