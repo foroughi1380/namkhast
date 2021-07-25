@@ -38,4 +38,5 @@ Route::get('/about', function (){
     return \Inertia\Inertia::render('Web/about');
 });
 Route::inertia('/challenge/create', 'Web/challengeCreate');
+Route::inertia('/challenge/myChallenge', 'Web/myChallenge');
 
