@@ -21,7 +21,7 @@
               <section class="text-center">
 
                 <IconInputText maxlen="11" type="number" name="phone" icon="icon-phone" placeholder="شماره تلفن" label="شماره تلفن" :disabled="inProcess" v-model="phone" v-if="! inGetConfirm"></IconInputText>
-                <IconInputText maxlen="11" type="number" name="phone" icon="icon-code" placeholder="کد تایید ۴ رقمی ارسالی به شما" label="کد تایید" :disabled="inProcess" v-model="code" v-else></IconInputText>
+                <IconInputText maxlen="4" type="number" name="phone" icon="icon-code" placeholder="کد تایید ۴ رقمی ارسالی به شما" label="کد تایید" :disabled="inProcess" v-model="code" v-else></IconInputText>
                 <p class="text-danger " v-for="err in errors" v-text="err"></p>
                 <button @click="submit" class="btn btn-primary  btn-inline">
                   <span  v-if="! inProcess" v-text="inGetConfirm?'تایید':'ورود'"></span>
