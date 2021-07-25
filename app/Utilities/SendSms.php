@@ -1,12 +1,12 @@
 <?php
-namespace App\Http;
+namespace App\Utilities;
 
 use Melipayamak\MelipayamakApi;
 use SoapClient;
 
 class SendSms
 {
-    static function sendConfirmCode($to): bool
+    static function sendConfirmCode($to)
     {
         $username = env("SMS_MELIPAYAMAK_USERNAME");
         $password = env("SMS_MELIPAYAMAK_PASSWORD");
