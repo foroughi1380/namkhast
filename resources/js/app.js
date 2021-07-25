@@ -18,6 +18,10 @@ createInertiaApp({
                 async generateRecaptchaToken(action) {
                     await this.$recaptchaLoaded()
                     return await this.$recaptcha(action);
+                },
+                checkPhoneIsValid(phone){
+                    let regex = /^09\d{9}$/
+                    return regex.test(phone)
                 }
             }
         })
