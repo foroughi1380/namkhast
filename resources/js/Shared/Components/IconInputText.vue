@@ -1,6 +1,6 @@
 <template>
   <fieldset class="form-label-group form-group position-relative has-icon-left">
-    <input :type="type ? type : 'text'" class="form-control" :id="name" :name="name" :placeholder="placeholder" :value="modelValue" @input="inputChange">
+    <input :type="type ? type : 'text'" class="form-control" :id="name" :name="name" :placeholder="placeholder" :value="modelValue" @input="inputChange" :maxlength="maxlen">
     <div class="form-control-position">
       <i :class="['feather' , icon]"></i>
     </div>
@@ -11,7 +11,7 @@
 <script>
 export default {
   name: "IconInputText",
-  props : ['name' , 'icon' , 'placeholder' , 'label' , 'modelValue' , 'type'],
+  props : ['name' , 'icon' , 'placeholder' , 'label' , 'modelValue' , 'type' , 'maxlen'],
   methods:{
     inputChange(e){
       this.$emit('update:modelValue', e.target.value);
