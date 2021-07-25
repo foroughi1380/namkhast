@@ -27,7 +27,6 @@
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="/theme/web/app-assets/css-rtl/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="/theme/web/app-assets/css-rtl/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="/theme/web/app-assets/css-rtl/pages/invoice.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -62,8 +61,16 @@
 <script src="/theme/web/app-assets/js/scripts/components.js"></script>
 <!-- END: Theme JS-->
 
-<!-- BEGIN: Page JS-->
-<script src="/theme/web/app-assets/js/scripts/pages/invoice.js"></script>
-<!-- END: Page JS-->
+<script src="/theme/web/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+<script src="/theme/web/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+<script src="/theme/web/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+<script src="/theme/web/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+<script src="/theme/web/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+<script src="/theme/web/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+<script src="/theme/web/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+<script src="/theme/web/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+<script src="/theme/web/app-assets/js/scripts/datatables/datatable.js"></script>
+
+
 </body>
 </html>
