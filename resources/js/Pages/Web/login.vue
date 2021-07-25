@@ -62,14 +62,15 @@ export default {
   name: "login",
   props:{
     errors : {},
-    sm : null,
+    conf : false,
+    refresh : false
   },
   data(){
     return {
       inProcess : false,
       phone : "",
       code : "",
-      inGetConfirm : false,
+      inGetConfirm : false ,
     }
   },
   components : {IconInputText , HollowDotsSpinner},
@@ -82,23 +83,51 @@ export default {
       }
     },
     confirm(){
+      this.inProcess = true;
 
+      this.generateRecaptchaToken('login').then(token => {
+        Inertia.post('/login' , {
+          phone:this.phone,
+          code:this.code,
+          token :token
+        } , {
+          onSuccess : page=>{
+            if (this.refresh){
+              window.location.reload();
+            }
+            this.inGetConfirm = this.conf;
+          },
+          onFinish : visit =>{
+            this.inProcess = false;
+          },
+        })
+      }).catch(err=>{
+        this.errors = {
+          captcha : "خطا در حل کپچا در صورت برترف نشدن مشکل با بارگذاری مجدد صفحه با پشتیبانی تماس بگیرید."
+        }
+      })
     },
     sendCode(){
       this.inProcess = true;
 
-      Inertia.post('/login' , {phone:this.phone} , {
-        onSuccess : page =>{
-          this.inGetConfirm = true;
-        },
-        onError : error=>{
-          console.log(error)
-          console.log(this.errors)
-        },
-        onFinish : visit =>{
-          this.inProcess = false;
-        },
+      this.generateRecaptchaToken('login').then(token => {
+        Inertia.post('/login' , {
+          phone:this.phone,
+          token :token
+        } , {
+          onSuccess : page=>{
+            this.inGetConfirm = this.conf;
+          },
+          onFinish : visit =>{
+            this.inProcess = false;
+          },
+        })
+      }).catch(err=>{
+        this.errors = {
+          captcha : "خطا در حل کپچا در صورت برترف نشدن مشکل با بارگذاری مجدد صفحه با پشتیبانی تماس بگیرید."
+        }
       })
+
     }
   }
 }
