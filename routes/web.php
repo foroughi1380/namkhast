@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\web\IndexController;
 use Illuminate\Support\Facades\Route;
-
+use Inertia\Inertia;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,4 +37,5 @@ Route::get('/favorites', function (){
 Route::get('/about', function (){
     return \Inertia\Inertia::render('Web/about');
 });
+Route::inertia('/challenge/create', 'Web/challengeCreate');
 

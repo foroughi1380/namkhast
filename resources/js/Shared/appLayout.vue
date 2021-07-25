@@ -275,7 +275,7 @@
 
         <li class=" navigation-header"><span>چالش ها</span>
         </li>
-        <li class=" nav-item"><a href="app-calender.html"><i class="feather icon-plus-circle"></i><span class="menu-title" data-i18n="Calender">ثبت چالش</span></a>
+        <li class=" nav-item"><Link href="/challenge/create"><i class="feather icon-plus-circle"></i><span class="menu-title" data-i18n="Calender">ثبت چالش</span></Link>
         </li>
         <li class=" nav-item"><a href="app-calender.html"><i class="feather icon-user-check"></i><span class="menu-title" data-i18n="Calender">چالش های من</span></a>
         </li>
