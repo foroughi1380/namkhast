@@ -5,6 +5,11 @@
   background : url(/theme/web/app-assets/images/pages/faq.jpg) no-repeat;
   background-size : cover;
 }
+.home-bg {
+  background : url(/theme/web/app-assets/images/pages/faq.jpg) no-repeat;
+  background-size : cover;
+  height: 40rem;
+}
 .faq-bg .form-control:focus ~ .form-control-position i {
   color : #7367F0;
 }
