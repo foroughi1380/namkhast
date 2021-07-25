@@ -18,9 +18,12 @@ use Inertia\Inertia;
 class ReLoController extends Controller
 {
     function loginIndex(){
-        //SendSms::sendConfirmCode("09162943094");
         Inertia::setRootView("userRegisterLogin");
         return Inertia::render("Web/login");
+    }
+    function registerIndex(){
+        Inertia::setRootView("userRegisterLogin");
+        return Inertia::render("Web/register");
     }
 
     function login(LoginRequest $request){
