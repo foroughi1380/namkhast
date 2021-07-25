@@ -63,7 +63,8 @@ export default {
   props:{
     errors : {},
     conf : false,
-    refresh : false
+    refresh : false,
+    ph : ""
   },
   data(){
     return {
@@ -72,6 +73,9 @@ export default {
       code : "",
       inGetConfirm : false ,
     }
+  },
+  created() {
+    this.phone = this.ph;
   },
   components : {IconInputText , HollowDotsSpinner},
   methods : {
