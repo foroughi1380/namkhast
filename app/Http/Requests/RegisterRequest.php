@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
             'name' => 'required|min:3|max:30|string',
             'family'=> 'required|min:2|max:35|string',
             "phone" => "required|digits:11|regex:/^09\d{9}$/|unique:user,phone",
-            "token" => "require"
+            "token" => "required"
         ];
     }
 
