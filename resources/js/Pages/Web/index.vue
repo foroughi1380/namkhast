@@ -15,6 +15,8 @@
               <h4 class="card-text mb-2 text-muted">
                 اولین پلتفرم اینترنتی درخواست نام در ایران
               </h4>
+                <a href="/login" class="btn bg-gradient-primary mt-5 mr-1 mb-1 waves-effect waves-light">ورود</a>
+                <a href="/register" class="btn bg-gradient-success mt-5 mr-1 mb-1 waves-effect waves-light">ثبت نام</a>
             </div>
           </div>
         </div>
@@ -54,11 +56,11 @@
       <section class="row text-center" id="about">
         <div class="card col-12 mx-auto">
           <div class="card-content row">
-            <div class="card-body col-4 text-center">
+            <div class="card-body col-4 col-md-4 col-sm-12 text-center">
               <img src="/theme/web/app-assets/images/pages/graphic-3.png" alt="about"
                    class="users-avatar-shadow rounded" height="300" width="300">
             </div>
-            <div class="card-body col-8 text-center">
+            <div class="card-body col-8 col-md-8 col-sm-12 text-center">
               <h2 class="mt-1 mb-3">نام خواست چیست؟</h2>
               <p class="text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
                 گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
