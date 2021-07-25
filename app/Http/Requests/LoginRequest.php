@@ -27,7 +27,8 @@ class LoginRequest extends FormRequest
         return [
             "phone" => "required|digits:11|regex:/^09\d{9}$/",
 //            "phone" => "required|digits:11|regex:(0)?9\d{9}|exists:App\Model\User,phone",
-            "code" => "digits:4"
+            "code" => "digits:4",
+            "_token" => "required"
         ];
     }
 
@@ -36,7 +37,8 @@ class LoginRequest extends FormRequest
         return [
             "phone.exists" => 'شماره تلفن وارد شده در سامانه وجود ندارد',
             "phone.*" => 'شماره تلفن وارد شده صحیح نمیباشد',
-            "code" =>   'کد وارد شده باید ۴ عدد باشد'
+            "code.*" =>   'کد وارد شده باید ۴ عدد باشد',
+            "_token.required" => 'کد کپچا به سمت سرور ارسال نشده است لطفا دباره تلاش کنید.'
         ];
     }
 }
