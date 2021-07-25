@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="/theme/web/assets/css/style-rtl.css">
     <!-- END: Custom CSS-->
 </head>
-<body class="vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
+<body class="menu-collapsed vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
 @inertia
 
 <div class="sidenav-overlay"></div>
