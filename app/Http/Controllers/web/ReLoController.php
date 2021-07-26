@@ -61,17 +61,6 @@ class ReLoController extends Controller
 
     public function register(RegisterRequest $request)
     {
-
-
-        return Inertia::render("Web/login" , ["ph"=>$request->get("phone") ,
-            "toasts"=>[
-                ['message'=>'شما با موفقیت ثبت نام کردید' ,
-                    'type'=>'success']
-            ]
-        ]);
-
-
-
         if (! Utilities::checkRecaptcha($request->get('token') , 'register' , $request->ip)){
             return Inertia::render("Web/register" , [
                'errors' => ['term' => 'شما به عنوان ربات شناخته شدید.']
