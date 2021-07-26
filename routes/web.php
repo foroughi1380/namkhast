@@ -16,11 +16,15 @@ use Inertia\Inertia;
 
 Route::get('/', [IndexController::class , "index"]);
 Route::middleware([\App\Http\Middleware\webNoAuthMiddleware::class])->group(function (){
-    Route::get("/login" , [\App\Http\Controllers\web\ReLoController::class , "loginIndex"]);
+    Route::get("/login" , [\App\Http\Controllers\web\ReLoController::class , "loginIndex"])->name("login");
     Route::post("/login" , [\App\Http\Controllers\web\ReLoController::class , "login"]);
 
-    Route::get("/register" , [\App\Http\Controllers\web\ReLoController::class , "registerIndex"]);
+    Route::get("/register" , [\App\Http\Controllers\web\ReLoController::class , "registerIndex"])->name("register");
     Route::post("/register" , [\App\Http\Controllers\web\ReLoController::class , "register"]);
+});
+
+Route::middleware(["auth"])->group(function (){
+    Route::get("/logout" , function (){\Illuminate\Support\Facades\Auth::logout(); return \Illuminate\Support\Facades\Redirect::to("/");})->name("logout");
 });
 
 
