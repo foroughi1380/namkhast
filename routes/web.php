@@ -19,6 +19,8 @@ Route::middleware([\App\Http\Middleware\webNoAuthMiddleware::class])->group(func
     Route::get("/login" , [\App\Http\Controllers\web\ReLoController::class , "loginIndex"]);
     Route::post("/login" , [\App\Http\Controllers\web\ReLoController::class , "login"]);
 
+    Route::get("/register" , [\App\Http\Controllers\web\ReLoController::class , "registerIndex"]);
+    Route::post("/register" , [\App\Http\Controllers\web\ReLoController::class , "register"]);
 });
 
 
