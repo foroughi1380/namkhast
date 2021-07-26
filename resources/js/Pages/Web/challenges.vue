@@ -1,8 +1,7 @@
 <template>
   <Head title="چالش ها"></Head>
   <section>
-    <div class="content-detached content-right">
-      <div class="content-body">
+    <div class="content-detached content-right col-9 col-sm-12 col-md-9">
         <!-- Ecommerce Content Section Starts -->
         <section id="ecommerce-header">
           <div class="row">
@@ -291,10 +290,8 @@
           </div>
         </section>
         <!-- Ecommerce Pagination Ends -->
-
-      </div>
     </div>
-    <div class="sidebar-detached sidebar-left col-md-3 col-sm-12">
+    <div class="sidebar-detached sidebar-left col-sm-12 col-md-3">
       <div class="sidebar">
         <!-- Ecommerce Sidebar Starts -->
         <div class="sidebar-shop" id="ecommerce-sidebar-toggler">
@@ -409,6 +406,41 @@
                 </ul>
               </div>
               <!-- Categories Ends -->
+              <hr>
+              <!-- Filter -->
+              <div class="brands">
+                <div class="brand-title mt-1 pb-1">
+                  <h6 class="filter-title mb-0">فیلتر ها</h6>
+                </div>
+                <div class="brand-list" id="brands">
+                  <ul class="list-unstyled">
+                    <li class="d-flex justify-content-between align-items-center py-25">
+                        <span class="vs-checkbox-con vs-checkbox-primary">
+                            <input type="checkbox" value="false">
+                            <span class="vs-checkbox">
+                                <span class="vs-checkbox--check">
+                                    <i class="vs-icon feather icon-check"></i>
+                                </span>
+                            </span>
+                            <span class="">چالش های به اتمام رسیده</span>
+                        </span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center py-25">
+                      <span class="vs-checkbox-con vs-checkbox-primary">
+                          <input type="checkbox" value="false">
+                          <span class="vs-checkbox">
+                              <span class="vs-checkbox--check">
+                                  <i class="vs-icon feather icon-check"></i>
+                              </span>
+                          </span>
+                          <span class="">
+                              چالش های فعال
+                          </span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

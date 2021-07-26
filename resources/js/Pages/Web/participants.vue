@@ -1,8 +1,7 @@
 <template>
   <Head title="چالش های شرکت شده"></Head>
   <section>
-    <div class="content-detached content-right">
-      <div class="content-body">
+    <div class="content-detached content-right col-9 col-sm-12 col-md-9">
         <!-- background Overlay when sidebar is shown  starts-->
         <div class="shop-content-overlay"></div>
         <!-- background Overlay when sidebar is shown  ends-->
@@ -271,9 +270,9 @@
         </section>
         <!-- Ecommerce Pagination Ends -->
 
-      </div>
+
     </div>
-    <div class="sidebar-detached sidebar-left col-md-3 col-sm-12">
+    <div class="sidebar-detached sidebar-left col-sm-12 col-md-3">
       <div class="sidebar">
         <!-- Ecommerce Sidebar Starts -->
         <div class="sidebar-shop" id="ecommerce-sidebar-toggler">

@@ -34,16 +34,17 @@
     <link rel="stylesheet" type="text/css" href="/theme/web/assets/css/style-rtl.css">
     <!-- END: Custom CSS-->
 </head>
-<body class="vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
+<body class="menu-collapsed vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
 @inertia
 
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
 
 <!-- BEGIN: Footer-->
-<footer class="footer footer-static footer-light">
-    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">
-            تمامی حقوق این سایت متعلق به ممدا است </span>
+<footer class="text-center footer footer-static footer-light text-muted">
+    <p class="clearfix blue-grey lighten-2 mb-0">
+        <span class="d-block d-md-inline-block mt-25">
+            ♥ساخته شده با عشق♥ </span>
     </p>
 </footer>
 
