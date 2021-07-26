@@ -64,7 +64,8 @@ export default {
     errors : {},
     conf : false,
     refresh : false,
-    ph : ""
+    ph : "",
+    toasts : {}
   },
   data(){
     return {
@@ -76,6 +77,7 @@ export default {
   },
   created() {
     this.phone = this.ph;
+    this.showToasts(this.toasts);
   },
   components : {IconInputText , HollowDotsSpinner},
   methods : {
