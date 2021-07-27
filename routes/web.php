@@ -13,7 +13,7 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post("update" , [\App\Http\Controllers\web\UserController::class, "update"]);
 Route::get('/', [IndexController::class , "index"]);
 Route::middleware([\App\Http\Middleware\webNoAuthMiddleware::class])->group(function (){
     Route::get("/login" , [\App\Http\Controllers\web\ReLoController::class , "loginIndex"])->name("login");
