@@ -17,7 +17,6 @@ Route::middleware(["auth:admin"])->group(function (){
     Route::get('/admin' , [\App\Http\Controllers\AC\AdminController::class , "index"]);
     Route::get('/admin/create');
     Route::post('/admin/store');
-    Route::get('/admin/delete');
     Route::delete('/admin/destroy');
     Route::get('/admin/edit');
     Route::put('/admin/update');
