@@ -23,8 +23,8 @@
           <td>{{ admin.email }}</td>
           <td>
             <div class="row text-white text-center mx-auto">
-              <a :href="'/ac/admin/edit/' + admin.id" class="btn btn-info m-1 col-5">ویرایش</a>
-              <a :href="'/ac/admin/delete/' + admin.id" class="btn btn-danger m-1 col-5">حذف</a>
+              <Link :href="'/ac/admin/edit/' + admin.id" class="btn btn-info m-1 col-5">ویرایش</Link>
+              <Link :href="'/ac/admin/delete/' + admin.id" class="btn btn-danger m-1 col-5">حذف</Link>
             </div>
           </td>
         </tr>
