@@ -11,9 +11,12 @@
 </template>
 
 <script>
+import { HollowDotsSpinner } from 'epic-spinners'
+
 export default {
   name: "WaitButton",
-  props : ['wait', 'text' , 'onClick']
+  props : ['wait', 'text' , 'onClick'],
+  components : {HollowDotsSpinner}
 }
 </script>
 
