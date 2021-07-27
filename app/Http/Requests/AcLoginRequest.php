@@ -13,7 +13,7 @@ class AcLoginRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class AcLoginRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "email" => "required|exists:admin,email",
+            "password" => "required|min:6",
+            "token" => "required"
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'email.exists' => 'ایمیل وارد شده نا معتبر است',
         ];
     }
 }
