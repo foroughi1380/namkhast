@@ -2,7 +2,7 @@
   <div class="form-group">
     <div class="controls">
       <label>{{ label }}</label>
-      <input :type="type ? type : 'text'" :name="name" class="form-control" :placeholder="placeholder" :value="modelValue" :maxlength="maxlen" @input="this.$emit('update:modelValue', e.target.value)">
+      <input :type="type ? type : 'text'" :name="name" class="form-control" :placeholder="placeholder" :value="modelValue" :maxlength="maxlen" @input="$emit('update:modelValue', $event.target.value)">
     </div>
   </div>
 </template>
