@@ -30,6 +30,7 @@ class RouteServiceProvider extends ServiceProvider
     // protected $namespace = 'App\\Http\\Controllers';
     protected $adminControlNamespace = "App\\Http\\Controllers\\AC";
 
+    public const AdminControlPrefix = "ac";
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -65,7 +66,7 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     protected function AdminConsoleMapping(){
-        Route::prefix('ac')
+        Route::prefix(self::AdminControlPrefix)
             ->middleware(['web' , InertiaACMiddleWare::class])
             ->namespace($this->adminControlNamespace)
             ->group(base_path("routes/AC.php"));

@@ -1,4 +1,5 @@
 <template>
+  <Head title="ورود ادمین"></Head>
   <div class="login-box">
     <div class="login-logo">
       <a href="/"><b>ورود به سایت</b></a>
@@ -73,6 +74,9 @@ export default {
           password:this.password,
           token :token
         },{
+          onSuccess : page=>{
+            window.location.reload();
+          },
           onFinish : visit =>{
             this.inProcess = false;
           },

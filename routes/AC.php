@@ -10,7 +10,7 @@ Route::middleware([\App\Http\Middleware\webNoAuthMiddleware::class])->group(func
     Route::post("/login" , [\App\Http\Controllers\AC\UserController::class , "login"]);
 });
 
-Route::middleware(["auth"])->group(function (){
+Route::middleware(["auth:admin"])->group(function (){
     Route::get("/" , [\App\Http\Controllers\AC\MainController::class , 'index']);
-    Route::get("/logout" , function (){\Illuminate\Support\Facades\Auth::logout(); return \Illuminate\Support\Facades\Redirect::to("/");})->name("logout");
+    Route::get("/logout" , function (){\Illuminate\Support\Facades\Auth::logout(); return \Illuminate\Support\Facades\Redirect::to("/");});
 });

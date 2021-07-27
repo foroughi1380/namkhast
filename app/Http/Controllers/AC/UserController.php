@@ -35,9 +35,9 @@ class UserController extends Controller
 
         if (Auth::guard('admin')->attempt($adminUser)) {
             $adminUserInstance = Admin::query()->where('email' ,'=', $request->get('email'))->first();
-            Auth::guard('admin')->login($adminUserInstance);
+            Auth::guard('admin')->loginUsingId($adminUserInstance->id);
 
-            return Inertia::render("AC/dashboard");
+            return Inertia::render("AC/login");
         }
 
         return Inertia::render("AC/login",[
