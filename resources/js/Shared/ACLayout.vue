@@ -192,7 +192,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <Link href="/ac/users" class="nav-link">
+                    <Link href="/ac/admin" class="nav-link">
                       <i class="fa fa-users nav-icon"></i>
                       <p>لیست ادمین ها</p>
                     </Link>

@@ -14,7 +14,7 @@ Route::middleware(["auth:admin"])->group(function (){
     Route::get("/" , [\App\Http\Controllers\AC\MainController::class , 'index']);
     Route::get("/logout" , function (){\Illuminate\Support\Facades\Auth::logout(); return \Illuminate\Support\Facades\Redirect::to("/");});
 
-    Route::get('/admin');
+    Route::get('/admin' , [\App\Http\Controllers\AC\AdminController::class , "index"]);
     Route::get('/admin/create');
     Route::post('/admin/store');
     Route::get('/admin/delete');
