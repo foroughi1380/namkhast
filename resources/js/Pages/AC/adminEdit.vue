@@ -9,28 +9,28 @@
         <div class="form-group">
           <label for="name" class="col-sm-2 control-label">نام</label>
           <div class="col-sm-10">
-            <input type="text" v-model="name" class="form-control" name="name" id="name" placeholder="نام خود را وارد کنید" :value="admin.name">
+            <input type="text" v-model="name" class="form-control" name="name" id="name" placeholder="نام خود را وارد کنید" >
           </div>
         </div>
 
         <div class="form-group">
           <label for="name" class="col-sm-2 control-label">نام خانوادگی</label>
           <div class="col-sm-10">
-            <input type="text" v-model="family" class="form-control" name="family" id="family" placeholder="نام خانوادگی خود را وارد کنید"  :value="admin.family">
+            <input type="text" v-model="family" class="form-control" name="family" id="family" placeholder="نام خانوادگی خود را وارد کنید">
           </div>
         </div>
 
         <div class="form-group">
           <label for="name" class="col-sm-2 control-label">شماره تلفن</label>
           <div class="col-sm-10">
-            <input type="phone" v-model="phone" class="form-control" name="phone" id="phone" placeholder="شماره تماس خود را وارد کنید"  :value="admin.phone">
+            <input type="phone" v-model="phone" class="form-control" name="phone" id="phone" placeholder="شماره تماس خود را وارد کنید" >
           </div>
         </div>
 
         <div class="form-group">
           <label for="email" class="col-sm-2 control-label">ایمیل</label>
           <div class="col-sm-10">
-            <input type="email" v-model="email" class="form-control" name="email" id="email" placeholder="ایمیل را وارد کنید" :value="admin.email">
+            <input type="email" v-model="email" class="form-control" name="email" id="email" placeholder="ایمیل را وارد کنید">
           </div>
         </div>
         <p class="text-danger " v-for="error in errors" v-text="error"></p>
