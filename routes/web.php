@@ -13,7 +13,6 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post("update" , [\App\Http\Controllers\web\UserController::class, "update"]);
 Route::get('/', [IndexController::class , "index"]);
 Route::middleware([\App\Http\Middleware\webNoAuthMiddleware::class])->group(function (){
     Route::get("/login" , [\App\Http\Controllers\web\ReLoController::class , "loginIndex"])->name("login");
@@ -25,6 +24,9 @@ Route::middleware([\App\Http\Middleware\webNoAuthMiddleware::class])->group(func
 
 Route::middleware(["auth"])->group(function (){
     Route::get("/logout" , function (){\Illuminate\Support\Facades\Auth::logout(); return \Illuminate\Support\Facades\Redirect::to("/");})->name("logout");
+
+    Route::inertia('/profile/edit', 'Web/profileEdit');
+    Route::post("/profile/edit" , [\App\Http\Controllers\web\UserController::class , "update"])->name("profile.update");
 });
 
 
@@ -45,7 +47,6 @@ Route::get('/about', function (){
 });
 Route::inertia('/challenge/create', 'Web/challengeCreate');
 Route::inertia('/challenge/myChallenge', 'Web/myChallenge');
-Route::inertia('/profile/edit', 'Web/profileEdit');
 Route::inertia('/withdraw', 'Web/withdraw');
 Route::inertia('/withdraw/track', 'Web/withdrawTrack');
 Route::inertia('/challenge/detail', 'Web/challengeDetail');
