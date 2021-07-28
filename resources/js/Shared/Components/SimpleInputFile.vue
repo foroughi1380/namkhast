@@ -1,5 +1,5 @@
 <template>
-  <fieldset class="form-group col-3 mt-2">
+  <fieldset class="form-group mt-2">
     <div class="custom-file">
       <input type="file" class="custom-file-input" :id="name" :accept="accept" @input="inputChange">
       <label class="custom-file-label" :name="name" :for="name">{{label}}</label>
