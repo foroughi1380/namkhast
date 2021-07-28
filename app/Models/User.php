@@ -37,13 +37,13 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
+    protected $appends = [
+      "auth"
     ];
+
+    public function getAuthAttribute($value){
+        return AuthRequest::query()->find($this->id);
+    }
 
     public function getPictureName()
     {
