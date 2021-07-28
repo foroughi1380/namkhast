@@ -26,7 +26,7 @@ class AcAdminEditRequest extends FormRequest
         return [
             "name" => "required|max:50",
             "family" => "required|max:70",
-            "phone" => "required|digits:11|regex:/^09\d{9}$/|unique:admin,phone",
+//            "phone" => "required|digits:11|regex:/^09\d{9}$/|unique:admin,phone",
             "email" => "required|unique:admin,email",
         ];
     }
@@ -35,7 +35,7 @@ class AcAdminEditRequest extends FormRequest
         return [
             "phone.exists" => 'شماره تلفن وارد شده در سامانه وجود دارد',
             "phone.*" => 'شماره تلفن وارد شده صحیح نمیباشد',
-            "email" => 'ایمیل وارد شده تکراری است'
+            "email.*" => 'ایمیل وارد شده تکراری است'
         ];
     }
 
