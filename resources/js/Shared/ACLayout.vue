@@ -186,10 +186,10 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="../../index2.html" class="nav-link">
+                    <Link href="/ac/admin/create" class="nav-link">
                       <i class="fa fa-user-plus nav-icon"></i>
                       <p>افزودن ادمین</p>
-                    </a>
+                    </Link>
                   </li>
                   <li class="nav-item">
                     <Link href="/ac/admin" class="nav-link">
