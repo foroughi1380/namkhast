@@ -26,14 +26,18 @@ class AdminController extends Controller
         ]);
     }
 
-    public function update($id , AcAdminEditRequest $request)
+    public function update($id , Request $request)
     {
-        dd($request);
-        $admin = Admin::query()->find($id);
-        return Inertia::render('AC/adminEdit', [
-            'admin' => $admin
+        $request->validate([
+            "name" => "required|max:50",
+            "family" => "required|max:70",
+            "phone" => "required|digits:11|regex:/^09\d{9}$/|unique:admin,phone,". $id,
+            "email" => "required|unique:admin,email,". $id,
         ]);
 
-    }
+        $admin = Admin::query()->find($id);
+        $admin->update($request->all());
 
+        return Inertia::render('AC/admins');
+    }
 }
