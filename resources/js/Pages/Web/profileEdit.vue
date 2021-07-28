@@ -32,7 +32,7 @@
                 <div class="media-body mt-50">
                   <h3 class="media-heading">{{user.name}} {{ user.family }}</h3>
 
-                  <SimpleInputFile :disabled="inProgress" accept="image/*" name="avatar" label="انتخواب عکس پروفایل"  v-model="avatar"/>
+                  <SimpleInputFile class="col-3" :disabled="inProgress" accept="image/*" name="avatar" label="انتخواب عکس پروفایل"  v-model="avatar"/>
                   <p class="text-danger " v-if="errors.picture" v-text="errors.picture"></p>
 
                 </div>
@@ -69,39 +69,58 @@
               <!-- users edit account form ends -->
             </div>
             <div class="tab-pane" id="information" aria-labelledby="information-tab" role="tabpanel">
+
+              <div class="alert alert-warning" role="alert" v-if="user.auth && user.auth.status === 'pending'">
+                <h4 class="alert-heading">در انتظار تایید</h4>
+                <p class="mb-0">
+اطلاعت شما با موفقیت برای برسی ارسال شد . برسی در کوتاه ترین زمان ممکن انجام میشود.
+                </p>
+              </div>
+
+
+              <div class="alert alert-success" role="alert" v-if="user.auth && user.auth.status === 'accept'">
+                <h4 class="alert-heading">در انتظار تایید</h4>
+                <p class="mb-0">
+                  اطلاعت شما با موفقیت برای برسی ارسال شد . برسی در کوتاه ترین زمان ممکن انجام میشود.
+                </p>
+              </div>
+
+
+
+              <div class="alert alert-danger" role="alert" v-if="user.auth && user.auth.status === 'denied'">
+                <h4 class="alert-heading">لطفا موارد زیر را خوانده و آن ها را اصلاح کنید</h4>
+                <p class="mb-0">
+                  {{user.atuh.descryption}}
+                </p>
+              </div>
+
+
+
+
+              <div class="alert alert-dark" role="alert" v-if="user.auth && user.auth.status === 'block'">
+                <h4 class="alert-heading">تعداد درخواست های مکرر زیاد</h4>
+                <p class="mb-0">
+                  شما تا ۳ روز اینده قادر به درخواست احراز هویت نیستید.
+                </p>
+              </div>
+
               <!-- users edit Info form start -->
-              <form novalidate>
                 <div class="row">
                   <div class="col-12 col-sm-6">
-                    <div class="media mb-2">
-                      <a class="mr-2 my-25" href="#">
-                        <img src="/theme/web/app-assets/images/portrait/small/avatar-s-18.jpg" alt="nc_picture" class="users-avatar-shadow rounded" height="90" width="200">
-                      </a>
-                      <div class="media-body mt-50">
-                        <h5 class="media-heading">لطفا جهت احراز هویت ، یک تصویر واضح از کارت ملی خود بارگذاری کنید.</h5>
-                        <fieldset class="form-group col-12 mt-2">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="picture">
-                            <label class="custom-file-label" name="picture" for="picture">انتخاب فایل</label>
-                          </div>
-                        </fieldset>
-                      </div>
-                    </div>
+                    <SimpleTextBox label="کد ملی" maxlen="10" type="number" placeholder="کد ملی خود را وارد کنید" name="melicode" v-model="nationalCode"/>
+                    <p class="text-danger " v-if="errors.nationalCode" v-text="errors.nationalCode"></p>
 
-                    <div class="form-group">
-                      <div class="controls">
-                        <label>شماره شبا</label>
-                        <input type="text" name="iban" class="form-control" placeholder="شماره شبا" value="">
-                      </div>
-                    </div>
+                    <span>لطفا جهت احراز هویت ، یک تصویر واضح از کارت ملی خود بارگذاری کنید.</span>
+                    <SimpleInputFile :disabled="inProgress" accept="image/*" name="nc_picture" label="انتخواب عکس کارت ملی"  v-model="ncPicture"/>
+                    <p class="text-danger " v-if="errors.ncPicture" v-text="errors.ncPicture"></p>
+
+
                   </div>
                   <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                    <button type="submit" class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1">
-                      ویرایش</button>
-                    <button type="reset" class="btn btn-outline-warning">پاک کردن</button>
+                    <p class="text-danger " v-if="errors.token" v-text="errors.token"></p>
+                    <WaitButton text="ثبت درخواست" :wait="inProgress" :on-click="authRequest" :disabled="inProgress || (user.auth !== null && ['block' , 'pending' , 'accept'].indexOf(user.auth.status) !== -1)" />
                   </div>
                 </div>
-              </form>
               <!-- users edit Info form ends -->
             </div>
           </div>
@@ -131,9 +150,42 @@ export default {
       phone: this.user.phone,
       iban : this.user.iban,
       inProgress : false,
+
+      ncPicture : null,
+      nationalCode : this.user.auth != null ? this.user.auth.national_code : "",
     }
   },
   methods:{
+    authRequest(){
+      this.errors.nationalCode = undefined
+      if (this.nationalCode.length !== 10){
+        this.errors.nationalCode = "کد ملی وارد شده باید ۱۰ کاراکتر باشد"
+        return
+      }
+
+      this.errors.ncPicture = undefined;
+      if (this.ncPicture == null){
+        this.errors.ncPicture = "لطفا تصویر کارت ملی خود را بارگذاری کنید"
+        return
+      }
+
+      this.generateRecaptchaToken('authUser').then($value=>{
+        this.inProgress = true;
+        Inertia.post("/profile/edit/auth" , {
+          nationalCode : this.nationalCode,
+          ncPicture : this.ncPicture,
+          token : $value
+        } , {
+          onSuccess : params => {
+            this.toast("درخواست شما با موفقیت ایجاد شد" , "success");
+          },
+          onFinish : params => {
+            this.inProgress = false;
+          }
+        })
+      })
+
+    },
     updateProfile(){
       let flag = true
       this.errors.name = undefined
