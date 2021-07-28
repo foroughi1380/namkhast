@@ -116,9 +116,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="/ac" class="brand-link">
-        <img src="/theme/AC/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-             style="opacity: .8">
+      <a href="/ac" class="brand-link text-center">
         <span class="brand-text font-weight-light">پنل مدیریت</span>
       </a>
 
@@ -145,7 +143,7 @@
                 <Link href="/ac" class="nav-link">
                   <i class="nav-icon fa fa-dashboard"></i>
                   <p>
-                    صفحه اصلی
+                    داشبورد
                   </p>
                 </Link>
               </li>
@@ -170,7 +168,13 @@
                   <li class="nav-item">
                     <a href="../../index2.html" class="nav-link">
                       <i class="fa fa-user-plus nav-icon"></i>
-                      <p>افزودن</p>
+                      <p>افزودن کاربر</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../index2.html" class="nav-link">
+                      <i class="fa fa-key nav-icon"></i>
+                      <p>درخواست های احراز هویت</p>
                     </a>
                   </li>
                 </ul>
@@ -193,13 +197,79 @@
                   </li>
                   <li class="nav-item">
                     <Link href="/ac/admin" class="nav-link">
-                      <i class="fa fa-users nav-icon"></i>
+                      <i class="fa fa-list nav-icon"></i>
                       <p>لیست ادمین ها</p>
                     </Link>
                   </li>
                 </ul>
               </li>
 
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-trophy"></i>
+                  <p>
+                    چالش ها
+                    <i class="right fa fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <Link href="#" class="nav-link">
+                      <i class="fa fa-list nav-icon"></i>
+                      <p>لیست چالش ها</p>
+                    </Link>
+                  </li>
+
+                  <li class="nav-item">
+                    <Link href="#" class="nav-link">
+                      <i class="fa fa-plus nav-icon"></i>
+                      <p>افزودن چالش</p>
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-money"></i>
+                  <p>
+                    امور مالی
+                    <i class="right fa fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <Link href="#" class="nav-link">
+                      <i class="fa fa-list nav-icon"></i>
+                      <p>لیست تراکنش ها</p>
+                    </Link>
+                  </li>
+                  <li class="nav-item">
+                    <Link href="#" class="nav-link">
+                      <i class="fa fa-search nav-icon"></i>
+                      <p>گزارش گیری</p>
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-gears"></i>
+                  <p>
+                    تنظیمات سایت
+                    <i class="right fa fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <Link href="#" class="nav-link">
+                      <i class="fa fa-gear nav-icon"></i>
+                      <p>اطلاعات سایت</p>
+                    </Link>
+                  </li>
+                </ul>
+              </li>
 
             </ul>
           </nav>
