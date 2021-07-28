@@ -4,6 +4,9 @@ import {createInertiaApp, Head, Link} from '@inertiajs/inertia-vue3'
 import {VueReCaptcha} from 'vue-recaptcha-v3'
 import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-default.css';
+import { ZiggyVue } from 'ziggy';
+import { Ziggy } from './ziggy';
+
 
 
 createInertiaApp({
