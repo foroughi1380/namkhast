@@ -15,8 +15,8 @@ Route::middleware(["auth:admin"])->group(function (){
     Route::get("/logout" , function (){\Illuminate\Support\Facades\Auth::logout(); return \Illuminate\Support\Facades\Redirect::to("/");});
 
     Route::get('/admin' , [\App\Http\Controllers\AC\AdminController::class , "index"]);
-    Route::get('/admin/create');
-    Route::post('/admin/store');
+    Route::get('/admin/create' , [\App\Http\Controllers\AC\AdminController::class , "create"]);
+    Route::post('/admin/store' ,[\App\Http\Controllers\AC\AdminController::class , "store"]);
     Route::delete('/admin/destroy');
     Route::get('/admin/edit/{id}' , [\App\Http\Controllers\AC\AdminController::class , "edit"])->where('id', '[0-9]+');
     Route::put('/admin/update/{id}', [\App\Http\Controllers\AC\AdminController::class , "update"])->where('id', '[0-9]+');
