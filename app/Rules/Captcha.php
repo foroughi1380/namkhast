@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class captcha implements Rule
+class Captcha implements Rule
 {
     /**
      * Create a new rule instance.
