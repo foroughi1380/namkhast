@@ -44,4 +44,16 @@ class User extends Authenticatable
      */
     protected $casts = [
     ];
+
+    public function getPictureName()
+    {
+        return $this->getRawOriginal("picture");
+    }
+
+    public function getPictureAttribute($value)
+    {
+        return env("AWS_PUBLIC_DOWNLOAD_PREFIX") . $value;
+    }
+
+
 }
