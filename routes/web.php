@@ -27,6 +27,7 @@ Route::middleware(["auth"])->group(function (){
 
     Route::inertia('/profile/edit', 'Web/profileEdit');
     Route::post("/profile/edit" , [\App\Http\Controllers\web\UserController::class , "update"])->name("profile.update");
+    Route::post("/profile/edit/auth" , [\App\Http\Controllers\web\AuthRequestController::class , "store"])->name("profile.auth");
 });
 
 
