@@ -95,6 +95,7 @@ export default {
           family: this.family,
           phone: this.phone,
           email: this.email,
+          token:token,
         }, {
           onSuccess: page => {
             window.location.href = '/ac/admin'
