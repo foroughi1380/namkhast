@@ -17,7 +17,7 @@ Route::middleware(["auth:admin"])->group(function (){
     Route::get('/admin' , [\App\Http\Controllers\AC\AdminController::class , "index"]);
     Route::get('/admin/create' , [\App\Http\Controllers\AC\AdminController::class , "create"]);
     Route::post('/admin/store' ,[\App\Http\Controllers\AC\AdminController::class , "store"]);
-    Route::delete('/admin/destroy');
+    Route::get('/admin/delete/{id}', [\App\Http\Controllers\AC\AdminController::class , "destroy"])->where('id', '[0-9]+');
     Route::get('/admin/edit/{id}' , [\App\Http\Controllers\AC\AdminController::class , "edit"])->where('id', '[0-9]+');
     Route::put('/admin/update/{id}', [\App\Http\Controllers\AC\AdminController::class , "update"])->where('id', '[0-9]+');
 });

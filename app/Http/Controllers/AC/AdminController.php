@@ -58,4 +58,9 @@ class AdminController extends Controller
 
         return Inertia::render('AC/admins');
     }
+
+    public function destroy($id){
+        Admin::destroy($id);
+        return redirect('/ac/admin');
+    }
 }
