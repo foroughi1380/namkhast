@@ -51,6 +51,7 @@ class AdminController extends Controller
             "family" => "required|max:70",
             "phone" => "required|digits:11|regex:/^09\d{9}$/|unique:admin,phone,". $id,
             "email" => "required|email|unique:admin,email,". $id,
+            "token" => "captcha:editAdmin"
         ]);
 
         $admin = Admin::query()->find($id);

@@ -14,6 +14,7 @@ class AcAdminCreateRequest extends FormRequest
             "phone" => "required|digits:11|regex:/^09\d{9}$/|unique:admin,phone",
             "email" => "required|email|unique:admin,email",
             "password" => "required|min:6",
+            "token" => "captcha:createAdmin"
         ];
     }
 
