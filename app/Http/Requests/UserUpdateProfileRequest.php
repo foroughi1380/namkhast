@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Captcha;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserUpdateProfileRequest extends FormRequest
@@ -29,7 +30,7 @@ class UserUpdateProfileRequest extends FormRequest
             "phone" => "digits:11|regex:/^09\d{9}$/|unique:user,phone",
             "picture" => "file|image|max:512",
             "iban" => "regex:/^(?=.{24}$)[0-9]*$/",
-            "token" => "required"
+            "token" => "required|captcha:profileupdate"
         ];
     }
 
