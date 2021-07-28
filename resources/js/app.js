@@ -4,7 +4,7 @@ import {createInertiaApp, Head, Link} from '@inertiajs/inertia-vue3'
 import {VueReCaptcha} from 'vue-recaptcha-v3'
 import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-default.css';
-import { ZiggyVue } from 'ziggy';
+import { ZiggyVue  } from 'ziggy';
 import { Ziggy } from './ziggy';
 
 
@@ -21,6 +21,7 @@ createInertiaApp({
         vuevue.component("Link", Link)
         vuevue.component("Head", Head)
         vuevue.use(VueReCaptcha, {siteKey: process.env.MIX_RECAPTCHA3_SITE})
+        vuevue.use(ZiggyVue , Ziggy)
         vuevue.mixin({
             methods: {
                 async generateRecaptchaToken(action) {
@@ -47,7 +48,6 @@ createInertiaApp({
             }
         })
         vuevue.mount(el)
-
     },
 })
 
