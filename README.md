@@ -2,6 +2,22 @@
 ## About
 this project just only for final university project and you should not use this for your business.
 
+index |goals | actor | req | finish | 
+|----|------|-------|--------|-----|
+|1| fix seyed problem  |  KH  | - |
+|2| create admin control User tabs | KH | 1 |
+|3| create page add challenge and connect pay.ir to it | FO | - |
+|4| create challange index list | FO | 3 |
+|5| create challenge admin | KH | 3 |
+|6| details challenge page | KH | 4 | 
+|7| Participate in the challenge and payment challenge | FO | 6* |
+|8| my challenge participate list (no payed and finish challenge)| FO | 7 | 
+|9|my challenge list | FO | 3 |
+|10|request withdraw page (user) | KH | - |
+|11|withdraw accept (admin) | KH | 10 |
+|12|user profile page | FO | A | 
+|13|favorite challenge page | FO| 4|
+
 ## requirements
 - PHP >= 7.3.0
 - Composer >= 2.1
