@@ -156,10 +156,10 @@
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <a href="../../index2.html" class="nav-link">
+                    <Link href="/ac/auth-request" class="nav-link">
                       <i class="fa fa-key nav-icon"></i>
                       <p>درخواست های احراز هویت</p>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
