@@ -44,6 +44,7 @@
 <!-- BEGIN: Body-->
 
 <body class="vertical-layout vertical-menu-modern semi-dark-layout 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column" data-layout="semi-dark-layout">
+<span id="___no_reload_from_java_script_login_page" class="d-none"></span>
 <!-- BEGIN: Content-->
 <div class="app-content content">
     <div class="content-overlay"></div>
