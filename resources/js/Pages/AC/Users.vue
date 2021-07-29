@@ -46,7 +46,7 @@
           <td style="width: 180px">
             <div class="row text-white text-center mx-auto">
               <Link :href="'/ac/user/edit/' + user.id" class="btn btn-info m-1 col-5">ویرایش</Link>
-              <Link :href="'/ac/user/delete/' + user.id" class="btn btn-danger m-1 col-5">حذف</Link>
+              <Link method="delete" :href="'/ac/user/delete/' + user.id" class="btn btn-danger m-1 col-5">حذف</Link>
               <Link :href="'/ac/user/change-status/' + user.id" class="text-white  btn btn-warning m-1 btn-block">تغییر وضعیت</Link>
             </div>
           </td>

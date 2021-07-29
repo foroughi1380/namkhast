@@ -22,6 +22,6 @@ Route::middleware(["auth:admin"])->group(function (){
     Route::get('/user' , [\App\Http\Controllers\AC\UserController::class , "index"]);
     Route::get('/user/edit/{id}' , [\App\Http\Controllers\AC\UserController::class , "edit"])->where('id', '[0-9]+');
     Route::put('/user/update/{id}', [\App\Http\Controllers\AC\UserController::class , "update"])->where('id', '[0-9]+');
-    Route::get('/user/delete/{id}', [\App\Http\Controllers\AC\UserController::class , "destroy"])->where('id', '[0-9]+');
+    Route::delete('/user/delete/{id}', [\App\Http\Controllers\AC\UserController::class , "destroy"])->where('id', '[0-9]+');
     Route::post('/user/change-status/{id}', [\App\Http\Controllers\AC\UserController::class , "changeStatus"])->where('id', '[0-9]+');
 });

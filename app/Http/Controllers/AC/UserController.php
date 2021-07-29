@@ -44,7 +44,8 @@ class UserController extends Controller
     }
 
     public function destroy($id){
-
+        User::destroy($id);
+        return redirect('/ac/user');
     }
 
     public function changeStatus($id){
