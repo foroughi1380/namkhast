@@ -28,4 +28,7 @@ Route::middleware(["auth:admin"])->group(function (){
     Route::get('/auth-request' , [\App\Http\Controllers\AC\AuthRequestController::class , "index"]);
     Route::get('/auth-request/edit/{id}', [\App\Http\Controllers\AC\AuthRequestController::class , "edit"])->where('id', '[0-9]+');
     Route::put('/auth-request/update/{id}', [\App\Http\Controllers\AC\AuthRequestController::class , "update"])->where('id', '[0-9]+');
+
+    //configs
+    Route::resource('/config' , \App\Http\Controllers\AC\ConfigController::class)->names("config");
 });
