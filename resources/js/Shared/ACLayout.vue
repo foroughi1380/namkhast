@@ -157,12 +157,6 @@
                   </li>
                   <li class="nav-item">
                     <a href="../../index2.html" class="nav-link">
-                      <i class="fa fa-user-plus nav-icon"></i>
-                      <p>افزودن کاربر</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../../index2.html" class="nav-link">
                       <i class="fa fa-key nav-icon"></i>
                       <p>درخواست های احراز هویت</p>
                     </a>
