@@ -13,12 +13,42 @@ use Inertia\Inertia;
 
 class UserController extends Controller
 {
-    function index()
+    public function index()
     {
         $users = User::all();
         return Inertia::render("AC/Users" , [
             'users' => $users
         ]);
+    }
+
+    public function edit($id){
+        $user = User::query()->find($id);
+        return Inertia::render("AC/userEdit" , [
+            'user' => $user
+        ]);
+    }
+
+    public function update($id , Request $request){
+        $request->validate([
+            'name' => 'min:3|max:30|string',
+            'family'=> 'min:2|max:35|string',
+            "phone" => "digits:11|regex:/^09\d{9}$/|unique:admin,phone,". $id,
+            "iban" => "regex:/^(?=.{24}$)[0-9]*$/",
+            "token" => "required|captcha:editUser"
+        ]);
+
+        $user = User::query()->find($id);
+        $user->update($request->all());
+
+        return Inertia::render('AC/Users');
+    }
+
+    public function destroy($id){
+
+    }
+
+    public function changeStatus($id){
+
     }
 
     function loginIndex()
