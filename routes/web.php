@@ -28,15 +28,15 @@ Route::middleware(["auth"])->group(function (){
     Route::inertia('/profile/edit', 'Web/profileEdit');
     Route::post("/profile/edit" , [\App\Http\Controllers\web\UserController::class , "update"])->name("profile.update");
     Route::post("/profile/edit/auth" , [\App\Http\Controllers\web\AuthRequestController::class , "store"])->name("profile.auth");
+
+    Route::resource("/challenge" , \App\Http\Controllers\web\ChallengeController::class)->name("*" , "challenge");
 });
 
 
 Route::get('/profile', function (){
     return \Inertia\Inertia::render('Web/profile');
 });
-Route::get('/challenge', function (){
-    return \Inertia\Inertia::render('Web/challenges');
-});
+
 Route::get('/participants', function (){
     return \Inertia\Inertia::render('Web/participants');
 });
@@ -46,11 +46,10 @@ Route::get('/favorites', function (){
 Route::get('/about', function (){
     return \Inertia\Inertia::render('Web/about');
 });
-Route::inertia('/challenge/create', 'Web/challengeCreate');
 Route::inertia('/challenge/myChallenge', 'Web/myChallenge');
 Route::inertia('/withdraw', 'Web/withdraw');
 Route::inertia('/withdraw/track', 'Web/withdrawTrack');
-Route::inertia('/challenge/detail', 'Web/challengeDetail');
+Route::inertia('/challenge/detail', '');
 Route::inertia('/challenge/participants', 'Web/challengeParticipants');
 Route::inertia('/challenge/suggestDetail', 'Web/suggestDetail');
 
