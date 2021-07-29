@@ -18,7 +18,7 @@ class AuthRequestController extends Controller
     {
         $id = Auth::user()->id;
 
-        $auth = AuthRequest::query()->find($id);
+        $auth = AuthRequest::query()->where("user_id" , $id)->first();
         if ($auth){
             $auth->national_code = $request->get("nationalCode");
             Storage::delete($auth->ncPicture);

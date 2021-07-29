@@ -42,7 +42,7 @@ class User extends Authenticatable
     ];
 
     public function getAuthAttribute($value){
-        return AuthRequest::query()->find($this->id);
+        return AuthRequest::query()->where("user_id" , $this->id)->first(["national_code" , "status" , "description"]);
     }
 
     public function getPictureName()
