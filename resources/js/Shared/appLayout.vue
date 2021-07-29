@@ -398,7 +398,7 @@
                                                                        data-i18n="Email">پروفایل من</span></Link>
         </li>
         <li class=" nav-item">
-          <Link href="/challenge"><i class="feather icon-award"></i><span class="menu-title"
+          <Link :href="route('challenge.index')"><i class="feather icon-award"></i><span class="menu-title"
                                                                           data-i18n="Chat">چالش ها</span></Link>
         </li>
         <li class=" nav-item">
@@ -417,7 +417,7 @@
         <li class=" navigation-header"><span>چالش ها</span>
         </li>
         <li class=" nav-item">
-          <Link href="/challenge/create"><i class="feather icon-plus-circle"></i><span class="menu-title"
+          <Link :href="route('challenge.create')" ><i class="feather icon-plus-circle"></i><span class="menu-title"
                                                                                        data-i18n="Calender">ثبت چالش</span>
           </Link>
         </li>
