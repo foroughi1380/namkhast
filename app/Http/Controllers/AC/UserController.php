@@ -49,7 +49,11 @@ class UserController extends Controller
     }
 
     public function changeStatus($id){
+        $user = User::query()->find($id);
+        $user->status =  $user->status == 'active'? 'suspend' : 'active';
+        $user->save();
 
+        return redirect('/ac/user');
     }
 
     function loginIndex()
