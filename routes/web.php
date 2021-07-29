@@ -29,7 +29,7 @@ Route::middleware(["auth"])->group(function (){
     Route::post("/profile/edit" , [\App\Http\Controllers\web\UserController::class , "update"])->name("profile.update");
     Route::post("/profile/edit/auth" , [\App\Http\Controllers\web\AuthRequestController::class , "store"])->name("profile.auth");
 
-    Route::resource("/challenge" , \App\Http\Controllers\web\ChallengeController::class)->name("*" , "challenge");
+    Route::resource("/challenge" , \App\Http\Controllers\web\ChallengeController::class)->names("challenge");
 });
 
 
