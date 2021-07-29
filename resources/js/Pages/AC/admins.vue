@@ -24,7 +24,7 @@
           <td>
             <div class="row text-white text-center mx-auto">
               <Link :href="'/ac/admin/edit/' + admin.id" class="btn btn-info m-1 col-5">ویرایش</Link>
-              <Link :href="'/ac/admin/delete/' + admin.id" class="btn btn-danger m-1 col-5">حذف</Link>
+              <Link method="delete" :href="'/ac/admin/delete/' + admin.id" class="btn btn-danger m-1 col-5">حذف</Link>
             </div>
           </td>
         </tr>
