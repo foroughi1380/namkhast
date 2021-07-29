@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AC;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AcLoginRequest;
 use App\Models\Admin;
+use App\Models\User;
 use App\Utilities\Utilities;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,10 @@ class UserController extends Controller
 {
     function index()
     {
-        return Inertia::render("AC/Users");
+        $users = User::all();
+        return Inertia::render("AC/Users" , [
+            'users' => $users
+        ]);
     }
 
     function loginIndex()
