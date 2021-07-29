@@ -14,7 +14,7 @@ class UpdateUserTableEmailFieldLenght extends Migration
     public function up()
     {
         Schema::table('user', function (Blueprint $table) {
-            $table->string('email' , 100)->unique()->nullable()->change();
+            //$table->string('email' , 100)->unique()->nullable()->change();
         });
     }
 
