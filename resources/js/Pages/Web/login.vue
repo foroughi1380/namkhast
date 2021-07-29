@@ -67,6 +67,12 @@ export default {
     ph : "",
     toasts : {}
   },
+  beforeCreate() {
+    if(! window.document.getElementById("___no_reload_from_java_script_login_page")) {
+      window.location.reload();
+      throw 'you are not in true file';
+    }
+  },
   data(){
     return {
       inProcess : false,
