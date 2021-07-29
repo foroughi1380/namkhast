@@ -15,9 +15,17 @@ Route::middleware(["auth:admin"])->group(function (){
     Route::get('/admin' , [\App\Http\Controllers\AC\AdminController::class , "index"]);
     Route::get('/admin/create' , [\App\Http\Controllers\AC\AdminController::class , "create"]);
     Route::post('/admin/store' ,[\App\Http\Controllers\AC\AdminController::class , "store"]);
-    Route::get('/admin/delete/{id}', [\App\Http\Controllers\AC\AdminController::class , "destroy"])->where('id', '[0-9]+');
+    Route::delete('/admin/delete/{id}', [\App\Http\Controllers\AC\AdminController::class , "destroy"])->where('id', '[0-9]+');
     Route::get('/admin/edit/{id}' , [\App\Http\Controllers\AC\AdminController::class , "edit"])->where('id', '[0-9]+');
     Route::put('/admin/update/{id}', [\App\Http\Controllers\AC\AdminController::class , "update"])->where('id', '[0-9]+');
     // user actions
     Route::get('/user' , [\App\Http\Controllers\AC\UserController::class , "index"]);
+    Route::get('/user/edit/{id}' , [\App\Http\Controllers\AC\UserController::class , "edit"])->where('id', '[0-9]+');
+    Route::put('/user/update/{id}', [\App\Http\Controllers\AC\UserController::class , "update"])->where('id', '[0-9]+');
+    Route::delete('/user/delete/{id}', [\App\Http\Controllers\AC\UserController::class , "destroy"])->where('id', '[0-9]+');
+    Route::post('/user/change-status/{id}', [\App\Http\Controllers\AC\UserController::class , "changeStatus"])->where('id', '[0-9]+');
+    // Auth Request
+    Route::get('/auth-request' , [\App\Http\Controllers\AC\AuthRequestController::class , "index"]);
+    Route::get('/auth-request/edit/{id}', [\App\Http\Controllers\AC\AuthRequestController::class , "edit"])->where('id', '[0-9]+');
+    Route::put('/auth-request/update/{id}', [\App\Http\Controllers\AC\AuthRequestController::class , "update"])->where('id', '[0-9]+');
 });

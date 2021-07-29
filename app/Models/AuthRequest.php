@@ -12,9 +12,10 @@ class AuthRequest extends Model
 {
     use HasFactory;
     protected $table = "authentication_request";
-    protected $primaryKey = "user_id";
+//    protected $primaryKey = "user_id";
 
     protected $fillable = [
+        "id",
       "status",
       "national_code",
       "description"
