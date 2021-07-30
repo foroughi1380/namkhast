@@ -3,10 +3,10 @@
 
   <div class="card ">
     <div class="card-header">
-      <h4>درخواست احراز هویت کاربر '{{ authRequest.user_id }}'</h4>
+      <h4>درخواست احراز هویت کاربر '{{ user.name }} {{ user.family }}'</h4>
     </div>
     <div class="card-body text-center">
-      <p>کاربر "{{ authRequest.user_id }}" به شماره ملی "{{ authRequest.national_code }}" بعد از "{{ authRequest.try }}"
+      <p>کاربر "{{ user.name }} {{ user.family }}" به شماره ملی "{{ authRequest.national_code }}" بعد از "{{ authRequest.try }}"
         بار تلاش ، اقدام به ارسال اطلاعات برای درخواست احراز هویت نموده است.</p>
       <img class="my-4" :href="authRequest.nc_picture" width="100" height="300" alt="تصویر کد ملی">
 
@@ -46,6 +46,7 @@ export default {
   layout: ACLayout,
   props: {
     authRequest: {},
+    user: {},
     errors: {}
   },
   data() {
