@@ -32,11 +32,11 @@ createInertiaApp({
                     let regex = /^09\d{9}$/
                     return regex.test(phone)
                 },
-                toast(message , type){
+                toast(message , type , position = "top-left"){
                     this.$toast.open({
                         message: message,
                         type: type,
-
+                        position : position
                     });
                 },
                 showToasts(messages){
@@ -44,6 +44,15 @@ createInertiaApp({
                     for (let t of this.toasts){
                         this.toast(t.message , t.type)
                     }
+                },
+                showTypedToast(messages , type , position = ""){
+                    for (let message of messages){
+                        this.toast(message , type , position)
+                    }
+                },
+                cloneObject(object){
+                    console.log("in clone")
+                    return JSON.parse(JSON.stringify(object))
                 }
             }
         })
