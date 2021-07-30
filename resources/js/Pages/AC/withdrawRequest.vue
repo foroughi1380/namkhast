@@ -37,8 +37,9 @@
           <td>{{ wdRequest.price }}</td>
           <td>{{ wdRequest.status == 'pending'? 'پرداخت شده' : 'در انتظار پرداخت' }}</td>
           <td>
-            <div class="row text-center">
-              <Link method="post" :href="'/ac/withdraw-request/change-status/' + wdRequest.id" class="btn btn-warning mx-auto">تغییر وضعیت</Link>
+            <div class="row text-center ">
+              <Link method="post" :href="'/ac/withdraw-request/change-status/' + wdRequest.id" class="btn mx-auto btn-warning col-4">تغییر وضعیت</Link>
+              <Link :href="'/ac/withdraw-request/show/' + wdRequest.id" class="btn mx-auto btn-info col-4">جزئیات</Link>
             </div>
           </td>
         </tr>
