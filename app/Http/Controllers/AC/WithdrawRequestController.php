@@ -20,6 +20,10 @@ class WithdrawRequestController extends Controller
 
     public function changeStatus($id)
     {
+        $wdRequest = WithdrawRequest::query()->find($id);
+        $wdRequest->status =  $wdRequest->status == 'pending'? 'payed' : 'pending';
+        $wdRequest->save();
 
+        return redirect('/ac/withdraw-request');
     }
 }
