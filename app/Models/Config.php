@@ -10,7 +10,7 @@ class Config extends Model
 {
 
     use HasFactory;
-    protected $fillable = ["key" , "type" , "value"];
+    protected $fillable = ["key" , "type" , "value" , "name"];
     protected $casts = ["value" => "string"];
 
     protected function getCastType($key)
@@ -35,6 +35,23 @@ class Config extends Model
         if ($conf){
             $conf->value = $value;
             return $conf->save();
+        }
+        return false;
+    }
+
+    public static function setWithId($id, $value){
+        $conf = Config::query()->find($id);
+        if ($conf){
+            $conf->value = $value;
+            return $conf->save();
+        }
+        return false;
+    }
+
+    public static function deleteWithId($id){
+        $conf = Config::query()->find($id);
+        if ($conf){
+            return $conf->delete();
         }
         return false;
     }
