@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AC;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AcAuthRequestEditRequest;
 use App\Models\AuthRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -20,9 +21,11 @@ class AuthRequestController extends Controller
 
     public function edit($id){
         $authRequest = AuthRequest::query()->find($id)->makeVisible(['try' , 'nc_picture' , 'user_id']);
+        $user = User::query()->find($authRequest->user_id);
 
         return Inertia::render("AC/authRequestEdit" , [
-            'authRequest' => $authRequest
+            'authRequest' => $authRequest,
+            'user' => $user
         ]);
     }
 
