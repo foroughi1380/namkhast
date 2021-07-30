@@ -13,8 +13,8 @@ index |goals | actor | req | finish |
 |7| Participate in the challenge and payment challenge | FO | 6* |
 |8| my challenge participate list (no payed and finish challenge)| FO | 7 | 
 |9|my challenge list | FO | 3 |
-|10|request withdraw page (user) | KH | - |
-|11|withdraw accept (admin) | KH | 10 |
+|10|request withdraw page (user) | KH | - | X |
+|11|withdraw accept (admin) | KH | 10 | X |
 |12|user profile page | FO | A | 
 |13|favorite challenge page | FO| 4|
 
