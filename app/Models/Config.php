@@ -10,10 +10,11 @@ class Config extends Model
 {
     use HasFactory;
     protected $fillable = ["key" , "type" , "value"];
+    protected $casts = ["value" => "string"];
 
     protected function getCastType($key)
     {
-        if ($key === 'value'){
+        if ($key == "value"){
             return $this->type;
         }else{
             return parent::getCastType($key);
