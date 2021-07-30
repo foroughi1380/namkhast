@@ -38,7 +38,7 @@
           <td>{{ wdRequest.status == 'pending'? 'پرداخت شده' : 'در انتظار پرداخت' }}</td>
           <td>
             <div class="row text-center">
-              <Link :href="'/ac/withdraw-request/change-status/' + wdRequest.id" class="btn btn-warning mx-auto">تغییر وضعیت</Link>
+              <Link method="post" :href="'/ac/withdraw-request/change-status/' + wdRequest.id" class="btn btn-warning mx-auto">تغییر وضعیت</Link>
             </div>
           </td>
         </tr>
