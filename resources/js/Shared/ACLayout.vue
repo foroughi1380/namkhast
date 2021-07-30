@@ -252,6 +252,12 @@
                       <p>اطلاعات سایت</p>
                     </Link>
                   </li>
+                  <li class="nav-item">
+                    <Link :href="route('ac.config.index')" class="nav-link">
+                      <i class="fa fa-gear nav-icon"></i>
+                      <p>پیکربندی</p>
+                    </Link>
+                  </li>
                 </ul>
               </li>
 
