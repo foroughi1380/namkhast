@@ -30,6 +30,11 @@ Route::middleware(["auth"])->group(function (){
     Route::post("/profile/edit/auth" , [\App\Http\Controllers\web\AuthRequestController::class , "store"])->name("profile.auth");
 
     Route::resource("/challenge" , \App\Http\Controllers\web\ChallengeController::class)->names("challenge");
+
+    //Withdraw Requests
+    Route::get("/withdraw" , [\App\Http\Controllers\web\WithdrawRequestController::class , "index"])->name("withdraw.index");
+    Route::post("/withdraw/submit-request" , [\App\Http\Controllers\web\WithdrawRequestController::class , "submitRequest"])->name("withdraw.submitReq");
+    Route::get("/withdraw/track" , [\App\Http\Controllers\web\WithdrawRequestController::class , "track"])->name("withdraw.track");
 });
 
 
@@ -47,8 +52,6 @@ Route::get('/about', function (){
     return \Inertia\Inertia::render('Web/about');
 });
 Route::inertia('/challenge/myChallenge', 'Web/myChallenge');
-Route::inertia('/withdraw', 'Web/withdraw');
-Route::inertia('/withdraw/track', 'Web/withdrawTrack');
 Route::inertia('/challenge/detail', '');
 Route::inertia('/challenge/participants', 'Web/challengeParticipants');
 Route::inertia('/challenge/suggestDetail', 'Web/suggestDetail');
