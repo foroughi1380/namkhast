@@ -1,5 +1,22 @@
 <template>
   <Head title="ادمین ها"></Head>
+
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>ادمین ها</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-left">
+            <li class="breadcrumb-item"><a href="#">ادمین ها</a></li>
+            <li class="breadcrumb-item active">لیست ادمین ها</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
   <div class="card">
     <div class="card-header">
       <h3 class="card-title">ادمین های سیستم</h3>
