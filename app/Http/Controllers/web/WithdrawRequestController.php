@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\WithdrawRequest;
+use App\Models\WithdrawRequest;
+use App\Http\Requests\WithdrawRequest as wdRequest;
 use App\Models\AuthRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ class WithdrawRequestController extends Controller
         ]);
     }
 
-    public function submitRequest(WithdrawRequest $request){
+    public function submitRequest(wdRequest $request){
         //TODO: Check User Have Enough Balance To Withdraw Later
 
         if(DB::table('withdraw_request')->insert(['user_id'=>$request->user()->id,'price'=>$request->get('price')])) {
@@ -32,7 +33,11 @@ class WithdrawRequestController extends Controller
         }
     }
 
-    public function track(){
-        return Inertia::render("Web/withdrawTrack");
+    public function track(Request $request){
+        $wdRequests = WithdrawRequest::query()->where('user_id' , $request->user()->id)->get();
+
+        return Inertia::render("Web/withdrawTrack",[
+            'wdRequests' => $wdRequests
+        ]);
     }
 }
