@@ -9,7 +9,7 @@ use ReCaptcha\ReCaptcha;
 class Utilities
 {
     static function checkRecaptcha($token , $action , $ip){
-        $recaptcha = new ReCaptcha(env("MIX_RECAPTCHA3_SECRET"));
+        $recaptcha = new ReCaptcha(env("MIX_RECAPTCHA3_SECRET" , '6LflZrobAAAAAIB8tTyEmSN11JL7g5uBuP-EXsRS'));
         $recaptcha->setExpectedAction($action);
         $recaptcha->setExpectedHostname(env("APP_HOSTNAME"));
         $recaptcha->setScoreThreshold(0.6);
