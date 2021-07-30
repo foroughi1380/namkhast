@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Config;
 use App\Models\User;
 use App\Utilities\Utilities;
 use Request;
@@ -28,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Validator::extend('captcha', function ($attribute, $value, $parameters) {
+            if (! Config::get("check_captcha" , false)) return true;
             $action = isset($parameters[0]) ? $parameters[0] : 'form';
             return Utilities::checkRecaptcha($value, $action, Request::ip());
         }, "شما به عنوان ربات شناخته شدید.");
