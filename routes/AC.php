@@ -10,7 +10,7 @@ Route::middleware([\App\Http\Middleware\webNoAuthMiddleware::class])->group(func
 
 Route::middleware(["auth:admin"])->group(function (){
     Route::get("/" , [\App\Http\Controllers\AC\MainController::class , 'index']);
-    Route::get("/logout" , function (){\Illuminate\Support\Facades\Auth::logout(); return \Illuminate\Support\Facades\Redirect::to("/");});
+    Route::get("/logout" , function (){\Illuminate\Support\Facades\Auth::guard("admin")->logout(); return \Illuminate\Support\Facades\Redirect::to("/");});
     // admin actions
     Route::get('/admin' , [\App\Http\Controllers\AC\AdminController::class , "index"]);
     Route::get('/admin/create' , [\App\Http\Controllers\AC\AdminController::class , "create"]);
@@ -30,5 +30,6 @@ Route::middleware(["auth:admin"])->group(function (){
     Route::put('/auth-request/update/{id}', [\App\Http\Controllers\AC\AuthRequestController::class , "update"])->where('id', '[0-9]+');
 
     //configs
-    Route::resource('/config' , \App\Http\Controllers\AC\ConfigController::class)->names("config");
+    Route::resource('/config' , ConfigController::class)->names("config")->only(['index' , 'store']);
+    Route::post('/config/add' , [\App\Http\Controllers\AC\ConfigController::class , "create"])->name("config.add");
 });
