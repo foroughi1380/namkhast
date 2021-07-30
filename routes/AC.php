@@ -32,4 +32,8 @@ Route::middleware(["auth:admin"])->group(function (){
     //configs
     Route::resource('/config' , ConfigController::class)->names("config")->only(['index' , 'store']);
     Route::post('/config/add' , [\App\Http\Controllers\AC\ConfigController::class , "create"])->name("config.add");
+
+    // Withdraw Request
+    Route::get('/withdraw-request' , [\App\Http\Controllers\AC\WithdrawRequestController::class , "index"]);
+    Route::post('/withdraw-request/change-status/{id}', [\App\Http\Controllers\AC\WithdrawRequestController::class , "changeStatus"])->where('id', '[0-9]+');
 });
