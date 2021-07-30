@@ -69,6 +69,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::prefix(self::AdminControlPrefix)
             ->middleware(['web' , InertiaACMiddleWare::class])
             ->namespace($this->adminControlNamespace)
+            ->name("ac.")
             ->group(base_path("routes/AC.php"));
     }
 }
