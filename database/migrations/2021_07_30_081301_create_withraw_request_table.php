@@ -15,6 +15,9 @@ class CreateWithrawRequestTable extends Migration
     {
         Schema::create('withdraw_request', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("user_id")->constrained("user")->cascadeOnDelete();
+            $table->integer('price');
+            $table->enum("status" , ["pending" , "payed"])->default("pending");
             $table->timestamps();
         });
     }
