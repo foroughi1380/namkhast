@@ -8,6 +8,7 @@ use phpDocumentor\Reflection\Types\This;
 
 class Config extends Model
 {
+
     use HasFactory;
     protected $fillable = ["key" , "type" , "value"];
     protected $casts = ["value" => "string"];
@@ -21,12 +22,12 @@ class Config extends Model
         }
     }
 
-    public static function get($key){
+    public static function get($key , $def = null){
         $conf = Config::query()->where("key" , $key)->first();
         if ($conf){
             return $conf->value;
         }
-        return null;
+        return $def;
     }
 
     public static function set($key , $value){
