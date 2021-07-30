@@ -35,5 +35,6 @@ Route::middleware(["auth:admin"])->group(function (){
 
     // Withdraw Request
     Route::get('/withdraw-request' , [\App\Http\Controllers\AC\WithdrawRequestController::class , "index"]);
+    Route::get('/withdraw-request/show/{id}' , [\App\Http\Controllers\AC\WithdrawRequestController::class , "show"])->where('id', '[0-9]+');
     Route::post('/withdraw-request/change-status/{id}', [\App\Http\Controllers\AC\WithdrawRequestController::class , "changeStatus"])->where('id', '[0-9]+');
 });
