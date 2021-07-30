@@ -4,8 +4,8 @@ this project just only for final university project and you should not use this 
 
 index |goals | actor | req | finish | 
 |----|------|-------|--------|-----|
-|1| fix seyed problem  |  KH  | - |
-|2| create admin control User tabs | KH | 1 |
+|1| fix seyed problem  |  KH  | - | X |
+|2| create admin control User tabs | KH | 1 | X |
 |3| create page add challenge and connect pay.ir to it | FO | - |
 |4| create challange index list | FO | 3 |
 |5| create challenge admin | KH | 3 |
