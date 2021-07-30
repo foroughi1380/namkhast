@@ -223,6 +223,12 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
+                    <Link href="/ac/withdraw-request" class="nav-link">
+                      <i class="fa fa-level-up nav-icon"></i>
+                      <p>درخواست های برداشت</p>
+                    </Link>
+                  </li>
+                  <li class="nav-item">
                     <Link href="#" class="nav-link">
                       <i class="fa fa-list nav-icon"></i>
                       <p>لیست تراکنش ها</p>
@@ -253,7 +259,7 @@
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link :href="route('ac.config.index')" class="nav-link">
+                    <Link href="/ac/config" class="nav-link">
                       <i class="fa fa-gear nav-icon"></i>
                       <p>پیکربندی</p>
                     </Link>
