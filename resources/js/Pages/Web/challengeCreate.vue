@@ -34,20 +34,6 @@
 
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="max_word">حداکثر تعداد کلمات</label>
-                        <input type="text" class="form-control" id="max_word">
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label for="max_char">حداکثر تعداد کاراکتر</label>
-                        <input type="text" class="form-control" id="max_char">
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <div class="form-group">
                         <label for="budget">مبلغ جایزه</label>
                         <input type="number" class="form-control" id="budget">
                         <div class="row mx-auto">
@@ -72,7 +58,9 @@
                     <div class="col-3">
                       <div class="form-group" v-if="is_payd">
                         <label for="payd_value">مبلغ ورودی</label>
-                        <input type="number" class="form-control" name="payd_value" id="payd_value">
+                        <select class="custom-select" id="payd_value">
+                          <option v-for="price in participantPrices" v-text="price" :value="price"></option>
+                        </select>
                       </div>
                     </div>
 
@@ -80,11 +68,7 @@
                       <label for="category">دسته بندی</label>
                       <fieldset class="form-group">
                         <select class="form-control" id="category" name="category">
-                          <option>دسته بندی 1</option>
-                          <option>دسته بندی 2</option>
-                          <option>دسته بندی 3</option>
-                          <option>دسته بندی 4</option>
-                          <option>دسته بندی 5</option>
+                          <option v-for="category in challengeCategories" v-text="category" :value="category"></option>
                         </select>
                       </fieldset>
                     </div>
@@ -92,7 +76,7 @@
                     <div class="col-3 mt-2">
                         <fieldset>
                           <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" checked name="pay_type" id="pay_type">
+                            <input type="radio" class="custom-control-input" checked name="pay_type" id="bank_pay">
                             <label class="custom-control-label" for="bank_pay">پرداخت از طریق درگاه بانکی</label>
                           </div>
                         </fieldset>
@@ -100,7 +84,7 @@
                     <div class="col-3 mt-2">
                         <fieldset>
                           <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="pay_type"  id="pay_type">
+                            <input type="radio" class="custom-control-input" name="pay_type"  id="acc_pay">
                             <label class="custom-control-label" for="acc_pay">پرداخت از طریق اعتبار حساب</label>
                           </div>
                         </fieldset>
@@ -127,7 +111,8 @@
                         </fieldset>
                       </div>
                     </div>
-                    <button class="mt-4 ml-2 btn btn-primary waves-effect waves-light" type="submit">ثبت چالش</button>
+                    <button class="mt-4 ml-2 btn btn-primary waves-effect waves-light" type="submit">ثبت نهایی و پرداخت</button>
+                    <button class="mt-4 ml-2 btn btn-secondary waves-effect waves-light" type="submit">ذخیره پیش نویس</button>
                   </div>
                 </fieldset>
               </form>
@@ -147,6 +132,7 @@ import appLayout from "../../Shared/appLayout";
 export default {
   name: "challengeCreate",
   layout: appLayout,
+  props : ["participantPrices" , "challengeCategories"],
   data() {
     return {
       is_payd: false
