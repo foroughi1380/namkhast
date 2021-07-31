@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateChallengeRequest;
+use App\Models\Config;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,7 +17,7 @@ class ChallengeController extends Controller
      */
     public function index()
     {
-        return Inertia::render("Web/challenges");
+        return Inertia::render("Web/myChallenges");
     }
 
     /**
@@ -25,7 +27,10 @@ class ChallengeController extends Controller
      */
     public function create()
     {
-        return Inertia::render("Web/challengeCreate");
+        return Inertia::render("Web/challengeCreate" , [
+            "participantPrices" => Config::get("challenge_pp"),
+            "challengeCategories" => Config::get("challenge_group")
+        ]);
     }
 
     /**
@@ -34,7 +39,7 @@ class ChallengeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateChallengeRequest $request)
     {
         //
     }
