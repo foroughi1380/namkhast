@@ -1,7 +1,7 @@
 const dir_route = "routes";
 const mix = require('laravel-mix');
 const path = require('path');
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 const fs = require("fs");
 
 mix.alias({
@@ -21,16 +21,17 @@ mix.alias({
 mix.js('resources/js/app.js', 'public/js')
     .vue()
     .before(Mix => { // for normal building
-        exec("php artisan route:cache");
-        exec("php artisan ziggy:generate");
+        execSync("php artisan route:cache");
+        execSync("php artisan ziggy:generate");
         fs.readdir("routes" , (err  , files)=>{
             if (err) console.log("error in listern to routes.");
             for (let file of files) {
                 console.log("watch to file " + file);
                 fs.watch("routes/" + file , (curr , prev) =>{
                     console.log(file + " changed.");
-                    exec("php artisan route:cache ; php artisan ziggy:generate");
-                });
+                    execSync("php artisan route:cache");
+                    execSync("php artisan ziggy:generate");
+                })
             }
         });
     })
