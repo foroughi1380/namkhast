@@ -6,7 +6,7 @@ import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-default.css';
 import { ZiggyVue  } from 'ziggy';
 import { Ziggy } from './ziggy';
-
+import datePicker from "./Shared/Components/datePicker";
 
 
 createInertiaApp({
@@ -20,6 +20,7 @@ createInertiaApp({
         })
         vuevue.component("Link", Link)
         vuevue.component("Head", Head)
+        vuevue.component("date-picker" , datePicker)
         vuevue.use(VueReCaptcha, {siteKey: process.env.MIX_RECAPTCHA3_SITE})
         vuevue.use(ZiggyVue , Ziggy)
         vuevue.mixin({

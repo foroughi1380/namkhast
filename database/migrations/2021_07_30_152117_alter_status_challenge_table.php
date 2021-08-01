@@ -13,7 +13,7 @@ class AlterStatusChallengeTable extends Migration
      */
     public function up()
     {
-        \Illuminate\Support\Facades\DB::statement("ALTER TABLE `challenge` MODIFY COLUMN `status` ENUM('draft' , 'pending' , 'paid') NOT NULL DEFAULT 'draft'");
+        \Illuminate\Support\Facades\DB::statement("ALTER TABLE `challenge` MODIFY COLUMN `status` ENUM('draft' , 'pending' , 'paid' , 'failed') NOT NULL DEFAULT 'draft'");
 //        Schema::table("challenge" , function (Blueprint $blueprint){
 //            $blueprint->enum("status" , ["pending" , "paid"])->default("draft")->change();
 //        });

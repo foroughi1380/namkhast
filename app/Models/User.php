@@ -52,6 +52,7 @@ class User extends Authenticatable
 
     public function getPictureAttribute($value)
     {
+        if (! $value) return $value;
         return env("AWS_PUBLIC_DOWNLOAD_PREFIX") . $value;
     }
 
