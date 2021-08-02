@@ -16,7 +16,7 @@
           </div>
         </div>
 
-        <div class="form-group col-5">
+        <div class="form-group col-md-5 col-sm-12">
           <div class="controls">
             <IconInputText minlen="4" type="number" name="price" icon="icon-credit-card" placeholder="مبلغ درخواستی" label="مبلغ درخواستی (تومان)" :disabled="inProcess" v-model="price"></IconInputText>
           </div>
