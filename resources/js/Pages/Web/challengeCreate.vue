@@ -16,13 +16,13 @@
             <div class="card-body">
 
                   <div class="row">
-                    <div class="col-2 d-flex justify-content-center align-items-center flex-column" >
+                    <div class="col-md-2 col-sm-12 d-flex justify-content-center align-items-center flex-column" >
                       <img :src="challenge.picture" alt="users avatar" class="users-avatar-shadow rounded" height="150" width="150" v-if="challenge && challenge.picture">
                       <img src="/theme/web/app-assets/images/portrait/small/avatar-s-18.jpg" alt="users avatar" class="users-avatar-shadow rounded" height="150" width="150" v-else>
                       <simple-input-file id="picture" v-model="picture" label="تصویر الحاقی" accept="image/*" name="picture"  :disabled="inProcess"/>
                     </div>
 
-                    <div class="col-10">
+                    <div class="col-md-10 col-sm-12">
 
                       <div class="col-12">
                         <div class="form-group">
@@ -42,17 +42,21 @@
                     </div>
 
 
-                    <section class="col-6">
-                      <label for="startDate"> تاریخ شروع : </label>
-                      <date-picker id="startDate" class="col-3 col-sm-12" show-today min-date="today" v-model="startDate"  :disabled="inProcess"/>
-                      <p class="text-danger text-sm" v-text="errors.startDate" v-if="errors.startDate"></p>
+                    <section class="col-md-6 col-sm-12 row">
+                      <div class="col-md-12 col-sm-12">
+                        <label for="startDate"> تاریخ شروع : </label>
+                        <date-picker id="startDate" class="col-md-6 col-sm-12" show-today min-date="today" v-model="startDate"  :disabled="inProcess"/>
+                        <p class="text-danger text-sm" v-text="errors.startDate" v-if="errors.startDate"></p>
+                      </div>
 
-                      <label for="endDate"> تاریخ پایان : </label>
-                      <date-picker id="endDate" class="col-3 col-sm-12" :min-date="startDate" v-model="endDate"  :disabled="inProcess"/>
-                      <p class="text-danger text-sm" v-text="errors.endDate" v-if="errors.endDate"></p>
+                      <div class="col-md-12 col-sm-12">
+                        <label for="endDate"> تاریخ پایان : </label>
+                        <date-picker id="endDate" class="col-md-6 col-sm-12" :min-date="startDate" v-model="endDate"  :disabled="inProcess"/>
+                        <p class="text-danger text-sm" v-text="errors.endDate" v-if="errors.endDate"></p>
+                      </div>
                     </section>
 
-                    <div class="col-6">
+                    <div class="col-md-6 col-sm-12">
                       <div class="form-group">
                         <label for="budget">مبلغ جایزه</label>
                         <input type="number" class="form-control" id="budget" v-model="budget" :min="minBudget" :max="maxBudget" step="100"  :disabled="inProcess">
@@ -65,7 +69,7 @@
 
 
 
-                    <div class="col-md-6 col-12">
+                    <div class="col-md-6 col-sm-12">
                       <label for="category">دسته بندی</label>
                       <fieldset class="form-group">
                         <select class="form-control" id="category" name="category" v-model="category" :disabled="inProcess">
@@ -76,7 +80,7 @@
                     </div>
 
 
-                    <div class="col-3 mt-2">
+                    <div class="col-md-3 col-sm-6 mt-2">
                       <div class="vs-checkbox-con vs-checkbox-primary">
                         <input type="checkbox" name="type" v-model="isCost">
                         <span class="vs-checkbox">
@@ -89,7 +93,7 @@
                       <p class="text-danger text-sm" v-text="errors.isCost" v-if="errors.isCost"></p>
                     </div>
 
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-6">
                       <div class="form-group" v-if="isCost">
                         <label for="payd_value">مبلغ ورودی</label>
                         <select class="custom-select" id="payd_value" v-model="costPrice"  :disabled="inProcess">
@@ -101,10 +105,8 @@
 
 
 
-                    <div class="col-6">
+                    <div class="col-md-6 col-m-12">
                       <div class="col-12">
-
-
                         <fieldset class="form-group">
                           <label for="document">فایل های مستندات</label>
                           <div class="custom-file">
@@ -116,7 +118,7 @@
                       </div>
                     </div>
 
-                    <div class="col-6 mt-3">
+                    <div class="col-md-6 col-sm-12 mt-3">
                       <ul>
                         <li>در صورت انتخاب گذینه شرکت به صورت ورودی دار کارمزد دریافتی از شما نصف خواهد شد.</li>
                         <li>در صورت نهایی کردن چالش و پرداخت هزینه امکان ویرایش برای شما وجود ندارد.</li>
@@ -220,13 +222,13 @@ export default {
 
       this.errors.title = undefined;
       if (this.title == null || this.title.trim() === "" ||  this.title.trim().length > 255 || this.title.trim().length < 5){
-        this.errors.title = "موضوع باید حدقال ۵ و حداکثر ۲۵۵ کاراکتر باشد."
+        this.errors.title = "موضوع باید حداقل ۵ و حداکثر ۲۵۵ کاراکتر باشد."
         flag = false
       }
 
       this.errors.description = undefined;
       if (this.description == null || this.description.trim() === "" ||  this.description.trim().length > 5000 || this.description.trim().length < 20){
-        this.errors.description = "توضیحات باید حدقال ۲۰ و حداکثر ۵۰۰۰ کاراکتر باشد."
+        this.errors.description = "توضیحات باید حداقل ۲۰ و حداکثر ۵۰۰۰ کاراکتر باشد."
         flag = false
       }
 
@@ -258,7 +260,7 @@ export default {
 
       this.errors.category = undefined;
       if (this.challengeCategories.indexOf(this.category) === -1){
-        this.errors.category = "دسته بندی را انتخواب کنید"
+        this.errors.category = "دسته بندی را انتخاب کنید"
         flag = false
       }
 
