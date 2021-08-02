@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateChallengeRequest;
 use App\Models\Challenge;
 use App\Models\Config;
+use App\Models\Contributors;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -87,7 +89,46 @@ class ChallengeController extends Controller
      */
     public function show($id)
     {
-        return Inertia::render("Web/challengeDetail");
+        $challenge = Challenge::query()->findOrFail($id)->where('status' , 'paid')->first();
+
+        $winnerUser = '';
+        if($challenge->winner_user){
+            $winnerUser = User::query()->find($challenge->winner_user);
+        }
+
+        $contributors = Contributors::query()->where('challenge_id' , $id)->get();
+
+        $users = User::all();
+
+        return Inertia::render("Web/challengeDetail" , [
+            "challenge" => $challenge,
+            "winnerUser" => $winnerUser,
+            "contributors" => $contributors,
+            "users" => $users
+        ]);
+    }
+
+    public function suggestDetail($id){
+        $suggest = Contributors::query()->findOrFail($id);
+        $user = User::query()->find($suggest->user_id);
+
+        return Inertia::render("Web/suggestDetail" , [
+            "suggest" => $suggest,
+            "user" => $user
+        ]);
+    }
+
+    public function choiceWinner($id , Request $request){
+        $request->validate([
+            "token" => "required|captcha:choiceWinner"
+        ]);
+
+        $suggest = Contributors::query()->find($id);
+        $challenge = Challenge::query()->find($suggest->challenge_id);
+        $challenge->winner_user = $request->get('winnerUser');
+        $challenge->ended_at = now();
+        $challenge->save();
+        return redirect(route("challenge.show" , [$challenge->id]));
     }
 
     /**

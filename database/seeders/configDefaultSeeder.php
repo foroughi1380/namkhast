@@ -18,5 +18,7 @@ class configDefaultSeeder extends Seeder
         Config::create(['name'=>'حق سایت در ساخت چالش پولی' , 'key' => 'challenge_ppf' , 'type'=>'float' , 'value' => "0.01"]);
         Config::create(['name'=>'دسته بندی های چالش ها' , 'key' => 'challenge_group' , 'type'=>'array' , 'value' => ["دسته اول","دسته دوم","دسته سوم"]]);
         Config::create(['name'=>'نرخ های شرکت در چالش پولی' , 'key' => 'challenge_pp' , 'type'=>'array' , 'value' => ["1000","2000","3000","4000","5000"]]);
+        Config::create(['name'=>'حداقل مبلغ جایزه در چالش ها' , 'key' => 'min_coast_budget' , 'type'=>'float' , 'value' => 5000]);
+        Config::create(['name'=>'حداکثر مبلغ جایزه در چالش ها' , 'key' => 'max_coast_budget' , 'type'=>'float' , 'value' => 100000]);
     }
 }

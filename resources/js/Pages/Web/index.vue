@@ -56,11 +56,11 @@
       <section class="row text-center" id="about">
         <div class="card col-12 mx-auto">
           <div class="card-content row">
-            <div class="card-body col-4 col-md-4 col-sm-12 text-center">
+            <div class="card-body col-md-4 col-sm-12 text-center">
               <img src="/theme/web/app-assets/images/pages/graphic-3.png" alt="about"
                    class="users-avatar-shadow rounded" height="300" width="300">
             </div>
-            <div class="card-body col-8 col-md-8 col-sm-12 text-center">
+            <div class="card-body col-md-8 col-sm-12 text-center">
               <h2 class="mt-1 mb-3">نام خواست چیست؟</h2>
               <p class="text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
                 گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
@@ -134,7 +134,7 @@
       <section class="row text-center" id="whyUs">
         <div class="card col-12 mx-auto">
           <div class="card-content row">
-            <div class="card-body col-8 text-center">
+            <div class="card-body col-md-8 col-sm-12 text-center">
               <h2 class="mt-1 mb-3">چرا نام خواست ؟</h2>
               <p class="text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
                 گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
@@ -145,7 +145,7 @@
                 حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
                 گیرد.</p>
             </div>
-            <div class="card-body col-4 text-center">
+            <div class="card-body col-md-4 col-sm-12 text-center">
               <img src="/theme/web/app-assets/images/pages/graphic-5.png" alt="about"
                    class="users-avatar-shadow rounded" height="300" width="300">
             </div>
