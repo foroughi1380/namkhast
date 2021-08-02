@@ -39,7 +39,7 @@
           <td>{{ authRequest.user_id }}</td>
           <td>{{ authRequest.try }}</td>
           <td>{{ authRequest.national_code }}</td>
-          <td><img :href="authRequest.nc_picture" width="70" heigh="100" alt="nc_picture"></td>
+          <td><img :src="authRequest.nc_picture" width="70" height="100" alt="nc_picture"></td>
 
           <td class="text-success" v-if="authRequest.status == 'accept' ">تایید شده</td>
           <td class="text-info" v-if="authRequest.status == 'pending' ">در انتظار تایید</td>
