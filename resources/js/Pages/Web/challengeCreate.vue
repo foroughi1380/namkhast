@@ -34,7 +34,7 @@
                       <div class="col-12">
                         <div class="form-group">
                           <label for="description">توضیحات </label>
-                          <textarea name="shortDescription" id="description" rows="5" class="form-control" v-model="description"  :disabled="inProcess"></textarea>
+                          <CkSimpleEditor></CkSimpleEditor>
                         </div>
                         <p class="text-danger text-sm" v-text="errors.description" v-if="errors.description"></p>
                       </div>
@@ -120,7 +120,7 @@
 
                     <div class="col-md-6 col-sm-12 mt-3">
                       <ul>
-                        <li>در صورت انتخاب گذینه شرکت به صورت ورودی دار کارمزد دریافتی از شما نصف خواهد شد.</li>
+                        <li>در صورت انتخاب گزینه شرکت به صورت ورودی دار کارمزد دریافتی از شما نصف خواهد شد.</li>
                         <li>در صورت نهایی کردن چالش و پرداخت هزینه امکان ویرایش برای شما وجود ندارد.</li>
                         <li>بهتر است برای دریافت هرچه بیشتر کارایی حداقل ۱۰ روز فرصت برای شرکت کنندگان قرار دهید</li>
                         <li>تصویر چالش را به گونه ای انتخاب کنید که به انتخاب نام کمک کند.</li>
@@ -150,9 +150,11 @@ import appLayout from "../../Shared/appLayout";
 import DatePicker from "../../Shared/Components/datePicker";
 import SimpleInputFile from "../../Shared/Components/SimpleInputFile";
 import {Inertia} from "@inertiajs/inertia";
+import CkSimpleEditor from "../../Shared/Components/CkSimpleEditor";
+
 export default {
   name: "challengeCreate",
-  components: {SimpleInputFile, DatePicker},
+  components: {SimpleInputFile, DatePicker , CkSimpleEditor},
   layout: appLayout,
   props : ["participantPrices" , "challengeCategories" , 'errors' , 'maxBudget' , 'minBudget' , 'challenge'],
   data() {
@@ -167,7 +169,7 @@ export default {
       category : null,
       costPrice : null ,
       picture : null,
-      document : null
+      document : null,
     }
   },
   created() {
