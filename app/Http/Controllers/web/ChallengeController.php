@@ -21,7 +21,7 @@ class ChallengeController extends Controller
      */
     public function index()
     {
-        return Inertia::render("Web/myChallenges");
+        return Inertia::render("Web/myChallenge");
     }
 
     /**
