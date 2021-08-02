@@ -112,7 +112,7 @@
                         </div>
                       </div>
 
-                      <div v-if="" class="tab-pane" id="names" aria-labelledby="names-tab" role="tabpanel">
+                      <div class="tab-pane" id="names" aria-labelledby="names-tab" role="tabpanel">
                         <div class="card">
                           <div class="card-header d-flex justify-content-between">
                             <h4>نام های پیشنهاد شده</h4>
