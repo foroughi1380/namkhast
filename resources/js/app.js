@@ -7,7 +7,7 @@ import 'vue-toast-notification/dist/theme-default.css';
 import { ZiggyVue  } from 'ziggy';
 import { Ziggy } from './ziggy';
 import datePicker from "./Shared/Components/datePicker";
-
+import CKEditor from '@ckeditor/ckeditor5-vue';
 
 createInertiaApp({
     title: title => `${title} | نام خواست `,
@@ -23,6 +23,7 @@ createInertiaApp({
         vuevue.component("date-picker" , datePicker)
         vuevue.use(VueReCaptcha, {siteKey: process.env.MIX_RECAPTCHA3_SITE})
         vuevue.use(ZiggyVue , Ziggy)
+        vuevue.use(CKEditor)
         vuevue.mixin({
             methods: {
                 async generateRecaptchaToken(action) {
