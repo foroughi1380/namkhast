@@ -41,7 +41,7 @@
           <td>{{ user.family }}</td>
           <td>{{ user.phone }}</td>
           <td>{{ user.iban }}</td>
-          <td><img :href="user.picture" width="70" heigh="70" alt="user avatar"></td>
+          <td><img :src="user.picture" width="50" height="50" alt="user avatar"></td>
           <td>{{ user.status == 'active'? 'فعال' : 'غیرفعال' }}</td>
           <td style="width: 180px">
             <div class="row text-white text-center mx-auto">

@@ -39,16 +39,6 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">تصویر آواتار</label>
-        <div class="col-sm-6">
-          <SimpleInputFile :disabled="inProcess" accept="image/*" name="picture" label="انتخاب آواتار"  v-model="picture"/>
-        </div>
-        <div class="col-4">
-          <img :href="picture" alt="user Avatar">
-        </div>
-      </div>
-
 
       <p class="text-danger " v-for="error in errors" v-text="error"></p>
 
@@ -83,7 +73,6 @@ export default {
       family: "",
       phone: "",
       iban: "",
-      picture: "",
       inProcess: false
     }
   },
@@ -92,7 +81,6 @@ export default {
     this.family = this.user.family
     this.phone = this.user.phone
     this.iban = this.user.iban
-    this.picture = this.user.picture
   },
   methods: {
     editInfo() {
