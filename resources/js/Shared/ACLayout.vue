@@ -130,7 +130,7 @@
                    with font-awesome or any other icon font library -->
 
               <li class="nav-item">
-                <Link href="/ac" class="nav-link">
+                <Link :href="route('ac.dashboard')" class="nav-link">
                   <i class="nav-icon fa fa-dashboard"></i>
                   <p>
                     داشبورد
@@ -148,7 +148,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <Link href="/ac/user" class="nav-link">
+                    <Link :href="route('ac.user.index')" class="nav-link">
 
                       <i class="fa fa-users nav-icon"></i>
                       <p>لیست کاربران</p>
@@ -156,7 +156,7 @@
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link href="/ac/auth-request" class="nav-link">
+                    <Link :href="route('ac.authRequest.index')" class="nav-link">
                       <i class="fa fa-key nav-icon"></i>
                       <p>درخواست های احراز هویت</p>
                     </Link>
@@ -174,13 +174,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <Link href="/ac/admin/create" class="nav-link">
+                    <Link :href="route('ac.admin.create')" class="nav-link">
                       <i class="fa fa-user-plus nav-icon"></i>
                       <p>افزودن ادمین</p>
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link href="/ac/admin" class="nav-link">
+                    <Link :href="route('ac.admin.index')" class="nav-link">
                       <i class="fa fa-list nav-icon"></i>
                       <p>لیست ادمین ها</p>
                     </Link>
@@ -223,7 +223,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <Link href="/ac/withdraw-request" class="nav-link">
+                    <Link :href="route('ac.authRequest.index')" class="nav-link">
                       <i class="fa fa-level-up nav-icon"></i>
                       <p>درخواست های برداشت</p>
                     </Link>
@@ -259,7 +259,7 @@
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link href="/ac/config" class="nav-link">
+                    <Link :href="route('ac.config.index')" class="nav-link">
                       <i class="fa fa-gear nav-icon"></i>
                       <p>پیکربندی</p>
                     </Link>
