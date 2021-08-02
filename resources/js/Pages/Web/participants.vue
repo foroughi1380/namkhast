@@ -1,7 +1,7 @@
 <template>
   <Head title="چالش های شرکت شده"></Head>
   <section>
-    <div class="content-detached content-right col-9 col-sm-12 col-md-9">
+    <div class="content-detached content-right col-sm-12 col-md-9">
         <!-- background Overlay when sidebar is shown  starts-->
         <div class="shop-content-overlay"></div>
         <!-- background Overlay when sidebar is shown  ends-->
@@ -25,17 +25,17 @@
         <section class="grid-view row">
           <div class="card ecommerce-card">
             <div class="card-content row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <a href="app-ecommerce-details.html">
                   <img class="img-fluid" src="theme/web/app-assets/images/pages/eCommerce/1.png" alt="img-placeholder"></a>
               </div>
-              <div class="card-body col-6">
+              <div class="card-body col-md-6 col-sm-12">
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html"><a href="#">نام چالش</a></h3>
-                  <div class="row">
-                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
-                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                  <div class="row text-center">
+                    <p class="item-company col-md-4 col-sm-6">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-md-4 col-sm-6">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-md-4 col-sm-12">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -44,16 +44,16 @@
                   </p>
                 </div>
               </div>
-              <div class="col-3 text-center my-auto">
+              <div class="col-md-3 text-center my-auto">
                 <div class="item-cost">
                   <h4 class="item-price mb-4">
                     15000 تومان
                   </h4>
                 </div>
-                <div class="wishlist">
+                <div class="wishlist col-12">
                   <a class="feather icon-star"></a> <span>علاقه مندی ها</span>
                 </div>
-                <div class="cart mr-1 mt-1">
+                <div class=" mr-1 mt-1 col-12">
                   <a class=" btn btn-info btn-block"><span class="add-to-cart text-white">ارسال جواب</span></a>
                 </div>
               </div>
@@ -63,17 +63,17 @@
         <section class="grid-view row">
           <div class="card ecommerce-card">
             <div class="card-content row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <a href="app-ecommerce-details.html">
                   <img class="img-fluid" src="theme/web/app-assets/images/pages/eCommerce/1.png" alt="img-placeholder"></a>
               </div>
-              <div class="card-body col-6">
+              <div class="card-body col-md-6 col-sm-12">
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html"><a href="#">نام چالش</a></h3>
-                  <div class="row">
-                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
-                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                  <div class="row text-center">
+                    <p class="item-company col-md-4 col-sm-6">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-md-4 col-sm-6">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-md-4 col-sm-12">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -82,16 +82,16 @@
                   </p>
                 </div>
               </div>
-              <div class="col-3 text-center my-auto">
+              <div class="col-md-3 text-center my-auto">
                 <div class="item-cost">
                   <h4 class="item-price mb-4">
                     15000 تومان
                   </h4>
                 </div>
-                <div class="wishlist">
+                <div class="wishlist col-12">
                   <a class="feather icon-star"></a> <span>علاقه مندی ها</span>
                 </div>
-                <div class="cart mr-1 mt-1">
+                <div class=" mr-1 mt-1 col-12">
                   <a class=" btn btn-info btn-block"><span class="add-to-cart text-white">ارسال جواب</span></a>
                 </div>
               </div>
@@ -101,17 +101,17 @@
         <section class="grid-view row">
           <div class="card ecommerce-card">
             <div class="card-content row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <a href="app-ecommerce-details.html">
                   <img class="img-fluid" src="theme/web/app-assets/images/pages/eCommerce/1.png" alt="img-placeholder"></a>
               </div>
-              <div class="card-body col-6">
+              <div class="card-body col-md-6 col-sm-12">
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html"><a href="#">نام چالش</a></h3>
-                  <div class="row">
-                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
-                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                  <div class="row text-center">
+                    <p class="item-company col-md-4 col-sm-6">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-md-4 col-sm-6">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-md-4 col-sm-12">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -120,16 +120,16 @@
                   </p>
                 </div>
               </div>
-              <div class="col-3 text-center my-auto">
+              <div class="col-md-3 text-center my-auto">
                 <div class="item-cost">
                   <h4 class="item-price mb-4">
                     15000 تومان
                   </h4>
                 </div>
-                <div class="wishlist">
+                <div class="wishlist col-12">
                   <a class="feather icon-star"></a> <span>علاقه مندی ها</span>
                 </div>
-                <div class="cart mr-1 mt-1">
+                <div class=" mr-1 mt-1 col-12">
                   <a class=" btn btn-info btn-block"><span class="add-to-cart text-white">ارسال جواب</span></a>
                 </div>
               </div>
@@ -139,17 +139,17 @@
         <section class="grid-view row">
           <div class="card ecommerce-card">
             <div class="card-content row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <a href="app-ecommerce-details.html">
                   <img class="img-fluid" src="theme/web/app-assets/images/pages/eCommerce/1.png" alt="img-placeholder"></a>
               </div>
-              <div class="card-body col-6">
+              <div class="card-body col-md-6 col-sm-12">
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html"><a href="#">نام چالش</a></h3>
-                  <div class="row">
-                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
-                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                  <div class="row text-center">
+                    <p class="item-company col-md-4 col-sm-6">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-md-4 col-sm-6">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-md-4 col-sm-12">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -158,16 +158,16 @@
                   </p>
                 </div>
               </div>
-              <div class="col-3 text-center my-auto">
+              <div class="col-md-3 text-center my-auto">
                 <div class="item-cost">
                   <h4 class="item-price mb-4">
                     15000 تومان
                   </h4>
                 </div>
-                <div class="wishlist">
+                <div class="wishlist col-12">
                   <a class="feather icon-star"></a> <span>علاقه مندی ها</span>
                 </div>
-                <div class="cart mr-1 mt-1">
+                <div class=" mr-1 mt-1 col-12">
                   <a class=" btn btn-info btn-block"><span class="add-to-cart text-white">ارسال جواب</span></a>
                 </div>
               </div>
@@ -177,17 +177,17 @@
         <section class="grid-view row">
           <div class="card ecommerce-card">
             <div class="card-content row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <a href="app-ecommerce-details.html">
                   <img class="img-fluid" src="theme/web/app-assets/images/pages/eCommerce/1.png" alt="img-placeholder"></a>
               </div>
-              <div class="card-body col-6">
+              <div class="card-body col-md-6 col-sm-12">
                 <div class="item-name">
                   <h3 href="app-ecommerce-details.html"><a href="#">نام چالش</a></h3>
-                  <div class="row">
-                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
-                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
+                  <div class="row text-center">
+                    <p class="item-company col-md-4 col-sm-6">دسته <span class="company-name">'تکنولوژی'</span></p>
+                    <p class="item-company col-md-4 col-sm-6">وضعیت : <span class="company-name">'فعال'</span></p>
+                    <p class="item-company col-md-4 col-sm-12">ورودی <span class="company-name">'رایگان'</span></p>
                   </div>
                 </div>
                 <div>
@@ -196,16 +196,16 @@
                   </p>
                 </div>
               </div>
-              <div class="col-3 text-center my-auto">
+              <div class="col-md-3 text-center my-auto">
                 <div class="item-cost">
                   <h4 class="item-price mb-4">
                     15000 تومان
                   </h4>
                 </div>
-                <div class="wishlist">
+                <div class="wishlist col-12">
                   <a class="feather icon-star"></a> <span>علاقه مندی ها</span>
                 </div>
-                <div class="cart mr-1 mt-1">
+                <div class=" mr-1 mt-1 col-12">
                   <a class=" btn btn-info btn-block"><span class="add-to-cart text-white">ارسال جواب</span></a>
                 </div>
               </div>
@@ -213,43 +213,43 @@
           </div>
         </section>
         <section class="grid-view row">
-          <div class="card ecommerce-card">
-            <div class="card-content row">
-              <div class="col-3">
-                <a href="app-ecommerce-details.html">
-                  <img class="img-fluid" src="theme/web/app-assets/images/pages/eCommerce/1.png" alt="img-placeholder"></a>
-              </div>
-              <div class="card-body col-6">
-                <div class="item-name">
-                  <h3 href="app-ecommerce-details.html"><a href="#">نام چالش</a></h3>
-                  <div class="row">
-                    <p class="item-company col-4">دسته <span class="company-name">'تکنولوژی'</span></p>
-                    <p class="item-company col-4">وضعیت : <span class="company-name">'فعال'</span></p>
-                    <p class="item-company col-4 text-right">ورودی <span class="company-name">'رایگان'</span></p>
-                  </div>
-                </div>
-                <div>
-                  <p class="item-description text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
-                    با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-                  </p>
+        <div class="card ecommerce-card">
+          <div class="card-content row">
+            <div class="col-md-3 col-sm-12">
+              <a href="app-ecommerce-details.html">
+                <img class="img-fluid" src="theme/web/app-assets/images/pages/eCommerce/1.png" alt="img-placeholder"></a>
+            </div>
+            <div class="card-body col-md-6 col-sm-12">
+              <div class="item-name">
+                <h3 href="app-ecommerce-details.html"><a href="#">نام چالش</a></h3>
+                <div class="row text-center">
+                  <p class="item-company col-md-4 col-sm-6">دسته <span class="company-name">'تکنولوژی'</span></p>
+                  <p class="item-company col-md-4 col-sm-6">وضعیت : <span class="company-name">'فعال'</span></p>
+                  <p class="item-company col-md-4 col-sm-12">ورودی <span class="company-name">'رایگان'</span></p>
                 </div>
               </div>
-              <div class="col-3 text-center my-auto">
-                <div class="item-cost">
-                  <h4 class="item-price mb-4">
-                    15000 تومان
-                  </h4>
-                </div>
-                <div class="wishlist">
-                  <a class="feather icon-star"></a> <span>علاقه مندی ها</span>
-                </div>
-                <div class="cart mr-1 mt-1">
-                  <a class=" btn btn-info btn-block"><span class="add-to-cart text-white">ارسال جواب</span></a>
-                </div>
+              <div>
+                <p class="item-description text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                  با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3 text-center my-auto">
+              <div class="item-cost">
+                <h4 class="item-price mb-4">
+                  15000 تومان
+                </h4>
+              </div>
+              <div class="wishlist col-12">
+                <a class="feather icon-star"></a> <span>علاقه مندی ها</span>
+              </div>
+              <div class=" mr-1 mt-1 col-12">
+                <a class=" btn btn-info btn-block"><span class="add-to-cart text-white">ارسال جواب</span></a>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
         <!-- END: Challenge Cart -->
 
         <!-- Ecommerce Pagination Starts -->
