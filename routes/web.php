@@ -28,9 +28,10 @@ Route::middleware(["auth"])->group(function (){
     Route::inertia('/profile/edit', 'Web/profileEdit');
     Route::post("/profile/edit" , [\App\Http\Controllers\web\UserController::class , "update"])->name("profile.update");
     Route::post("/profile/edit/auth" , [\App\Http\Controllers\web\AuthRequestController::class , "store"])->name("profile.auth");
-
+    // Challenge
     Route::resource("/challenge" , \App\Http\Controllers\web\ChallengeController::class)->names("challenge");
-
+    Route::get("/challenge/suggest/{id}" , [\App\Http\Controllers\web\ChallengeController::class , "suggestDetail"] )->where('id', '[0-9]+')->name('challenge.suggest');
+    Route::post("/challenge/choice-winner/{id}" , [\App\Http\Controllers\web\ChallengeController::class , "choiceWinner"] )->where('id', '[0-9]+')->name('challenge.winner');
     //Withdraw Requests
     Route::get("/withdraw" , [\App\Http\Controllers\web\WithdrawRequestController::class , "index"])->name("withdraw.index");
     Route::post("/withdraw/submit-request" , [\App\Http\Controllers\web\WithdrawRequestController::class , "submitRequest"])->name("withdraw.submitReq");
@@ -53,6 +54,6 @@ Route::get('/about', function (){
 });
 Route::inertia('/challenge/myChallenge', 'Web/myChallenge');
 Route::inertia('/challenge/detail', '');
-Route::inertia('/challenge/participants', 'Web/challengeParticipants');
-Route::inertia('/challenge/suggestDetail', 'Web/suggestDetail');
+Route::inertia('/challengee/participants', 'Web/challengeParticipants');
+Route::inertia('/challengee/suggestDetail', 'Web/suggestDetail');
 
