@@ -13,9 +13,10 @@ class AuthRequestController extends Controller
 {
     public function index(){
         $authRequests = AuthRequest::all()->makeVisible(['try' , 'nc_picture' , 'user_id']);
-
+        $users = User::all();
         return Inertia::render("AC/authRequests" , [
-            'authRequests' => $authRequests
+            'authRequests' => $authRequests,
+            'users' => $users
         ]);
     }
 

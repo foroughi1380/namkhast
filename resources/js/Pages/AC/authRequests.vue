@@ -34,9 +34,9 @@
           <th>وضعیت</th>
           <th>عملیات</th>
         </tr>
-        <tr v-for="authRequest in authRequests">
-          <td>1</td>
-          <td>{{ authRequest.user_id }}</td>
+        <tr v-for="(authRequest , index) in authRequests">
+          <td>{{index+1}}</td>
+          <td v-for="user in users">{{ authRequest.user_id == user.id ? user.name + ' ' + user.family : ''}}</td>
           <td>{{ authRequest.try }}</td>
           <td>{{ authRequest.national_code }}</td>
           <td><img :src="authRequest.nc_picture" width="70" height="100" alt="nc_picture"></td>
@@ -67,7 +67,8 @@ export default {
   name: "authRequests",
   layout: ACLayout,
   props:{
-    authRequests : {}
+    authRequests : {},
+    users: {}
   }
 }
 </script>
