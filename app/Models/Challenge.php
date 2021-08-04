@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\QueryHelper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
 class Challenge extends Model
 {
+    use QueryHelper;
     use HasFactory;
 
     protected $table="challenge";
@@ -31,7 +33,7 @@ class Challenge extends Model
     ];
 
     protected $appends =[
-        'mine'
+        'mine' , 'is_favorite' , 'is_Contributor'
     ];
     public function getMineAttribute()
     {
@@ -58,5 +60,15 @@ class Challenge extends Model
         }else{
             return $value;
         }
+    }
+
+    public function getIsFavoriteAttribute()
+    {
+        return $this->belongsToMany(User::class , 'favorites')->where('user_id' , Auth::id())->count() != 0;
+    }
+
+    public function getIsContributorAttribute()
+    {
+        return Contributors::query()->where("user_id" , Auth::id())->where("challenge_id" , $this->id)->count() != 0;
     }
 }

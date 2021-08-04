@@ -16,8 +16,9 @@
                 <li>مبلغ ورودی : {{ challenge.type == 'free' ? 'رایگان' : challenge.cost + " تومان" }}</li>
               </ul>
             </div>
-            <div>
-              <a class="btn btn-primary btn-block text-white">شرکت در چالش</a>
+            <div v-if="! challenge.mine" @click="btnClick">
+              <a class="btn btn-primary btn-block text-white" v-if="! challenge.is_Contributor">عضویت در چالش</a>
+              <a class="btn btn-warning btn-block text-white" v-else-if="challenge.ended_at === null">ارسال جواب</a>
             </div>
           </div>
         </div>
@@ -30,7 +31,11 @@
           <div class="card-body col-12 row">
             <div class="col-3">
               <img class="img-fluid" :src="challenge.picture"
-                   alt="challenge" width="100" height="150">
+                   alt="challenge" width="100" height="150" v-if="challenge.picture">
+
+              <img class="img-fluid" src="/theme/web/app-assets/images/portrait/small/avatar-s-18.jpg"
+                   alt="challenge" width="100" height="150" v-else>
+
             </div>
             <div class="col-9">
               <h2>{{ challenge.title }}</h2>
@@ -38,8 +43,9 @@
                 <div class="col-6">
                   <p class="item-company">دسته <span class="company-name">'{{ challenge.category }}'</span></p>
                 </div>
-                <div class="col-6 text-right">
-                  <a class="feather icon-star"></a> <span>علاقه مندی ها</span>
+                <div class="col-6 text-right" @click="favoriteRequest">
+                  <a class="feather icon-star-on" v-if="challenge.is_favorite"> <span>حذف از علاقه مندی ها</span> </a>
+                  <a class="feather icon-star" v-else> <span>اضافه کردن به علاقه مندی ها</span> </a>
                 </div>
               </div>
               <p class="text-justify">
@@ -164,6 +170,7 @@
 
 <script>
 import appLayout from "../../Shared/appLayout";
+import {Inertia} from "@inertiajs/inertia";
 
 export default {
   name: "challengeDetail",
@@ -172,8 +179,27 @@ export default {
     challenge : {},
     winnerUser : {},
     contributors : {},
-    users : {}
+    users : {},
+    errors : []
   },
+  methods : {
+    favoriteRequest(){
+      axios.put(this.route("favorite.update" , this.challenge.id))
+          .then(value => {
+            this.toast("با موفقیت اضافه شد")
+          }).catch(reason => {this.toast("عملیات با شکست مواجه شد" , "error")})
+          .finally(() => {
+            this.challenge.is_favorite = ! this.challenge.is_favorite;
+          })
+    },
+    btnClick(){
+      Inertia.get(this.route('contributor' , this.challenge.id) , {} , {
+        onFinish :params => {
+          this.showTypedToast(this.errors , "error")
+        }
+      })
+    }
+  }
 }
 </script>
 

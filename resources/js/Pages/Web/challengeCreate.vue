@@ -34,7 +34,7 @@
                       <div class="col-12">
                         <div class="form-group">
                           <label for="description">توضیحات </label>
-                          <CkSimpleEditor></CkSimpleEditor>
+                          <CkSimpleEditor v-model="description" id="description"></CkSimpleEditor>
                         </div>
                         <p class="text-danger text-sm" v-text="errors.description" v-if="errors.description"></p>
                       </div>
@@ -129,7 +129,7 @@
                     </div>
 
                     <div class="col-12 h-auto">
-                      <button class=" ml-2 btn btn-primary waves-effect waves-light" type="submit" :disabled="inProcess">ثبت نهایی و پرداخت</button>
+                      <a class=" ml-2 btn btn-primary waves-effect waves-light" type="submit" :disabled="inProcess" v-if="challenge" :href="route('challenge.pay' , challenge.id)" @click="inProcess = true">ثبت نهایی و پرداخت</a>
                       <button class=" ml-2 btn btn-secondary waves-effect waves-light" @click="submit"  :disabled="inProcess">ذخیره پیش نویس</button>
                     </div>
                   </div>

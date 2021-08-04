@@ -56,5 +56,8 @@ class User extends Authenticatable
         return env("AWS_PUBLIC_DOWNLOAD_PREFIX") . $value;
     }
 
+    public function getFavoriteChallenges(){
+        return $this->belongsToMany(Challenge::class , 'favorites');
+    }
 
 }

@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Config;
+use App\Models\Transaction;
 use App\Models\User;
+use App\Observers\TransactionObserve;
 use App\Utilities\Utilities;
 use Request;
 use Illuminate\Support\ServiceProvider;
@@ -28,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Transaction::observe(TransactionObserve::class);
         Validator::extend('captcha', function ($attribute, $value, $parameters) {
             if (! Config::get("check_captcha" , false)) return true;
             $action = isset($parameters[0]) ? $parameters[0] : 'form';

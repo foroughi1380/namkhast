@@ -3,16 +3,21 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
+use App\Http\IdPayPayment;
 use App\Http\Requests\CreateChallengeRequest;
 use App\Models\Challenge;
 use App\Models\Config;
 use App\Models\Contributors;
 use App\Models\User;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Nette\Schema\ValidationException;
+use phpDocumentor\Reflection\Types\Integer;
+use function PHPUnit\Framework\isReadable;
 
 class ChallengeController extends Controller
 {
@@ -21,9 +26,11 @@ class ChallengeController extends Controller
      *
      * @return \Inertia\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Inertia::render("Web/myChallenge");
+        return Inertia::render("Web/myChallenge" , [
+            "chs" => (new Challenge())->parseQueries($request)->where("user_id" , Auth::id())->paginate(5)
+        ]);
     }
 
     /**
@@ -89,14 +96,14 @@ class ChallengeController extends Controller
      */
     public function show($id)
     {
-        $challenge = Challenge::query()->findOrFail($id)->where('status' , 'paid')->first();
+        $challenge = Challenge::query()->where('status' , 'paid')->findOrFail($id);
 
         $winnerUser = '';
         if($challenge->winner_user){
             $winnerUser = User::query()->find($challenge->winner_user);
         }
 
-        $contributors = Contributors::query()->where('challenge_id' , $id)->get();
+        $contributors = Contributors::query()->where('challenge_id' , $id)->whereNotNull('suggested_name')->get();
 
         $users = User::all();
 
@@ -128,7 +135,89 @@ class ChallengeController extends Controller
         $challenge->winner_user = $request->get('winnerUser');
         $challenge->ended_at = now();
         $challenge->save();
+
+        $wallet = new Wallet();
+        $wallet->user_id = $challenge->winner_user;
+        $wallet->price = $challenge->budget;
+        $wallet->save();
+
         return redirect(route("challenge.show" , [$challenge->id]));
+    }
+
+
+    public function contributor(Challenge $challenge)
+    {
+        if ($challenge->is_Contributor){
+            return Inertia::render("Web/challengeParticipants" , [
+               "contributor" => Contributors::query()->where("user_id" , Auth::id())->where("challenge_id" , $challenge->id)->first(),
+               "challenge" => $challenge
+            ]);
+        }
+
+        if ($challenge->type == "free"){
+            $cont = new Contributors();
+            $cont->user_id = Auth::id();
+            $cont->challenge_id = $challenge->id;
+            $cont->save();
+            return $this->show($challenge->id);
+        }else{
+            $payment = IdPayPayment::create($challenge->cost , ["for" => Contributors::class , "user_id" => Auth::id() , "challenge_id" => $challenge->id]);
+            if ($payment){
+                return redirect($payment->link);
+            }else{
+                throw \Illuminate\Validation\ValidationException::withMessages([
+                    "unknown" => "خطایی در ارتباط با درگاه پرداخت داده رخ داده است."
+                ]);
+            }
+        }
+    }
+
+    public function contributorUpdate(Contributors $cont , Request $request)
+    {
+        if ($cont->user_id != Auth::id()) exit(403);
+
+        $request->validate([
+            "name" => "required|string|min:3" ,
+            "description" => "nullable|string" ,
+            "sound" => "file|max:1000",
+            "token" => "required|captcha:cup"
+        ] , [
+            "name.*" => "نام باید حد اقل ۳ کراکتر باشد",
+            "sound.*" => "حجم فایل باید کمتر از ۱ مگابایت باشد"
+        ]);
+
+
+        $cont->suggested_name = $request->get("name");
+        $cont->description = $request->get("description" , $cont->description);
+
+        if ($request->hasFile("sound")){
+            if ($cont->sound){
+                Storage::delete($cont->sound);
+            }
+            $cont->sound = $request->file("sound")->store("sounds/");
+        }
+
+
+        if($cont->save()){
+            return Inertia::render("Web/challengeParticipants" , [
+                "contributor" => Contributors::query()->where("user_id" , Auth::id())->where("challenge_id" , $cont->challenge_id)->first(),
+                "challenge" => Challenge::query()->find($cont->challenge_id)
+            ]);
+        }else{
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                "unknown" => "خطایی در ارتباط با درگاه پرداخت داده رخ داده است."
+            ]);
+        }
+    }
+    public function contributorChallenges(Request $request)
+    {
+        return Inertia::render("Web/myChallenge" , [
+            "chs" => (new Challenge())->parseQueries($request)->selectRaw("challenge.*")->join('contributors', function ($join) {
+                    $join->on("challenge.id" , "=" , 'contributors.challenge_id');
+                    $join->where('contributors.user_id', '=', Auth::id());
+                })->paginate(5),
+            "myTitle" => "چالش های شرکت شده "
+        ]);
     }
 
     /**
@@ -139,7 +228,7 @@ class ChallengeController extends Controller
      */
     public function edit(Challenge $challenge)
     {
-        if (! $challenge.mine){
+        if (! $challenge->mine){
             exit(403);
         }
 
@@ -161,8 +250,12 @@ class ChallengeController extends Controller
      */
     public function update(CreateChallengeRequest $request, Challenge $challenge)
     {
-        if (! $challenge.mine){
+        if (! $challenge->mine){
             exit(403);
+        }
+
+        if (! $challenge->status != 'draft'){
+            return redirect(\route("challenge.index"));
         }
 
         $challenge->title = $request->get('title');
@@ -209,5 +302,39 @@ class ChallengeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function pay(Challenge $challenge)
+    {
+        if (! $challenge->mine){
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                "unknown" => "این چالش متعلق به شما نیست."
+            ]);
+        }
+
+        $tax = ($challenge->budget - Config::get('min_coast_budget')) /  Config::get('max_coast_budget') *  Config::get('max_tax_challenge') + Config::get('min_tax_challenge');
+        $price = floor($challenge->budget + $tax) * 10;
+        $challenge->status = "pending";
+        $challenge->save();
+        $payinfo = IdPayPayment::create($price , [
+           "for" => Challenge::class,
+           "id" => $challenge->id
+        ]);
+
+        if ($payinfo){
+            return redirect($payinfo->link);
+        }else{
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                "unknown" => "خطای درگاه پرداخت"
+            ]);
+        }
+
+    }
+
+    public function challenges(Request $request){
+        return Inertia::render("Web/myChallenge" , [
+            "chs" => (new Challenge())->parseQueries($request)->whereNull("ended_at")->where("status" , 'paid')->paginate(5),
+            "myTitle" => "چالش ها"
+        ]);
     }
 }

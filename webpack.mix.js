@@ -29,8 +29,11 @@ mix.js('resources/js/app.js', 'public/js')
                 console.log("watch to file " + file);
                 fs.watch("routes/" + file , (curr , prev) =>{
                     console.log(file + " changed.");
-                    execSync("php artisan route:cache");
-                    execSync("php artisan ziggy:generate");
+
+                    try {
+                        execSync("php artisan route:cache");
+                        execSync("php artisan ziggy:generate");
+                    }catch (e) {console.log(e.message)}
                 })
             }
         });

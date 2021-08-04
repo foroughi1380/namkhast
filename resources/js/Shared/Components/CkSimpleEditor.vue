@@ -7,6 +7,10 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 export default {
   name: "CkSimpleEditor",
+  props : ['modelValue'],
+  created() {
+    this.description = this.modelValue;
+  },
   data() {
     return {
       editor: ClassicEditor,
@@ -19,11 +23,16 @@ export default {
           'blockQuote', '|',
           'undo', 'redo'
         ],
-        plugins: [ WordCount ],
         language: 'fa',
       },
+      description : ""
     }
   },
+  watch : {
+    description(){
+      this.$emit("update:modelValue" , this.description)
+    }
+  }
 }
 </script>
 

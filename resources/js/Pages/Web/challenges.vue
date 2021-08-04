@@ -285,6 +285,8 @@
         </section>
         <!-- Ecommerce Pagination Ends -->
     </div>
+
+
     <div class="sidebar-detached sidebar-left col-sm-12 col-md-3">
       <div class="sidebar">
         <!-- Ecommerce Sidebar Starts -->

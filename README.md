@@ -6,17 +6,17 @@ index |goals | actor | req | finish |
 |----|------|-------|--------|-----|
 |1| fix seyed problem  |  KH  | - | X |
 |2| create admin control User tabs | KH | 1 | X |
-|3| create page add challenge and connect pay.ir to it | FO | - |
-|4| create challange index list | FO | 3 |
-|5| create challenge admin | KH | 3 |
+|3| create page add challenge and connect pay.ir to it | FO | - | X
+|4| create challange index list | FO | 3 | X
+|5| create challenge admin | KH | 3 | زیاد مهم نیست 
 |6| details challenge page | KH | 4 | X |
-|7| Participate in the challenge and payment challenge | FO | 6* |
-|8| my challenge participate list (no payed and finish challenge)| FO | 7 | 
-|9|my challenge list | FO | 3 |
+|7| Participate in the challenge and payment challenge | FO | 6* | X
+|8| my challenge participate list (no payed and finish challenge)| FO | 7 |X 
+|9|my challenge list | FO | 3 | X
 |10|request withdraw page (user) | KH | - | X |
 |11|withdraw accept (admin) | KH | 10 | X |
-|12|user profile page | FO | A | 
-|13|favorite challenge page | FO| 4|
+|12|user profile page | FO | A |  X
+|13|favorite challenge page | FO| 4| X
 
 ## requirements
 - PHP >= 7.3.0

@@ -55,7 +55,26 @@ createInertiaApp({
                 cloneObject(object){
                     console.log("in clone")
                     return JSON.parse(JSON.stringify(object))
-                }
+                },
+                jalali: function (input) {
+                    try {
+                        let moment = require('moment-jalaali');
+                        let date = moment(input, 'YYYY/MM/DD');
+                        return date.format(`jYYYY${this.separator}jMM${this.separator}jDD`);
+                    } catch (e) {
+                        return input;
+                    }
+                },
+                gregorian: function (input) {
+                    try {
+                        if (input === undefined || input == null || input.length === 0) return "";
+                        let moment = require('moment-jalaali');
+                        let date = moment(input, `jYYYY${this.separator}jM${this.separator}jD`);
+                        return date.format(`YYYY${this.separator}MM${this.separator}DD`);
+                    } catch (e) {
+                        return input;
+                    }
+                },
             }
         })
         vuevue.mount(el)

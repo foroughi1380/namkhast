@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Config;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
@@ -39,7 +41,9 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             "isLogin"=>fn()=>Auth::check(),
-            "user" => fn()=>Auth::user()
+            "user" => fn()=>Auth::user(),
+            "category_set" => fn()=>Config::get("challenge_group"),
+            "wallet" => fn() => Wallet::query()->where("user_id" , Auth::id() ? Auth::id() : -1)->sum("price")
         ]);
     }
 }

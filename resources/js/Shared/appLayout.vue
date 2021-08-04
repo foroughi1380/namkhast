@@ -8,39 +8,39 @@
           <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
 
             <ul class="nav navbar-nav bookmark-icons">
-              <li class="dropdown dropdown-notification nav-item">
-                <a class="nav-link nav-link-label" href="#" data-toggle="dropdown" title="پیام های شما">
-                  <i
-                  class="ficon feather icon-bell"></i><span class="badge badge-pill badge-primary badge-up">1</span></a>
-                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-left">
-                  <li class="dropdown-menu-header">
-                    <div class="dropdown-header m-0 p-2">
-                      <h3 class="notification-title">پیام های شما</h3>
-                    </div>
-                  </li>
-                  <li class="scrollable-container media-list">
+<!--              <li class="dropdown dropdown-notification nav-item">-->
+<!--                <a class="nav-link nav-link-label" href="#" data-toggle="dropdown" title="پیام های شما">-->
+<!--                  <i-->
+<!--                  class="ficon feather icon-bell"></i><span class="badge badge-pill badge-primary badge-up">1</span></a>-->
+<!--                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-left">-->
+<!--                  <li class="dropdown-menu-header">-->
+<!--                    <div class="dropdown-header m-0 p-2">-->
+<!--                      <h3 class="notification-title">پیام های شما</h3>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="scrollable-container media-list">-->
 
 
-                    <a class="d-flex justify-content-between"
-                       href="javascript:void(0)">
-                      <div class="media d-flex align-items-start">
-                        <div class="media-left"><i class="feather icon-plus-square font-medium-5 success"></i></div>
-                        <!-- success   danger    info   warning -->
-                        <div class="media-body">
-                          <h6 class="primary media-heading">چالش شما با موفقیت ثبت شد.</h6>
-                          <small class="notification-text"></small>
-                        </div>
-                        <small>
-                          <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">10 ساعت پیش</time>
-                        </small>
-                      </div>
-                    </a>
+<!--                    <a class="d-flex justify-content-between"-->
+<!--                       href="javascript:void(0)">-->
+<!--                      <div class="media d-flex align-items-start">-->
+<!--                        <div class="media-left"><i class="feather icon-plus-square font-medium-5 success"></i></div>-->
+<!--                        &lt;!&ndash; success   danger    info   warning &ndash;&gt;-->
+<!--                        <div class="media-body">-->
+<!--                          <h6 class="primary media-heading">چالش شما با موفقیت ثبت شد.</h6>-->
+<!--                          <small class="notification-text"></small>-->
+<!--                        </div>-->
+<!--                        <small>-->
+<!--                          <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">10 ساعت پیش</time>-->
+<!--                        </small>-->
+<!--                      </div>-->
+<!--                    </a>-->
 
 
-                  </li>
-                  <li class="dropdown-menu-footer"><a class="dropdown-item p-1 text-center" href="javascript:void(0)">مشاهده تمام پیام ها</a></li>
-                </ul>
-              </li>
+<!--                  </li>-->
+<!--                  <li class="dropdown-menu-footer"><a class="dropdown-item p-1 text-center" href="javascript:void(0)">مشاهده تمام پیام ها</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
 
               <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star" title="مورد علاقه ها"><i
                   class="ficon feather icon-star"></i>
@@ -51,13 +51,12 @@
                 <a class="dropdown-toggle nav-link font-size-2"  data-toggle="dropdown">
                   <span class="ficon feather icon-dollar-sign"></span>
                   <span>اعتبار شما : </span>
-                  <span>۵۰</span>
+                  <span v-text="wallet"></span>
                   <span> تومان </span>
                 </a>
 
 
                 <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#"><i class="feather icon-zap"></i> شارژ حساب </a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#"><i class="feather icon-chevron-right"></i>درخواست برداشت</a>
                 </div>
@@ -132,12 +131,12 @@
                                                                        data-i18n="Email">پروفایل من</span></Link>
         </li>
         <li class=" nav-item">
-          <Link :href="route('challenge.index')"><i class="feather icon-award"></i><span class="menu-title"
+          <Link :href="route('challenges')"><i class="feather icon-award"></i><span class="menu-title"
                                                                                          data-i18n="Chat">چالش ها</span>
           </Link>
         </li>
         <li class=" nav-item">
-          <Link href="/participants"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">شرکت شده ها</span>
+          <Link :href="route('contributors')"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">شرکت شده ها</span>
           </Link>
         </li>
         <li class=" nav-item">
@@ -224,7 +223,7 @@
 <script>
 export default {
   name: "appLayout",
-  props: ['isLogin', 'user']
+  props: ['isLogin', 'user' , 'wallet']
 }
 </script>
 
