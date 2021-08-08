@@ -13,9 +13,6 @@ trait QueryHelper
     {
         $query = $this::query();
 
-        /** parse orders */
-        $query = $this->parseOrders($query, $request);
-
         /** parse findable */
         $columns = $request->input("parsable", []);
         foreach ($columns as $column) {
@@ -28,39 +25,7 @@ trait QueryHelper
             $query = $this->parseSearch($query, json_decode($column));
         }
 
-        /** parse full_text search */
-        $fullText = $request->input("full_text", "");
-        if (strlen($fullText)) {
-            $columns = $this->fullTextIndex;
-            $query = $query->where(function ($query) /** @param $search JoinClause */ use ($fullText, $columns) {
-                foreach ($columns as $key => $column) {
-                    if ($key == 0) $query->where($column, "LIKE", "%$fullText%");
-                    else $query->orWhere($column, "LIKE", "%$fullText%");
-                }
-            });
-        }
-
-        /** parse wheres */
-        $columns = $request->input("wheres", []);
-        foreach ($columns as $column) {
-            $query = $this->parseWheres($query, json_decode($column));
-        }
-
         return $query;
-    }
-
-    public function parseWheres(Builder $query, $input): Builder
-    {
-        if (!(isset($input->value) && isset($input->operation))) return $query;
-        if (!strlen($input->value) || !strlen($input->operation)) return $query;
-
-        if ($input->value == "null" && $input->operation == "is") {
-            return $query->whereNull($input->column);
-        } else if ($input->value == "null" && $input->operation == "not") {
-            return $query->whereNotNull($input->column);
-        } else {
-            return $query->where($input->column, $input->operation, $input->value);
-        }
     }
 
     public function parseSearch(Builder $query, $input): Builder
@@ -93,13 +58,5 @@ trait QueryHelper
         }
 
         return $query->where($column, $queries);
-    }
-
-    public function parseOrders(Builder $query, Request $request): Builder
-    {
-        return $query->orderBy(
-            $request->input("order", "id"),
-            $request->input("direction", "desc")
-        );
     }
 }
