@@ -107,7 +107,8 @@
       <ul class="nav navbar-nav flex-row">
         <li class="nav-item mr-auto">
           <Link class="navbar-brand" href="/">
-            <div class="brand-logo"></div>
+            <img src="/theme/web/app-assets/images/logo/logo.png" width="30" height="27">
+<!--            <div class="brand-logo"></div>-->
             <h2 class="brand-text mb-0">نام خواست</h2>
           </Link>
         </li>
