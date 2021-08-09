@@ -31,7 +31,7 @@
           <div class="card-content row">
             <div class="card-body col-12 text-center">
               <h3 class="text-muted">تعداد کل کاربران</h3>
-              <h2 class="my-2">132</h2>
+              <h2 class="my-2" v-text="userCount"></h2>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
           <div class="card-content row">
             <div class="card-body col-12 text-center">
               <h3 class="text-muted">تعداد کل چالش ها</h3>
-              <h2 class="my-2">51</h2>
+              <h2 class="my-2" v-text="challengeCount"></h2>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
           <div class="card-content row">
             <div class="card-body col-12 text-center">
               <h3 class="text-muted">مجموع درآمد کاربران</h3>
-              <h2 class="my-2">154120 تومان</h2>
+              <h2 class="my-2" v-text="payments"></h2>
             </div>
           </div>
         </div>
@@ -64,14 +64,18 @@
             </div>
             <div class="card-body col-md-8 col-sm-12 text-center">
               <h2 class="mt-1 mb-3">نام خواست چیست؟</h2>
-              <p class="text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
-                گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
-                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای
-                طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان
-                امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-                حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-                گیرد.</p>
+              <p class="text-justify">وبسایت نام خواست در سال ۱۴۰۰ با بهره گیری از آخرین تکنولوژی های زمینه وب در راستای ایجاد اشتغال برای افراد خلاق و کمک به افراد جویای نام برای هر جا و هر جیزی تولید و به بهره بداری رسید.
+                <br>
+ما در نام خواست برای دو دسته از افراد نیاز های انها را برطرف کرده ایم.
+                <br>
+                <br>
+              ۱- افرادی که برای پروژه - فرزند - وبسایت - کسب و کار و .. خود نیازمند نام هستند.
+                <br>
+              ۲- افراد خلاقی که به دنبال کسب درامد هستند.
+                <br>
+                <br>
+                هر دوی این افراد میتوانند از وبسایت ما استفاده کنند و بهترین سود دهی را برای خود و دیگران به ارمقان بیاوردند.
+              </p>
             </div>
           </div>
         </div>
@@ -89,42 +93,20 @@
             <div class="col-12">
               <div class="card-deck-wrapper">
                 <div class="card-deck">
-                  <div class="card">
+
+
+
+                  <div class="card col-lg-3 p-0" v-for="challenge in challenges">
                     <div class="card-content">
-                      <img class="card-img-top img-fluid" src="/theme/web/app-assets/images/slider/01.jpg" alt="Card image cap" />
+                      <img class="card-img-top img-fluid" :src="challenge.picture" alt="Card image cap"  v-if="challenge.picture"/>
+                      <img class="card-img-top img-fluid w-100" src="/theme/web/app-assets/images/slider/01.jpg" alt="Card image cap" v-else/>
                       <div class="card-body">
-                        <h4 class="card-title">نام چالش</h4>
-                        <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است ...</p>
+                        <h4 class="card-title">{{challenge.title}}</h4>
+                        <p class="card-text" style="max-height: 150px ; overflow: hidden" v-html="challenge.description"></p>
                       </div>
                     </div>
                   </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <img class="card-img-top img-fluid" src="/theme/web/app-assets/images/slider/01.jpg" alt="Card image cap" />
-                      <div class="card-body">
-                        <h4 class="card-title">نام چالش</h4>
-                        <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است ...</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <img class="card-img-top img-fluid" src="/theme/web/app-assets/images/slider/01.jpg" alt="Card image cap" />
-                      <div class="card-body">
-                        <h4 class="card-title">نام چالش</h4>
-                        <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است ...</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-content">
-                      <img class="card-img-top img-fluid" src="/theme/web/app-assets/images/slider/01.jpg" alt="Card image cap" />
-                      <div class="card-body">
-                        <h4 class="card-title">نام چالش</h4>
-                        <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است ...</p>
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -138,14 +120,21 @@
           <div class="card-content row">
             <div class="card-body col-md-8 col-sm-12 text-center">
               <h2 class="mt-1 mb-3">چرا نام خواست ؟</h2>
-              <p class="text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
-                گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
-                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای
-                طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان
-                امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-                حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-                گیرد.</p>
+              <p class="text-justify">
+                وبسایت نام خواست برای راحتی شما برای عضویت هزینه ای دریافت نمیکند.
+                <br>
+                سریع راحت حتی میتوانید برای شرکت در چالش های خود هزینه ورودی قرار دهید.
+                <br>
+                کارمزد کم برای ثب چالش ها
+                <br>
+                بدون کارمزد برای شرکت در چالش ها
+                <br>
+                شخصی سازی توضیحات مربوط به چالش ها
+                <br>
+                بدون نیاز به احراض هویت برای شرکت در چالش ها
+                <br>
+                بدون احراض هویت برای ثبت چالش ها
+              </p>
             </div>
             <div class="card-body col-md-4 col-sm-12 text-center">
               <img src="/theme/web/app-assets/images/pages/graphic-5.png" alt="about"
@@ -165,7 +154,7 @@ import appLayout from "../../Shared/appLayout";
 export default {
   name: "index",
   layout: appLayout,
-  props: ['isLogin']
+  props: ['isLogin', "userCount", "challengeCount" , "payments" , "challenges"]
 }
 </script>
 
