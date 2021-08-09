@@ -15,9 +15,11 @@
               <h4 class="card-text mb-2 text-muted">
                 اولین پلتفرم اینترنتی درخواست نام در ایران
               </h4>
+              <div v-if="!isLogin">
                 <a href="/login" class="btn bg-gradient-primary mt-5 mr-1 mb-1 waves-effect waves-light">ورود</a>
                 <a href="/register" class="btn bg-gradient-success mt-5 mr-1 mb-1 waves-effect waves-light">ثبت نام</a>
-            </div>
+              </div>
+              </div>
           </div>
         </div>
       </div>
@@ -162,7 +164,8 @@ import appLayout from "../../Shared/appLayout";
 
 export default {
   name: "index",
-  layout: appLayout
+  layout: appLayout,
+  props: ['isLogin']
 }
 </script>
 
