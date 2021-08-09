@@ -75,6 +75,15 @@ createInertiaApp({
                         return input;
                     }
                 },
+                translateStatus(status){
+                    switch (status){
+                        case 'draft' : return 'پیش نویس';
+                        case 'pending' : return "در انتظار پرداخت";
+                        case 'paid' : return "در حال انجام";
+                        default :
+                             return status;
+                    }
+                }
             }
         })
         vuevue.mount(el)
