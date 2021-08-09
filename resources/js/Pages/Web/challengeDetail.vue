@@ -37,6 +37,8 @@
                    alt="challenge" width="100" height="150" v-else>
 
             </div>
+
+
             <div class="col-9">
               <h2>{{ challenge.title }}</h2>
               <div class="row">
@@ -52,6 +54,8 @@
                 {{ challenge.description.substring(0,200)+"..."  }}
               </p>
             </div>
+
+
           </div>
         </div>
       </div>
@@ -88,7 +92,7 @@
                           <i class="feather icon-info mr-25"></i><span class="d-none d-sm-block">توضیحات تکمیلی</span>
                         </a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item" v-if="challenge.mine">
                         <a class="nav-link d-flex align-items-center" id="names-tab" data-toggle="tab" href="#names" aria-controls="information" role="tab" aria-selected="false">
                           <i class="fa fa-lightbulb-o mr-25"></i><span class="d-none d-sm-block">اسامی پیشنهاد شده</span>
                         </a>

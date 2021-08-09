@@ -133,6 +133,11 @@ class ChallengeController extends Controller
         $suggest = Contributors::query()->find($id);
         $challenge = Challenge::query()->find($suggest->challenge_id);
         $challenge->winner_user = $request->get('winnerUser');
+        if (! $challenge->mine){
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                "unknown" => "این چالش متعلق به شما نیست."
+            ]);
+        }
         $challenge->ended_at = now();
         $challenge->save();
 
