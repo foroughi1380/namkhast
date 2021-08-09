@@ -123,9 +123,9 @@
                           </div>
                           <div class="card-body">
                             <div v-for="contributor in contributors" class="d-flex justify-content-start align-items-center mb-1">
-                              <div cl ass="avatar mr-50">
-                                <img v-for="user in users" :src="contributor.user_id == user.id ? user.picture : '' " alt="avtar img holder" height="35" width="35">
-                              </div>
+<!--                              <div cl ass="avatar mr-50">-->
+<!--                                <img v-for="user in users" :src="contributor.user_id == user.id ? user.picture : '' " alt="avtar img holder" height="35" width="35">-->
+<!--                              </div>-->
                               <div class="user-page-info">
                                 <h6 class="mb-0">نام پیشنهادی : '{{ contributor.suggested_name }}'</h6>
                                 <span v-for="user in users" class="font-small-2">{{ contributor.user_id == user.id ? user.name + ' ' + user.family : ''}}</span>
@@ -143,9 +143,9 @@
                           </div>
                           <div class="card-body">
                             <div v-for="contributor in contributors" class="d-flex justify-content-start align-items-center mb-1">
-                              <div class="avatar mr-50">
-                                <img v-for="user in users" :src="contributor.user_id == user.id ? user.picture : '' " alt="avtar img holder" height="35" width="35">
-                              </div>
+<!--                              <div class="avatar mr-50">-->
+<!--                                <img v-for="user in users" :src="contributor.user_id == user.id ? user.picture : '/theme/web/app-assets/images/portrait/small/avatar-s-11.jpg' " alt="avtar img holder" height="35" width="35">-->
+<!--                              </div>-->
                               <div class="user-page-info">
                                 <h6 v-for="user in users" class="mb-0">{{ contributor.user_id == user.id ? user.name + ' ' + user.family : ''}}</h6>
                               </div>
