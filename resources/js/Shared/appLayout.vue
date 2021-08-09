@@ -80,7 +80,7 @@
               </span>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> پروفایل </a>
+                <a class="dropdown-item" :href="route('user.index')"><i class="feather icon-user"></i> پروفایل </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/logout"><i class="feather icon-power"></i> خارج شدن</a>
               </div>
