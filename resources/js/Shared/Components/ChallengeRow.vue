@@ -19,7 +19,7 @@
           </div>
           <div>
             <p style="height: 0 ; overflow: hidden">fffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasd</p>
-            <p class="item-description text-justify" v-text="challenge.description"></p>
+            <p class="item-description text-justify" v-html="challenge.description"></p>
           </div>
         </div>
         <div class="col-3 text-center my-auto">

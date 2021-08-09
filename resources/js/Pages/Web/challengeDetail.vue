@@ -102,9 +102,7 @@
                     <div class="tab-content">
                       <div class="tab-pane active" id="descryption" aria-labelledby="descryption-tab" role="tabpanel">
                         <h4>توضیحات تکمیلی</h4>
-                        <p>
-                          {{challenge.description}}
-                        </p>
+                        <p v-html="challenge.description"></p>
 <!--                        <h4 class="mt-1">توضیحات اضافی</h4>-->
 <!--                        <ul>-->
 <!--                          <li>حداکثر تعداد کلمه : 2</li>-->
