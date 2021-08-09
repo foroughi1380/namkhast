@@ -71,7 +71,8 @@
           <div class="card-body col-12 text-center" v-if="challenge.winner_user">
             <h3>کاربر برنده</h3>
             <div class="avatar mr-50  mt-3">
-              <img :src="winnerUser.picture" alt="avtar img holder" height="100" width="100">
+              <img :src="winnerUser.picture" v-if="winnerUser.picture" alt="avtar img holder" height="100" width="100">
+              <img src="/theme/web/app-assets/images/portrait/small/avatar-s-11.jpg" v-else alt="avtar img holder" height="100" width="100">
             </div>
             <h4>{{ winnerUser.name }} {{ winnerUser.family}}</h4>
           </div>
