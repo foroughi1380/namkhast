@@ -60,7 +60,7 @@
                 <div class="divider-text">اگر حساب دارید</div>
               </div>
               <div class="footer-btn d-flex align-items-center justify-content-center pb-1">
-                <Link href="/" class="card-link mr-2 ml-2">بازگشت به صفحه اصلی</Link>
+                <a href="/" class="card-link mr-2 ml-2">بازگشت به صفحه اصلی</a>
                 ویا
                 <Link href="/login" class="card-link mr-2 ml-2">ورود</Link>
               </div>
