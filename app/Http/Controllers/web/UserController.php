@@ -4,6 +4,7 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserUpdateProfileRequest;
+use App\Models\Challenge;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,11 +17,15 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        //
+        return \Inertia\Inertia::render('Web/profile' , [
+            'specificUser' => Auth::user(),
+            'winnerCount'=> Challenge::query()->where("winner_user" , Auth::id())->count(),
+            'challengeCount' => Challenge::query()->where("user_id" , Auth::id())->count()
+        ]);
     }
 
     /**
@@ -47,23 +52,27 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  User  $user
+     * @return \Inertia\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return \Inertia\Inertia::render('Web/profile' , [
+            'specificUser' => $user,
+            'winnerCount'=> Challenge::query()->where("winner_user" , $user->id)->count(),
+            'challengeCount' => Challenge::query()->where("user_id" , $user->id)->count()
+        ]);//
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  User  $id
+     * @return \Inertia\Response
      */
-    public function edit($id)
+    public function edit(User $id)
     {
-        //
+
     }
 
     /**

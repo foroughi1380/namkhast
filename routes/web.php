@@ -44,7 +44,8 @@ Route::middleware(["auth"])->group(function (){
 
     Route::resource("/favorites" , \App\Http\Controllers\web\FavoriteController::class)->names( "favorite")->only(['index' , 'update']);
 
-    Route::resource('/profile' , \App\Http\Controllers\web\UserController::class)->names('user')->only(['index' , 'edit']);
+    Route::get('/profile' , [\App\Http\Controllers\web\UserController::class , 'index'])->name('user.index');
+    Route::get('/profile/{user}' , [\App\Http\Controllers\web\UserController::class , 'show'])->name('user.show');
 
     Route::get('/challenges' , [\App\Http\Controllers\web\ChallengeController::class , 'challenges'])->name("challenges");
     Route::get('contributor/{challenge}' , [\App\Http\Controllers\web\ChallengeController::class , "contributor"])->name("contributor");
@@ -53,9 +54,9 @@ Route::middleware(["auth"])->group(function (){
 });
 
 
-Route::get('/profile', function (){
-    return \Inertia\Inertia::render('Web/profile');
-});
+//Route::get('/profile', function (){
+//    return \Inertia\Inertia::render('Web/profile');
+//});
 
 Route::get('/participants', function (){
     return \Inertia\Inertia::render('Web/participants');

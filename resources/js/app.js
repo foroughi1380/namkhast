@@ -56,11 +56,11 @@ createInertiaApp({
                     console.log("in clone")
                     return JSON.parse(JSON.stringify(object))
                 },
-                jalali: function (input) {
+                jalali: function (input , separator = "-") {
                     try {
                         let moment = require('moment-jalaali');
-                        let date = moment(input, 'YYYY/MM/DD');
-                        return date.format(`jYYYY${this.separator}jMM${this.separator}jDD`);
+                        let date = moment(input, 'YYYY-MM-DD');
+                        return date.format(`jYYYY${separator}jMM${separator}jDD`);
                     } catch (e) {
                         return input;
                     }
