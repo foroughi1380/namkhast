@@ -79,9 +79,9 @@
 
 
               <div class="alert alert-success" role="alert" v-if="user.auth && user.auth.status === 'accept'">
-                <h4 class="alert-heading">در انتظار تایید</h4>
+                <h4 class="alert-heading">احراز هویت تایید شده است</h4>
                 <p class="mb-0">
-                  اطلاعت شما با موفقیت برای برسی ارسال شد . برسی در کوتاه ترین زمان ممکن انجام میشود.
+                  احراز هویت شما با موفقیت انجام شده است.
                 </p>
               </div>
 
@@ -105,7 +105,7 @@
               </div>
 
               <!-- users edit Info form start -->
-                <div class="row">
+                <div class="row" v-if="user.auth.status !== 'block' && user.auth.status !== 'accept'">
                   <div class="col-12 col-sm-6">
                     <SimpleTextBox label="کد ملی" maxlen="10" type="number" placeholder="کد ملی خود را وارد کنید" name="melicode" v-model="nationalCode"/>
                     <p class="text-danger " v-if="errors.nationalCode" v-text="errors.nationalCode"></p>
