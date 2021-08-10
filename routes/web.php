@@ -14,7 +14,6 @@ use Inertia\Inertia;
 |
 */
 
-Route::get("pay" , [\App\Http\Controllers\TransactionCallBackController::class , "pay"]);
 Route::post("transactioncallback" , [\App\Http\Controllers\TransactionCallBackController::class , "store"])->name("callback");
 
 Route::get('/', [IndexController::class , "index"]);

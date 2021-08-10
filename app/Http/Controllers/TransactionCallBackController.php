@@ -8,21 +8,6 @@ use Illuminate\Http\Request;
 
 class TransactionCallBackController extends Controller
 {
-    public function pay()
-    {
-        $transaction = new Transaction();
-        $transaction->status = "payment";
-        $transaction->price = 10000;
-        $transaction->extras = "";
-        $transaction->save();
-
-        $req = IdPayPayment::create($transaction->id , $transaction->price);
-
-        $transaction->transaction_code = $req->id;
-        $transaction->save();
-
-        return redirect($req->link);
-    }
     public function store(Request $request)
     {
         $flag = true;
