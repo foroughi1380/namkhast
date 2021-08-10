@@ -12,4 +12,10 @@ class Contributors extends Model
     protected $table = 'contributors';
 
     protected $fillable = ["challenge_id" , "user_id" , "transaction_id" ,"suggested_name" , "sound" , "description"];
+
+    public function getSoundAttribute($value)
+    {
+        if (! $value) return $value;
+        return env("AWS_PUBLIC_DOWNLOAD_PREFIX") . $value;
+    }
 }

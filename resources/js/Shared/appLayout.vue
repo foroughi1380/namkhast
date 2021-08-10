@@ -51,6 +51,11 @@
               </Link>
               </li>
 
+              <li class="nav-item d-none d-lg-block"><Link class="nav-link bookmark-star" title="چالش ها" :href="route('challenges')"><i
+                  class="ficon feather icon-award"></i>
+              </Link>
+              </li>
+
               <li class="nav-item d-lg-block dropdown">
                 <a class="dropdown-toggle nav-link font-size-2"  data-toggle="dropdown">
                   <span class="ficon feather icon-dollar-sign"></span>
