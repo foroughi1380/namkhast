@@ -19,7 +19,6 @@ class IdPayPayment
         $params = array(
             'order_id' => $transaction->id,
             'amount' => $amount,
-//            'callback' => 'https://polite-lizard-53.loca.lt/transactioncallback',
             'callback' => route("callback"),
         );
 
