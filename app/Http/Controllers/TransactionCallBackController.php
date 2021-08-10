@@ -33,11 +33,9 @@ class TransactionCallBackController extends Controller
                   $transaction->status = "paid";
               }else{
                   $flag = false;
-                  dd("in submint");
               }
           }else{
               $flag = false;
-              dd("in check valid");
           }
        }else{
            $flag = false;
