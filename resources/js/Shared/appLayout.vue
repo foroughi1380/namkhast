@@ -7,6 +7,10 @@
         <div class="navbar-collapse" id="navbar-mobile">
           <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
 
+            <ul class="nav navbar-nav">
+              <li class="nav-item mobile-menu d-xl-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ficon feather icon-menu"></i></a></li>
+            </ul>
+
             <ul class="nav navbar-nav bookmark-icons">
 <!--              <li class="dropdown dropdown-notification nav-item">-->
 <!--                <a class="nav-link nav-link-label" href="#" data-toggle="dropdown" title="پیام های شما">-->
@@ -42,12 +46,12 @@
 <!--                </ul>-->
 <!--              </li>-->
 
-              <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star" title="مورد علاقه ها"><i
+              <li class="nav-item d-none d-lg-block"><Link class="nav-link bookmark-star" title="مورد علاقه ها" :href="route('favorite.index')"><i
                   class="ficon feather icon-star"></i>
-              </a>
+              </Link>
               </li>
 
-              <li class="nav-item d-none d-lg-block dropdown">
+              <li class="nav-item d-lg-block dropdown">
                 <a class="dropdown-toggle nav-link font-size-2"  data-toggle="dropdown">
                   <span class="ficon feather icon-dollar-sign"></span>
                   <span>اعتبار شما : </span>
