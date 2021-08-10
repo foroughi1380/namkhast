@@ -24,6 +24,11 @@ class WithdrawRequestController extends Controller
     }
 
     public function submitRequest(wdRequest $request){
+        if (!Auth::user()->iban){
+            throw ValidationException::withMessages([
+                "price" => "لطفا شماره شبای خود را در بخش ویرایش پروفایل کاربری ثبت کنید."
+            ]);
+        }
         if (Wallet::query()->where("user_id" , Auth::id())->sum("price") < $request->get("price")){
             throw ValidationException::withMessages([
                "price" => "اعتبار حساب شما کافی نمیباشد."
