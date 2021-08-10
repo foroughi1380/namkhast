@@ -18,7 +18,7 @@ class CereateConfigTable extends Migration
             $table->string("name" , 30);
             $table->string('key', 30);
             $table->string('type', 15);
-            $table->string('value');
+            $table->text('value');
             $table->timestamps();
         });
     }
