@@ -33,6 +33,12 @@
     <link rel="stylesheet" type="text/css" href="/theme/web/app-assets/css-rtl/custom-rtl.css">
     <link rel="stylesheet" type="text/css" href="/theme/web/assets/css/style-rtl.css">
     <!-- END: Custom CSS-->
+    <style type="text/css">
+        body{
+            background-image: url("/theme/web/assets/background.png");
+            background-size: cover;
+        }
+    </style>
 </head>
 <body class="menu-collapsed vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
 @inertia
