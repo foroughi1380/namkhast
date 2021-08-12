@@ -65,12 +65,12 @@ createInertiaApp({
                         return input;
                     }
                 },
-                gregorian: function (input) {
+                gregorian: function (input ,separator = "-") {
                     try {
                         if (input === undefined || input == null || input.length === 0) return "";
                         let moment = require('moment-jalaali');
-                        let date = moment(input, `jYYYY${this.separator}jM${this.separator}jD`);
-                        return date.format(`YYYY${this.separator}MM${this.separator}DD`);
+                        let date = moment(input, `jYYYY${separator}jM${separator}jD`);
+                        return date.format(`YYYY${separator}MM${separator}DD`);
                     } catch (e) {
                         return input;
                     }
