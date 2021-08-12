@@ -12,7 +12,7 @@ class WithdrawRequestController extends Controller
 {
     public function index()
     {
-        $wdRequests = WithdrawRequest::all()->makeVisible(['user_id']);
+        $wdRequests = WithdrawRequest::all()->where('status' , 'pending ')->makeVisible(['user_id']);
 
         return Inertia::render("AC/withdrawRequest" , [
             'wdRequests' => $wdRequests
