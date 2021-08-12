@@ -21,7 +21,7 @@
   <div class="card ">
     <div class="card-header">
       <h4>درخواست برداشت کاربر '{{ user.name }} {{ user.family }}'</h4>
-      <p class="my-3">کاربر '{{ user.name }} {{ user.family }}' به شماره ملی '{{ user.national_code }}' ، درخواست برداشت وجه به مبلغ '{{ wdRequest.price }}' به شماره شبا '{{ user.iban }}' ثبت نمود.</p>
+      <p class="my-3">کاربر '{{ user.name }} {{ user.family }}'  ، درخواست برداشت وجه به مبلغ '{{ wdRequest.price }}' به شماره شبا '{{ user.iban }}' ثبت نمود.</p>
       <Link href="/ac/withdraw-request" class="btn btn-info ">بازگشت</Link>
     </div>
     <div class="card-body text-center">

@@ -41,7 +41,8 @@
           <td>{{ user.family }}</td>
           <td>{{ user.phone }}</td>
           <td>{{ user.iban }}</td>
-          <td><img :src="user.picture" width="50" height="50" alt="user avatar"></td>
+          <td v-if="user.picture"><img  :src="user.picture" width="50" height="50" alt="user avatar"></td>
+          <td v-else ><img src="/theme/web/app-assets/images/portrait/small/avatar-s-11.jpg" width="50" height="50" alt="user avatar"></td>
           <td>{{ user.status == 'active'? 'فعال' : 'غیرفعال' }}</td>
           <td style="width: 180px">
             <div class="row text-white text-center mx-auto">

@@ -223,7 +223,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <Link :href="route('ac.authRequest.index')" class="nav-link">
+                    <Link :href="route('ac.wdRequest.index')" class="nav-link">
                       <i class="fa fa-level-up nav-icon"></i>
                       <p>درخواست های برداشت</p>
                     </Link>

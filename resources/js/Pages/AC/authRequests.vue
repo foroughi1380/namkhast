@@ -27,19 +27,17 @@
         <tbody>
         <tr>
           <th style="width: 10px">#</th>
-          <th>نام و نام خانوادگی کاربر</th>
+<!--          <th>نام و نام خانوادگی کاربر</th>-->
           <th>دفعات تلاش</th>
           <th>کد ملی</th>
-          <th>تصویر کد ملی</th>
           <th>وضعیت</th>
           <th>عملیات</th>
         </tr>
         <tr v-for="(authRequest , index) in authRequests">
           <td>{{index+1}}</td>
-          <td v-for="user in users">{{ authRequest.user_id == user.id ? user.name + ' ' + user.family : ''}}</td>
+<!--          <td v-for="user in users">{{ authRequest.user_id == user.id ? user.name + ' ' + user.family : ''}}</td>-->
           <td>{{ authRequest.try }}</td>
           <td>{{ authRequest.national_code }}</td>
-          <td><img :src="authRequest.nc_picture" width="70" height="100" alt="nc_picture"></td>
 
           <td class="text-success" v-if="authRequest.status == 'accept' ">تایید شده</td>
           <td class="text-info" v-if="authRequest.status == 'pending' ">در انتظار تایید</td>

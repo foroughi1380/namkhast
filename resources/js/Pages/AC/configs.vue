@@ -137,8 +137,6 @@
         <option value="array">لیست</option>
       </select>
       <WaitButton :on-click="addConfig" :wait="inProcess" :disabled="inProcess" text="اضافه کردن"/>
-
-      تقدیم با عشق به سید بالاخض کپچاییه
     </div>
     <!-- /.card-footer-->
   </div>
