@@ -20,7 +20,7 @@
           <div>
             <p style="height: 0 ; overflow: hidden">
               fffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasdfasdfasdfasdffffasd</p>
-            <p class="item-description text-justify max-limit description" v-html="challenge.description"></p>
+            <p class="item-description text-justify max-limit description" v-html="challenge.description.substring(0,200)+'...'"></p>
           </div>
 
 
