@@ -26,7 +26,7 @@
       <table class="table table-bordered text-center">
         <tbody><tr>
           <th style="width: 10px">#</th>
-          <th>نام و نام خانوادگی</th>
+          <th>شماره کاربری</th>
           <th>مبلغ</th>
           <th>وضعیت</th>
           <th>عملیات</th>

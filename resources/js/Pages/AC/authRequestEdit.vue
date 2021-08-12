@@ -8,7 +8,7 @@
     <div class="card-body text-center">
       <p>کاربر "{{ user.name }} {{ user.family }}" به شماره ملی "{{ authRequest.national_code }}" بعد از "{{ authRequest.try }}"
         بار تلاش ، اقدام به ارسال اطلاعات برای درخواست احراز هویت نموده است.</p>
-      <img class="my-4" :src="authRequest.nc_picture" width="100" height="300" alt="تصویر کد ملی">
+      <img class="my-4" :src="authRequest.nc_picture" width="300" height="150" alt="تصویر کد ملی">
 
       <div class="col-6 mx-auto mt-2">
         <div class="form-group">
