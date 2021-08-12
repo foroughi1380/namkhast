@@ -26,6 +26,7 @@
         "@inertiajs/inertia": "^0.10.0",
         "@inertiajs/inertia-vue3": "^0.5.1",
         "@majidh1/jalalidatepicker": "^0.2.9",
+        "apexcharts": "^3.27.3",
         "babel-loader": "^8.2.2",
         "babel-preset-env": "^1.7.0",
         "epic-spinners": "^1.1.0",
