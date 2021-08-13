@@ -11,7 +11,8 @@
           <div class="row">
             <div class="d-flex justify-content-center align-items-center mb-1 mx-auto">
               <div class="avatar mr-50">
-                <img :src="sugUser.picture" alt="avtar img holder" height="75" width="75">
+                <img :src="sugUser.picture" alt="avtar img holder" height="75" width="75" v-if="sugUser.picture">
+                <img src="/theme/web/app-assets/images/profile/user-uploads/user-13.jpg" alt="avtar img holder" height="75" width="75" v-else>
               </div>
               <div class="user-page-info">
                 <h3 class="mb-0">{{ sugUser.name}} {{ sugUser.family }}</h3>
