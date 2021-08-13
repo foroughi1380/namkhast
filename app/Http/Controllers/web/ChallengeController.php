@@ -121,7 +121,7 @@ class ChallengeController extends Controller
 
         return Inertia::render("Web/suggestDetail" , [
             "suggest" => $suggest,
-            "user" => $user
+            "sugUser" => $user
         ]);
     }
 

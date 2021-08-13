@@ -11,10 +11,10 @@
           <div class="row">
             <div class="d-flex justify-content-center align-items-center mb-1 mx-auto">
               <div class="avatar mr-50">
-                <img :src="user.picture" alt="avtar img holder" height="75" width="75">
+                <img :src="sugUser.picture" alt="avtar img holder" height="75" width="75">
               </div>
               <div class="user-page-info">
-                <h3 class="mb-0">{{ user.name}} {{ user.family }}</h3>
+                <h3 class="mb-0">{{ sugUser.name}} {{ sugUser.family }}</h3>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default {
     }
   },
   props: {
-    user: {},
+    sugUser: {},
     suggest: {},
     errors: {}
   },
