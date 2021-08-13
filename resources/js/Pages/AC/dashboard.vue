@@ -59,7 +59,7 @@
 
         <div class="card mx-auto">
           <div class="card-header">
-            <h4>تعداد در خواست های احراض هویت</h4>
+            <h4>تعداد در خواست های احراز هویت</h4>
           </div>
           <div class="card-body text-center">{{ authReqCount }}
           </div>

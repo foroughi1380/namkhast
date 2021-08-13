@@ -54,18 +54,22 @@ export default {
   components : {WaitButton , IconInputText},
   layout: appLayout,
   props:{
-    isAuth : false,
-    errors: {}
+    errors: {},
+    user:{}
   },
   data() {
     return {
       price: "",
       token: "",
-      inProcess: false
+      inProcess: false,
+      isAuth : false,
     }
   },
   created() {
     this.price = 50000
+    if(this.user.auth){
+      this.isAuth = this.user.auth.status
+    }
   },
   methods:{
     submitRequest() {

@@ -16,11 +16,9 @@ use Inertia\Inertia;
 class WithdrawRequestController extends Controller
 {
     public function index(){
-        $isAuth = AuthRequest::query()->where('user_id' , Auth::user()->id)->first();
+        //$isAuth = AuthRequest::query()->where('user_id' , Auth::user()->id)->first();
 
-        return Inertia::render("Web/withdraw" , [
-            'isAuth' => $isAuth->status
-        ]);
+        return Inertia::render("Web/withdraw");
     }
 
     public function submitRequest(wdRequest $request){

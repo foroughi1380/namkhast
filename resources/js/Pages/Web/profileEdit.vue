@@ -32,7 +32,7 @@
                 <div class="media-body mt-50">
                   <h3 class="media-heading">{{user.name}} {{ user.family }}</h3>
 
-                  <SimpleInputFile class="col-3" :disabled="inProgress" accept="image/*" name="avatar" label="انتخواب عکس پروفایل"  v-model="avatar"/>
+                  <SimpleInputFile class="col-3" :disabled="inProgress" accept="image/*" name="avatar" label="انتخاب عکس پروفایل"  v-model="avatar"/>
                   <p class="text-danger " v-if="errors.picture" v-text="errors.picture"></p>
 
                 </div>
@@ -105,13 +105,13 @@
               </div>
 
               <!-- users edit Info form start -->
-                <div class="row" v-if="user.auth.status !== 'block' && user.auth.status !== 'accept'">
+                <div class="row" v-if="! user.auth || (user.auth.status !== 'block' && user.auth.status !== 'accept')">
                   <div class="col-12 col-sm-6">
                     <SimpleTextBox label="کد ملی" maxlen="10" type="number" placeholder="کد ملی خود را وارد کنید" name="melicode" v-model="nationalCode"/>
                     <p class="text-danger " v-if="errors.nationalCode" v-text="errors.nationalCode"></p>
 
                     <span>لطفا جهت احراز هویت ، یک تصویر واضح از کارت ملی خود بارگذاری کنید.</span>
-                    <SimpleInputFile :disabled="inProgress" accept="image/*" name="nc_picture" label="انتخواب عکس کارت ملی"  v-model="ncPicture"/>
+                    <SimpleInputFile :disabled="inProgress" accept="image/*" name="nc_picture" label="انتخاب عکس کارت ملی"  v-model="ncPicture"/>
                     <p class="text-danger " v-if="errors.ncPicture" v-text="errors.ncPicture"></p>
 
 
@@ -154,6 +154,9 @@ export default {
       ncPicture : null,
       nationalCode : this.user.auth != null ? this.user.auth.national_code : "",
     }
+  },
+  computed:{
+
   },
   methods:{
     authRequest(){

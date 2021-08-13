@@ -34,8 +34,11 @@ class AuthRequest extends Model
         return $value;
     }
 
-    public function getNationalCodePicture()
-    {
-        return Storage::get($this->picture);
+    public function getNcPictureAttribute($value){
+        if(Auth::guard('admin')->check()){
+            return Storage::temporaryUrl($value, now()->addMinutes(5));
+        }
+        return null;
     }
+
 }
