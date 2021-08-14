@@ -50,9 +50,7 @@
                   <a class="feather icon-star" v-else> <span>اضافه کردن به علاقه مندی ها</span> </a>
                 </div>
               </div>
-              <p class="text-justify">
-                {{ challenge.description.substring(0,200)+"..."  }}
-              </p>
+              <p class="text-justify" v-html="challenge.description.substring(0,200)+'...'"></p>
             </div>
 
 
