@@ -26,7 +26,7 @@
               <div class="media mb-2">
                 <a class="mr-2 my-25" href="#">
                   <img :src="user.picture" alt="users avatar" class="users-avatar-shadow rounded" height="90" width="90" v-if="user.picture">
-                  <img src="/theme/web/app-assets/images/portrait/small/avatar-s-18.jpg" alt="users avatar" class="users-avatar-shadow rounded" height="90" width="90" v-else>
+                  <img src="/theme/web/app-assets/images/portrait/small/avatar-s-11.jpg" alt="users avatar" class="users-avatar-shadow rounded" height="90" width="90" v-else>
                 </a>
 
                 <div class="media-body mt-50">

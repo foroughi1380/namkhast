@@ -22,8 +22,11 @@
 <!--      </form>-->
 
       <!-- Right navbar links -->
-<!--      <ul class="navbar-nav mr-auto">-->
-<!--        &lt;!&ndash; Messages Dropdown Menu &ndash;&gt;-->
+      <ul class="navbar-nav mr-auto">
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item">
+          <a class="dropdown-item text-muted" href="/ac/logout"><i class="fa fa-sign-out"></i> خروج</a>
+        </li>
 <!--        <li class="nav-item dropdown">-->
 <!--          <a class="nav-link" data-toggle="dropdown" href="#">-->
 <!--            <i class="fa fa-comments-o"></i>-->
@@ -109,7 +112,7 @@
 <!--          </div>-->
 <!--        </li>-->
 
-<!--      </ul>-->
+      </ul>
     </nav>
     <!-- /.navbar -->
 

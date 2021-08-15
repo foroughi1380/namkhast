@@ -98,12 +98,15 @@
 
                   <div class="card col-lg-3 p-0" v-for="challenge in challenges">
                     <div class="card-content">
-                      <img class="card-img-top img-fluid" :src="challenge.picture" alt="Card image cap"  v-if="challenge.picture"/>
-                      <img class="card-img-top img-fluid w-100" src="/theme/web/app-assets/images/slider/01.jpg" alt="Card image cap" v-else/>
+                      <img class="card-img-top img-fluid w-100" :src="challenge.picture" alt="Card image cap"  v-if="challenge.picture"/>
+                      <img class="card-img-top img-fluid w-100"  src="/theme/web/app-assets/images/pages/eCommerce/1.png" alt="Card image cap" v-else/>
                       <div class="card-body">
                         <h4 class="card-title">{{challenge.title}}</h4>
-                        <p class="card-text" style="max-height: 150px ; overflow: hidden" v-html="challenge.description"></p>
+                        <p class="card-text" style="max-height: 150px ; overflow: hidden" v-html="challenge.description.substring(0,200)+'...'"></p>
                       </div>
+                      <Link :href="route('challenge.show' , challenge.id)" class=" btn btn-success btn-sm m-1"
+                            v-if="challenge.status === 'paid'"><span
+                          class="add-to-cart text-white fa fa-reply font-weight-bold">   ادامه  </span></Link>
                     </div>
                   </div>
 
