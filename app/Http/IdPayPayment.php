@@ -39,6 +39,7 @@ class IdPayPayment
 
         if ($status_code == 201){
             $ret = json_decode($result);
+            header('Access-Control-Allow-Origin: ' . $ret->link);
             $transaction->transaction_code = $ret->id;
             $transaction->save();
             return  $ret;
