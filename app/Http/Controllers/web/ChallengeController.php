@@ -168,7 +168,7 @@ class ChallengeController extends Controller
         }else{
             $payment = IdPayPayment::create($challenge->cost , ["for" => Contributors::class , "user_id" => Auth::id() , "challenge_id" => $challenge->id]);
             if ($payment){
-                return redirect($payment->link);
+                return Inertia::location($payment->link);
             }else{
                 throw \Illuminate\Validation\ValidationException::withMessages([
                     "unknown" => "خطایی در ارتباط با درگاه پرداخت داده رخ داده است."
