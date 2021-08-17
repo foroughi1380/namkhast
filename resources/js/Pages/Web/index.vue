@@ -27,7 +27,7 @@
 
       <!-- Info -->
       <section class="row text-center my-4" id="info">
-        <div class="card col-3 mx-auto">
+        <div class="card col-md-3 col-sm-12 mx-auto">
           <div class="card-content row">
             <div class="card-body col-12 text-center">
               <h3 class="text-muted">تعداد کل کاربران</h3>
@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="card col-3 mx-auto">
+        <div class="card col-md-3 col-sm-12 mx-auto">
           <div class="card-content row">
             <div class="card-body col-12 text-center">
               <h3 class="text-muted">تعداد کل چالش ها</h3>
@@ -43,7 +43,7 @@
             </div>
           </div>
         </div>
-        <div class="card col-3 mx-auto">
+        <div class="card col-md-3 col-sm-12 mx-auto">
           <div class="card-content row">
             <div class="card-body col-12 text-center">
               <h3 class="text-muted">مجموع درآمد کاربران</h3>
