@@ -14,7 +14,7 @@ class UpdateContributorsTable extends Migration
     public function up()
     {
         Schema::table("contributors" , function (Blueprint $table){
-            $table->string("suggested_name")->nullable();
+            $table->string("suggested_name")->nullable()->change();
         });
     }
 
