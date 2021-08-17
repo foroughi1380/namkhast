@@ -38,8 +38,8 @@ class ReLoController extends Controller
         /** @var User $user */
         $user = User::query()->where('phone' , '=' , $request->get("phone"))->first();
         if (!$request->has("code")){
-            //$user->cc = bcrypt(SendSms::sendConfirmCode($user->phone));
-            $user->cc = bcrypt(1234);
+            $user->cc = bcrypt(SendSms::sendConfirmCode($user->phone));
+//            $user->cc = bcrypt(1234);
             $user->save();
 
             return Inertia::render("Web/login" , [
