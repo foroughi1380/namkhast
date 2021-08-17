@@ -23,13 +23,35 @@ this project just only for final university project and you should not use this 
     npm install
 ```
 4. now your shold create .env file
->you can use this example (replase your database connection )
+```
+    cp .env.example .env
+```
+>or you can use this example (replase your database connection )
 ```
 APP_NAME=NamKhast
 APP_ENV=local
-APP_KEY=
+APP_KEY=base64:q5H2ZAeX3c+UHaJEw1RUmuLsj+1ttRythGLJRl+1VZY=
 APP_DEBUG=true
 APP_URL=http://localhost
+APP_HOSTNAME=localhost
+
+IdPay_Key=
+IdPay_SandBox=1
+
+MIX_RECAPTCHA3_SITE=
+MIX_RECAPTCHA3_SECRET=
+
+SMS_MELIPAYAMAK_USERNAME=
+SMS_MELIPAYAMAK_PASSWORD=
+SMS_MELIPAYAMAK_CONFIRM_CODE_PATTERN_ID=
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=
+AWS_BUCKET=
+AWS_ENDPOINT=
+AWS_PUBLIC_DOWNLOAD_PREFIX=
+AWS_USE_PATH_STYLE_ENDPOINT=true
 
 LOG_CHANNEL=stack
 LOG_LEVEL=debug
@@ -37,13 +59,13 @@ LOG_LEVEL=debug
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=namkhast_db
-DB_USERNAME=root
-DB_PASSWORD=root
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
-FILESYSTEM_DRIVER=local
+FILESYSTEM_DRIVER=public
 QUEUE_CONNECTION=sync
 SESSION_DRIVER=file
 SESSION_LIFETIME=120
@@ -62,12 +84,6 @@ MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS=null
 MAIL_FROM_NAME="${APP_NAME}"
-
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=us-east-1
-AWS_BUCKET=
-AWS_USE_PATH_STYLE_ENDPOINT=false
 
 PUSHER_APP_ID=
 PUSHER_APP_KEY=
@@ -104,7 +120,7 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 - Finally, if you have problems in the Routes or somethings, use the following command:
 ```
-    php artisan optimize
+    php artisan optimize:clear
 ```
 
 ### project demo site
