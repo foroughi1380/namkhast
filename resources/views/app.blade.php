@@ -2,6 +2,7 @@
 <html class="loading" lang="en" data-textdirection="rtl">
 <head>
     <meta charset="utf-8"/>
+    @laravelPWA
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet"/>
     <script src="{{ mix('/js/app.js') }}" defer></script>
 
@@ -39,7 +40,7 @@
             background-size: cover;
         }
     </style>
-    @laravelPWA
+
 </head>
 <body class="menu-collapsed vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
 @inertia
