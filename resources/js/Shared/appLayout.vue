@@ -223,6 +223,41 @@
       </div>
       <!-- End: Main Content -->
 
+      <div class="modal fade" id="payModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-white">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <section class="container d-flex flex-column text-center">
+                <section class="fa fa-money text-secondary"  style="font-size: 6rem"/>
+                <section class="mt-1">
+                  <span class="text">
+                    مبلغ:
+                  </span>
+                  <span class="font-size-large">
+                    {{payModalData.price}}
+                  </span>
+                </section>
+                <hr class="w-50"/>
+                <p v-text="payModalData.description"></p>
+                <a :href="payModalData.url">
+                  <button type="button" class="btn btn-primary">اتصال به درگاه پرداخت</button>
+                </a>
+              </section>
+            </div>
+            <div class="modal-footer justify-content-center text-light">
+              پرداخت امن
+              pay.ir
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
   <!-- END: Content-->

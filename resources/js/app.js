@@ -25,10 +25,25 @@ createInertiaApp({
         vuevue.use(ZiggyVue , Ziggy)
         vuevue.use(CKEditor)
         vuevue.mixin({
+            data(){
+                return {
+                    payModalData : {
+                        url : "fuck you",
+                        description : "برای اتصال به پرداخشوم",
+                        price : 5000,
+                    }
+                }
+            },
             methods: {
                 async generateRecaptchaToken(action) {
                     await this.$recaptchaLoaded()
                     return await this.$recaptcha(action);
+                },
+                openPayModal(price , url , description){
+                    this.payModalData.url = url;
+                    this.payModalData.price = price;
+                    this.payModalData.description = description;
+                    $("#payModal").modal("show");
                 },
                 checkPhoneIsValid(phone){
                     let regex = /^09\d{9}$/
