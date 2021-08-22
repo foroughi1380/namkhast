@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\QueryHelper;
+use App\Utilities\Utilities;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +34,7 @@ class Challenge extends Model
     ];
 
     protected $appends =[
-        'mine' , 'is_favorite' , 'is_Contributor'
+        'mine' , 'is_favorite' , 'is_Contributor' , 'payPrice'
     ];
     public function getMineAttribute()
     {
@@ -70,5 +71,13 @@ class Challenge extends Model
     public function getIsContributorAttribute()
     {
         return Contributors::query()->where("user_id" , Auth::id())->where("challenge_id" , $this->id)->count() != 0;
+    }
+
+    public function GetPayPriceAttribute()
+    {
+        if ($this->status === 'draft' || $this->status === "pending"){
+            return Utilities::calculateChallengePrice($this);
+        }
+        return null;
     }
 }
