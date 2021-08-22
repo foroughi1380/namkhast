@@ -229,10 +229,14 @@ class ChallengeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Inertia\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Inertia\Response
      */
     public function edit(Challenge $challenge)
     {
+        if ($challenge->status != 'draft'){
+            return redirect(\route("challenge.index"));
+        }
+
         if (! $challenge->mine){
             exit(403);
         }
