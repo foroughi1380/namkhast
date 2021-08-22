@@ -239,13 +239,14 @@
                   <span class="text">
                     مبلغ:
                   </span>
-                  <span class="font-size-large">
-                    {{payModalData.price}}
+                  <span class="font-size-large" id="payModalPrice"></span>
+                  <span class="font-size-xsmall text-light">
+                    تومان
                   </span>
                 </section>
                 <hr class="w-50"/>
-                <p v-text="payModalData.description"></p>
-                <a :href="payModalData.url">
+                <p id="payModalDescription"></p>
+                <a id="payModalUrl">
                   <button type="button" class="btn btn-primary">اتصال به درگاه پرداخت</button>
                 </a>
               </section>

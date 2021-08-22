@@ -25,24 +25,15 @@ createInertiaApp({
         vuevue.use(ZiggyVue , Ziggy)
         vuevue.use(CKEditor)
         vuevue.mixin({
-            data(){
-                return {
-                    payModalData : {
-                        url : "fuck you",
-                        description : "برای اتصال به پرداخشوم",
-                        price : 5000,
-                    }
-                }
-            },
             methods: {
                 async generateRecaptchaToken(action) {
                     await this.$recaptchaLoaded()
                     return await this.$recaptcha(action);
                 },
                 openPayModal(price , url , description){
-                    this.payModalData.url = url;
-                    this.payModalData.price = price;
-                    this.payModalData.description = description;
+                    window.document.querySelector("#payModalDescription").innerHTML = description;
+                    window.document.querySelector("#payModalPrice").innerHTML = price;
+                    window.document.querySelector("#payModalUrl").setAttribute("href" , url);
                     $("#payModal").modal("show");
                 },
                 checkPhoneIsValid(phone){
