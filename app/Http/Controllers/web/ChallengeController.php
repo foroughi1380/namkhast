@@ -10,6 +10,7 @@ use App\Models\Config;
 use App\Models\Contributors;
 use App\Models\User;
 use App\Models\Wallet;
+use App\Utilities\Utilities;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
@@ -321,8 +322,7 @@ class ChallengeController extends Controller
             ]);
         }
 
-        $tax = ($challenge->budget - Config::get('min_coast_budget')) /  Config::get('max_coast_budget') *  Config::get('max_tax_challenge') + Config::get('min_tax_challenge');
-        $price = floor($challenge->budget + $tax) * 10;
+        $price = Utilities::calculateChallengePrice($challenge) * 10;
         $challenge->status = "pending";
         $challenge->save();
         $payinfo = IdPayPayment::create($price , [
