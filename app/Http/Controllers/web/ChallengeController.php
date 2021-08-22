@@ -259,7 +259,7 @@ class ChallengeController extends Controller
             exit(403);
         }
 
-        if (! $challenge->status != 'draft'){
+        if ($challenge->status != 'draft'){
             return redirect(\route("challenge.index"));
         }
 
