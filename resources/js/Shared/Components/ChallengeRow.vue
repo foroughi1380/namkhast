@@ -28,7 +28,7 @@
             <Link class="text-white btn btn-success btn-sm m-1 fa fa-edit font-weight-bold" :href="route('challenge.edit' , challenge.id)"
                   v-if="challenge.mine && challenge.status === 'draft' " v-text="' ویرایش '"></Link>
 
-            <a class=" btn btn-warning btn-sm m-1" :href="route('challenge.pay' , challenge.id)"
+            <a class=" btn btn-warning btn-sm m-1" @click="openPayModal(challenge.payPrice , route('challenge.pay' , challenge.id) , 'جهت ثبت چالش')"
                v-if="challenge.mine && (challenge.status === 'draft' || challenge.status === 'pending')">
               <span class="text-white fa font-weight-bold fa-paypal"> پرداخت نهایی </span>
             </a>
