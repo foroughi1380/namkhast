@@ -16,9 +16,9 @@
                 <li>مبلغ ورودی : {{ challenge.type == 'free' ? 'رایگان' : challenge.cost + " تومان" }}</li>
               </ul>
             </div>
-            <div v-if="! challenge.mine" @click="btnClick">
-              <a class="btn btn-primary btn-block text-white" v-if="! challenge.is_Contributor">عضویت در چالش</a>
-              <a class="btn btn-warning btn-block text-white" v-else-if="challenge.ended_at === null">ارسال جواب</a>
+            <div v-if="! challenge.mine">
+              <a class="btn btn-primary btn-block text-white" v-if="! challenge.is_Contributor" @click="btnPayClick">عضویت در چالش</a>
+              <a class="btn btn-warning btn-block text-white" v-else-if="challenge.ended_at === null"  @click="btnClick">ارسال جواب</a>
             </div>
           </div>
         </div>
@@ -199,6 +199,13 @@ export default {
           this.showTypedToast(this.errors , "error")
         }
       })
+    },
+    btnPayClick(){
+
+      if (this.challenge.type === 'nonfree')
+        this.openPayModal(this.challenge.cost , this.route('contributor' , this.challenge.id) , 'جهت شرکت در چالش')
+      else
+        this.btnClick();
     }
   }
 }
