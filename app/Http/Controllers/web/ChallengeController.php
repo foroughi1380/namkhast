@@ -232,7 +232,7 @@ class ChallengeController extends Controller
             if ($cont->sound){
                 Storage::delete($cont->sound);
             }
-            $cont->sound = $request->file("sound")->store("sounds/");
+            $cont->sound = $request->file("sound")->store("sounds");
         }
 
 
