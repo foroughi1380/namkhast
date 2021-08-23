@@ -19,7 +19,7 @@ class CreateAuthenticationRequestTable extends Migration
             $table->enum("status" , ["accept" , "reject" , "pending" , "block"])->default("pending");
             $table->string("national_code" , 10)->unique();
             $table->string('nc_picture', 100);
-            $table->string("description")->default("");
+            $table->string("description")->default("")->nullable();
             $table->timestamps();
         });
     }
