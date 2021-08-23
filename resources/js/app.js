@@ -34,6 +34,19 @@ createInertiaApp({
                     window.document.querySelector("#payModalDescription").innerHTML = description;
                     window.document.querySelector("#payModalPrice").innerHTML = price;
                     window.document.querySelector("#payModalUrl").setAttribute("href" , url);
+
+                    let append = "?wallet=true"
+                    if (url.split('?').length > 1){
+                        append = "&wallet=true"
+                    }
+                    if (this.wallet >= price){
+                        window.document.querySelector("#payModalUrlFromWallet").setAttribute('disabled' , 'disabled');
+                    }else {
+                        try{
+                            window.document.querySelector("#payModalUrlFromWallet").removeAttribute('disabled');
+                        }catch (e){}
+                    }
+                    window.document.querySelector("#payModalUrlFromWallet").setAttribute("href" , url + append);
                     $("#payModal").modal("show");
                 },
                 checkPhoneIsValid(phone){

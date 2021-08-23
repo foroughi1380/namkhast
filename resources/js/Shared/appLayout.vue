@@ -66,8 +66,9 @@
 
 
                 <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" data-toggle="modal" data-target="#chargeModal"><i class="feather icon-plus"></i>شارژ حساب</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"><i class="feather icon-chevron-right"></i>درخواست برداشت</a>
+                  <Link class="dropdown-item" href="/withdraw"><i class="feather icon-chevron-right"></i>درخواست برداشت</Link>
                 </div>
               </li>
             </ul>
@@ -249,6 +250,10 @@
                 <a id="payModalUrl">
                   <button type="button" class="btn btn-primary">اتصال به درگاه پرداخت</button>
                 </a>
+                <p class="mt-1">و یا</p>
+                <a id="payModalUrlFromWallet">
+                  <button type="button" class="btn btn-secondary btn-sm">پرداخت با حساب کاربری</button>
+                </a>
               </section>
             </div>
             <div class="modal-footer justify-content-center text-light">
@@ -259,6 +264,48 @@
         </div>
       </div>
 
+
+
+      <!-- wallet charge -->
+      <div class="modal fade" id="chargeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-white">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <section class="container d-flex flex-column text-center">
+                <section class="fa fa-money text-secondary"  style="font-size: 6rem"/>
+                <p>شارژ حساب</p>
+                <hr class="w-50"/>
+                <section class="mt-1">
+                  <span class="text">
+                    مبلغ:
+                  </span>
+                  <input type="number" step="100" min="0" max="10000000" class="font-size-large" v-model="walletChargePrice">
+                  <span class="font-size-xsmall text-light">
+                    تومان
+                  </span>
+                </section>
+                <hr class="w-50"/>
+                <p> شما میتونید حد اقل ۵,۰۰۰ تومان و حداکثر تا  ۱,۰۰۰,۰۰۰ حساب کاربری خود را شارژ کنید</p>
+                <a>
+                  <WaitButton :on-click="walletCharge" text="اتصال به درگاه پرداخت" :wait="inProgress"/>
+                </a>
+              </section>
+            </div>
+            <div class="modal-footer justify-content-center text-light">
+              پرداخت امن
+              pay.ir
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
   <!-- END: Content-->
@@ -267,9 +314,52 @@
 </template>
 
 <script>
+import {Inertia} from "@inertiajs/inertia";
+import WaitButton from "./Components/WaitButton";
+
 export default {
   name: "appLayout",
-  props: ['isLogin', 'user' , 'wallet']
+  components: {WaitButton},
+  props: ['isLogin', 'user' , 'wallet'],
+  data(){
+    return {
+      walletChargePrice : 5000,
+      inProgress : false,
+    }
+  },
+  methods :{
+    walletCharge(){
+      if (this.walletChargePrice < 5000 || this.walletChargePrice > 1000000){
+        this.toast("حداقل مقدار واریزی ۵۰۰۰ تومان و حد اکثر ۱,۰۰۰,۰۰۰ میباشد." , "error");
+      }else if (! /^[1-9][0-9]+00/.test(this.walletChargePrice)){
+        this.toast("مبلغ وارد شده باید بر ۱۰۰ بخش پذیر باشد." , "error");
+      }else{
+        this.inProgress = true;
+        Inertia.get(this.route("walletCharge" , this.walletChargePrice) , {} , {
+          onError: err => {
+            this.toast(err.price , 'error');
+          },
+          onFinish : attr=>{
+            this.inProgress = false;
+          }
+        });
+      }
+    }
+  },
+  created() {
+    if (this.errors){
+      Object.values(this.errors).forEach(value => {
+        if ((typeof value) !== "object")
+          this.toast(value, 'error');
+      })
+
+      if (this.errors.success){
+        Object.values(this.errors.success).forEach(value => {
+          this.toast(value);
+        })
+      }
+    }
+  }
 }
 </script>
 

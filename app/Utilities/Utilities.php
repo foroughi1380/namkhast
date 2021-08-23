@@ -6,6 +6,7 @@ namespace App\Utilities;
 
 use App\Models\Challenge;
 use App\Models\Config;
+use Illuminate\Validation\ValidationException;
 use ReCaptcha\ReCaptcha;
 
 class Utilities
@@ -25,5 +26,11 @@ class Utilities
             $tax = max($tax / 2 , Config::get('min_tax_challenge'));
         }
         return floor($challenge->budget + $tax);
+    }
+
+    static function throwSuccess($messsages){
+        $validator = ValidationException::withMessages($messsages);
+        $validator->errorBag = "success";
+        throw $validator;
     }
 }

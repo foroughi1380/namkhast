@@ -50,6 +50,8 @@ Route::middleware(["auth"])->group(function (){
     Route::get('contributor/{challenge}' , [\App\Http\Controllers\web\ChallengeController::class , "contributor"])->name("contributor");
     Route::get('contributors' , [\App\Http\Controllers\web\ChallengeController::class , "contributorChallenges"])->name("contributors");
     Route::post('contributor/{cont}' , [\App\Http\Controllers\web\ChallengeController::class , "contributorUpdate"])->name("contributor.update" );
+
+    Route::get('/charge/{price}' , [\App\Http\Controllers\web\WalletController::class , 'charge'])->name('walletCharge');
 });
 
 
