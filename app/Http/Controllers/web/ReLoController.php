@@ -37,6 +37,12 @@ class ReLoController extends Controller
 
         /** @var User $user */
         $user = User::query()->where('phone' , '=' , $request->get("phone"))->first();
+        if ($user->status != 'active'){
+            return Inertia::render("Web/login" , [
+                'errors' => ['phone'=>'حساب کاربری شما غیر فعال است.']
+            ]);
+        }
+
         if (!$request->has("code")){
             $user->cc = bcrypt(SendSms::sendConfirmCode($user->phone));
 //            $user->cc = bcrypt(1234);
