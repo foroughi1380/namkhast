@@ -115,7 +115,7 @@
                         </fieldset>
 
                         <p class="text-danger text-sm" v-text="errors.document" v-if="errors.document"></p>
-                        <p class="text-sm" v-if="challenge.document">
+                        <p class="text-sm" v-if="challenge && challenge.document">
                           برای دانلود مستندات بارگذاری شده
                           <a :href="challenge.document" target="_blank"> اینجا </a>
                           کلیک کنید.

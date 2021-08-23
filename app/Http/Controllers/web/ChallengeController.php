@@ -383,7 +383,7 @@ class ChallengeController extends Controller
 
             $transaction->status = "paid";
             $extras['from'] = Wallet::class;
-            $extras['from_id'] = Wallet::class;
+            $extras['from_id'] = $wallet->id;
             $transaction->extras = $extras;
             $transaction->save();
             Utilities::throwSuccess([
