@@ -11,4 +11,7 @@ class Wallet extends Model
     protected $fillable= [
       "user_id" , 'price' , 'description' , 'extras'
     ];
+    protected $casts =[
+      'extras' => 'array'
+    ];
 }
