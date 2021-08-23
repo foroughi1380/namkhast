@@ -24,7 +24,7 @@ trait QueryHelper
         foreach ($columns as $column) {
             $query = $this->parseSearch($query, json_decode($column));
         }
-
+        $query = $query->orderByDesc('id');
         return $query;
     }
 

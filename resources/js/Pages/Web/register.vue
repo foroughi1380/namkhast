@@ -1,4 +1,5 @@
 <template>
+  <Head title="ثبت نام"></Head>
   <div class="card bg-authentication rounded-0 mb-0">
     <div class="row m-0">
       <div class="col-lg-6 d-lg-block d-none text-center align-self-center pl-0 pr-3 py-0">
