@@ -108,7 +108,7 @@
                     <div class="col-md-6 col-m-12">
                       <div class="col-12">
                         <fieldset class="form-group">
-                          <label">فایل های مستندات</label>
+                          <label >فایل های مستندات</label>
                           <div class="custom-file">
                             <simple-input-file  id="document" label="فایل مستندات" name="document" v-model="document"  :disabled="inProcess"/>
                           </div>
