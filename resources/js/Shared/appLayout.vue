@@ -289,7 +289,7 @@
                 <hr class="w-50"/>
                 <p> شما میتونید حد اقل ۵,۰۰۰ تومان و حداکثر تا  ۱,۰۰۰,۰۰۰ حساب کاربری خود را شارژ کنید</p>
                 <a>
-                  <button type="button" class="btn btn-primary" @click="walletCharge">اتصال به درگاه پرداخت</button>
+                  <WaitButton :on-click="walletCharge" text="اتصال به درگاه پرداخت" :wait="inProgress"/>
                 </a>
               </section>
             </div>
@@ -310,22 +310,35 @@
 </template>
 
 <script>
+import {Inertia} from "@inertiajs/inertia";
+import WaitButton from "./Components/WaitButton";
+
 export default {
   name: "appLayout",
+  components: {WaitButton},
   props: ['isLogin', 'user' , 'wallet'],
   data(){
     return {
       walletChargePrice : 5000,
+      inProgress : false,
     }
   },
   methods :{
     walletCharge(){
       if (this.walletChargePrice < 5000 || this.walletChargePrice > 1000000){
         this.toast("حداقل مقدار واریزی ۵۰۰۰ تومان و حد اکثر ۱,۰۰۰,۰۰۰ میباشد." , "error");
-      }else if (this.walletChargePrice %  100 !== 0){
+      }else if (! /^[1-9][0-9]+00/.test(this.walletChargePrice)){
         this.toast("مبلغ وارد شده باید بر ۱۰۰ بخش پذیر باشد." , "error");
       }else{
-        //this.Inertia.get()
+        this.inProgress = true;
+        Inertia.get(this.route("walletCharge" , this.walletChargePrice) , {} , {
+          onError: err => {
+            this.toast(err.price , 'error');
+          },
+          onFinish : attr=>{
+            this.inProgress = false;
+          }
+        });
       }
     }
   }
