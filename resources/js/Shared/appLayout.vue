@@ -250,6 +250,10 @@
                 <a id="payModalUrl">
                   <button type="button" class="btn btn-primary">اتصال به درگاه پرداخت</button>
                 </a>
+                <p class="mt-1">و یا</p>
+                <a id="payModalUrlFromWallet">
+                  <button type="button" class="btn btn-secondary btn-sm">پرداخت با حساب کاربری</button>
+                </a>
               </section>
             </div>
             <div class="modal-footer justify-content-center text-light">
@@ -339,6 +343,20 @@ export default {
             this.inProgress = false;
           }
         });
+      }
+    }
+  },
+  created() {
+    if (this.errors){
+      Object.values(this.errors).forEach(value => {
+        if ((typeof value) !== "object")
+          this.toast(value, 'error');
+      })
+
+      if (this.errors.success){
+        Object.values(this.errors.success).forEach(value => {
+          this.toast(value);
+        })
       }
     }
   }
