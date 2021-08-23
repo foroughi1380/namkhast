@@ -74,8 +74,10 @@ export default {
   },
   created() {
     this.uuid = "di" + new Date().getTime() + Math.ceil(Math.random() * 200)
-    if (!this.validateDate(this.modelValue)) {
+    if (!this.validateDate(this.jalali(this.modelValue))) {
       this.date = this.jalali(this.getToday());
+    }else{
+      this.date = this.jalali(this.modelValue);
     }
     this.init()
   },
