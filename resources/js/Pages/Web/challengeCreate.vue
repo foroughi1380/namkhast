@@ -42,16 +42,16 @@
                     </div>
 
 
-                    <section class="col-md-6 col-sm-12 row">
-                      <div class="col-md-12 col-sm-12">
-                        <label for="startDate"> تاریخ شروع : </label>
-                        <date-picker id="startDate" class="col-md-6 col-sm-12" show-today min-date="today" v-model="startDate"  :disabled="inProcess"/>
+                    <section class="col-md-6 col-sm-12 row justify-content-center">
+                      <div class="col-lg-6 col-md-12 col-sm-9 ">
+                        <label> تاریخ شروع : </label>
+                        <date-picker id="startDate" class="col-12" show-today min-date="today" v-model="startDate"  :disabled="inProcess"/>
                         <p class="text-danger text-sm" v-text="errors.startDate" v-if="errors.startDate"></p>
                       </div>
 
-                      <div class="col-md-12 col-sm-12">
-                        <label for="endDate"> تاریخ پایان : </label>
-                        <date-picker id="endDate" class="col-md-6 col-sm-12" :min-date="startDate" v-model="endDate"  :disabled="inProcess"/>
+                      <div class="col-lg-6 col-md-12 col-sm-9 ">
+                        <label> تاریخ پایان : </label>
+                        <date-picker id="endDate" class="col-12" :min-date="startDate" v-model="endDate"  :disabled="inProcess"/>
                         <p class="text-danger text-sm" v-text="errors.endDate" v-if="errors.endDate"></p>
                       </div>
                     </section>

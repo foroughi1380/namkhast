@@ -1,6 +1,6 @@
 <template>
 
-  <div class="col-auto mb-0 d-inline-block">
+  <div class="col-12 d-inline-block">
     <div class="input-group">
       <div class="input-group-prepend">
         <div class="input-group-text fa fa-calendar"></div>
