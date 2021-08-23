@@ -10,6 +10,7 @@ class TransactionCallBackController extends Controller
 {
     public function store(Request $request)
     {
+        $template = "<div style='text-align: center'><p>%s</p><a href='/'><button>بازگشت به صفحه اصلی</button></a></div>";
         $flag = true;
         $status = $request->get("status");
         $id = $request->get('order_id');
@@ -18,7 +19,7 @@ class TransactionCallBackController extends Controller
 
         $transaction = Transaction::query()->find($id);
         if (! $transaction || $transaction->transaction_code != $transaction_code || $transaction->status !== "payment") {
-            return "تراکنش نامعتبر";
+            return sprintf($template , "تراکنش نامعتبر");
         }
 
 
@@ -44,13 +45,13 @@ class TransactionCallBackController extends Controller
        if ($transaction->save()){
 
            if ($flag){
-               return  "پرداخت با موفقت انجام شد";
+               return  sprintf($template , "پرداخت با موفقت انجام شد");
            }else{
-               return "پرداخت نا موفق";
+               return sprintf($template , "پرداخت نا موفق");
            }
 
        }else{
-           return "خطا در ثبت پرداخت";
+           return sprintf($template , "خطا در ثبت پرداخت");
        }
     }
 }
