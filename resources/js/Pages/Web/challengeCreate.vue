@@ -34,7 +34,7 @@
                       <div class="col-12">
                         <div class="form-group">
                           <label>توضیحات </label>
-                          <CkSimpleEditor v-model="description" id="description"></CkSimpleEditor>
+                          <CkSimpleEditor v-model="description" id="description" :disabled="inProcess"></CkSimpleEditor>
                         </div>
                         <p class="text-danger text-sm" v-text="errors.description" v-if="errors.description"></p>
                       </div>
