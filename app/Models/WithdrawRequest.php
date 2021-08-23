@@ -14,10 +14,11 @@ class WithdrawRequest extends Model
     protected $fillable = [
         "id",
         "price",
+        "user_id",
         "status"
     ];
 
     protected $hidden = [
-        "user_id"
+
     ];
 }

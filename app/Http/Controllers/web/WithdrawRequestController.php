@@ -32,7 +32,7 @@ class WithdrawRequestController extends Controller
                "price" => "اعتبار حساب شما کافی نمیباشد."
             ]);
         }
-        $wr = WithdrawRequest::create(['user_id'=>$request->user()->id,'price'=>$request->get('price')]);
+        $wr = WithdrawRequest::create(['user_id'=>Auth::id(),'price'=>$request->get('price')]);
         if($wr) {
             $wallet = new Wallet();
             $wallet->user_id = Auth::id();
