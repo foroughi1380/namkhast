@@ -117,7 +117,7 @@
                     <div class="card-body">
 شما در هنگام ثبت چالش یک مبلغ به عنوان جایزه در نظر میگیرید.
                      مبلغ جایزه بعلاوه درصدی از این مبلغ (به عنوان درامد و حق ثبت و نگهداری) میشود هزینه ثبت چالش.
-                      البط باید توجه داشت هرچه بیشتر مبلغ جایزه باشد. درصد پرداخت کارمزد سایت نیز کمتر خواهد بود.
+                      البط باید توجه داشت هرچه  مبلغ جایزه بیشتر باشد، درصد پرداخت کارمزد سایت نیز کمتر خواهد بود.
                     </div>
                   </div>
                 </div>
@@ -125,7 +125,7 @@
                   <div class="card-header" id="headingOne" role="button" data-toggle="collapse"
                        data-target="#collapse4" aria-expanded="false" aria-controls="collapseOne">
                                                 <span class="lead collapse-title">
-                                                    آیا باید در سایت احراض هویت کرده باشیم ؟
+                                                    آیا باید در سایت احراز هویت کرده باشیم ؟
                                                 </span>
                   </div>
                   <div id="collapse4" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
