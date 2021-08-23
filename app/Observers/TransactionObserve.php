@@ -5,6 +5,7 @@ namespace App\Observers;
 use App\Models\Challenge;
 use App\Models\Contributors;
 use App\Models\Transaction;
+use App\Models\Wallet;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,6 +44,14 @@ class TransactionObserve
                     $cont->challenge_id = $transaction->extras['challenge_id'];
                     $cont->save();
                     return redirect(route("challenge.show" , $transaction->extras['challenge_id']))->send();
+                case Wallet::class:
+                    $wallet = new Wallet();
+                    $wallet->user_id = $transaction->extras['user_id'];
+                    $wallet->price = $transaction->extras['price'];
+                    $wallet->description = "شارژ حساب کاربری";
+                    $wallet->extras = ['transaction_id' => $transaction->id];
+                    $wallet->save();
+                    return redirect("/")->send();
             }
         }
     }
