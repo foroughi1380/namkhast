@@ -33,7 +33,7 @@
                       </div>
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="description">توضیحات </label>
+                          <label>توضیحات </label>
                           <CkSimpleEditor v-model="description" id="description"></CkSimpleEditor>
                         </div>
                         <p class="text-danger text-sm" v-text="errors.description" v-if="errors.description"></p>
@@ -108,13 +108,18 @@
                     <div class="col-md-6 col-m-12">
                       <div class="col-12">
                         <fieldset class="form-group">
-                          <label for="document">فایل های مستندات</label>
+                          <label">فایل های مستندات</label>
                           <div class="custom-file">
                             <simple-input-file  id="document" label="فایل مستندات" name="document" v-model="document"  :disabled="inProcess"/>
                           </div>
                         </fieldset>
 
                         <p class="text-danger text-sm" v-text="errors.document" v-if="errors.document"></p>
+                        <p class="text-sm" v-if="challenge.document">
+                          برای دانلود مستندات بارگذاری شده
+                          <a :href="challenge.document" target="_blank"> اینجا </a>
+                          کلیک کنید.
+                        </p>
                       </div>
                     </div>
 
