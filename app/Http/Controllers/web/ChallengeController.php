@@ -152,7 +152,7 @@ class ChallengeController extends Controller
     }
 
 
-    public function contributor(Challenge $challenge)
+    public function contributor(Request $request , Challenge $challenge)
     {
         if ($challenge->is_Contributor){
             return Inertia::render("Web/challengeParticipants" , [
@@ -168,7 +168,38 @@ class ChallengeController extends Controller
             $cont->save();
             return $this->show($challenge->id);
         }else{
-            $payment = IdPayPayment::create($challenge->cost , ["for" => Contributors::class , "user_id" => Auth::id() , "challenge_id" => $challenge->id]);
+            $extras = ["for" => Contributors::class , "user_id" => Auth::id() , "challenge_id" => $challenge->id];
+            if ($request->get('wallet' , false)){
+                $wallet = Wallet::query()->where("user_id" , Auth::id())->sum("price");
+                if ($wallet < $challenge->cost){
+                    throw \Illuminate\Validation\ValidationException::withMessages([
+                        "price" => "اعتبار حساب کاربری کافی نمیباشد."
+                    ]);
+                }
+
+                $transaction = new Transaction();
+                $transaction->status = "payment";
+                $transaction->price = $challenge->cost * 10;
+                $transaction->save();
+
+                $walletPayment = new Wallet();
+                $walletPayment->price = - $challenge->cost;
+                $walletPayment->user_id = Auth::id();
+                $walletPayment->description = "پرداخت برای شرکت در چالش";
+                $walletPayment->extras = ['transaction_id' => $transaction->id];
+                $walletPayment->save();
+
+                $transaction->status = "paid";
+                $extras['from'] = Wallet::class;
+                $extras['from_id'] = $walletPayment->id;
+                $transaction->extras = $extras;
+                $transaction->save();
+                Utilities::throwSuccess([
+                    'payment' => 'عملیات با موفقیت انجام شد'
+                ]);
+            }
+
+            $payment = IdPayPayment::create($challenge->cost*10 , $extras);
             if ($payment){
                 return redirect($payment->link);
             }else{
@@ -356,7 +387,7 @@ class ChallengeController extends Controller
             $transaction->extras = $extras;
             $transaction->save();
             Utilities::throwSuccess([
-                'payment' => 'عملات با موفقیت انجام شد'
+                'payment' => 'عملیات با موفقیت انجام شد'
             ]);
         }
 
