@@ -12,6 +12,7 @@ use App\Models\Transaction;
 use App\Models\User;
 use App\Models\Wallet;
 use App\Utilities\Utilities;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
@@ -159,6 +160,10 @@ class ChallengeController extends Controller
                "contributor" => Contributors::query()->where("user_id" , Auth::id())->where("challenge_id" , $challenge->id)->first(),
                "challenge" => $challenge
             ]);
+        }
+
+        if (Carbon::today()->isAfter($challenge->expiration_at)){
+            return $this->challenges($request);
         }
 
         if ($challenge->type == "free"){
@@ -405,7 +410,7 @@ class ChallengeController extends Controller
 
     public function challenges(Request $request){
         return Inertia::render("Web/myChallenge" , [
-            "chs" => (new Challenge())->parseQueries($request)->whereNull("ended_at")->where("status" , 'paid')->paginate(5),
+            "chs" => (new Challenge())->parseQueries($request)->whereNull("ended_at")->where("status" , 'paid')->whereDate('started_at' , '<=' , Carbon::now())->whereDate('expiration_at' , '>=' , Carbon::now())->paginate(5),
             "myTitle" => "چالش ها"
         ]);
     }
